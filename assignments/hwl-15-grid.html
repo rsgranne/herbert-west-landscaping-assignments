@@ -1,0 +1,254 @@
+<!-- <p>
+  main-8.css, fertilizers-2.html; 2,222 words
+</p> -->
+<p>
+  When you are finished with this assignment, text me (314-780-0489) &amp; we will go over it together. <strong>You cannot submit this assignment otherwise.</strong>
+</p>
+<p>
+  In this assignment you will use these CSS properties having to do with Grid layout:
+</p>
+<ul>
+  <li><code>grid-template-rows</code></li>
+  <li><code>grid-template-columns</code></li>
+  <li><code>gap</code></li>
+  <li><code>grid-row-start</code></li>
+  <li><code>grid-row-end</code></li>
+  <li><code>grid-column-start</code></li>
+  <li><code>grid-column-end</code></li>
+</ul>
+<p>
+  In addition, you will also use <code>@media</code> for <i>media queries</i>, which we will be covering very shortly. I will give a short explanation in this assignment, but you will understand more when we dive a little deeper into what they are and their importance later.
+</p>
+<h2 style="font-family: Monaco, Menlo, Consolas, 'Courier New', monospace !important; color: #d01a19;">fertilizers.html</h2>
+<p>
+  Remember the employee images on the Fertilizers page? We are going to arrange them using grid layout, and I think you are going to be pretty impressed with what you can do with grid.
+</p>
+<p>
+  We have to first figure out the layouts we want, like this:
+</p>
+<ul>
+  <li>Phones &amp; small devices (up to 767px wide): single column, one on top of the other</li>
+  <li>Tablets (768px&ndash;1199px wide): 2 rows &amp; 2 columns (a 2&times;2 grid, in other words)</li>
+  <li>Laptops & desktops (1200px&ndash;1399px wide): 2 rows &amp; 3 columns (since we have 4 employees, that will be 3 in the first row &amp; 1 in the second row, but that’s OK)</li>
+  <li>Large monitors (1400px and up): 1 row &amp; 4 columns, so they are all in a row</li>
+</ul>
+<p>
+  Before we can do anything, we need to set up on our HTML for our grid. Currently, we have a paragraph with an employee image in it, and then a paragraph with a description of the employee, and that pattern is repeated 4 times.
+</p>
+<p>
+  In the flexbox assignment we created CSS for cards, and we are going to re-use that here. The information about each employee will be inside a card, but it will be a simpler card than the ones we created using flexbox. Nonetheless, a lot of the CSS we created for flexbox is still useful.
+</p>
+<p>
+  The structure we are going to use for each card is as follows (please note that we are <em>not</em> using <code>width</code> or <code>height</code> with <code>&lt;img&gt;</code>):
+</p>
+<pre><code>&lt;div class="card"&gt;
+  &lt;img src="&hellip;" alt="&hellip;"&gt;
+  &lt;div class="card-body"&gt;
+    &lt;p class="card-text"&gt;&hellip;&lt;/p&gt;
+  &lt;/div&gt;
+&lt;/div&gt;</code></pre>
+<p>
+  So, for instance, our first listed employee, Kaka Whoopsy, would look like this:
+</p>
+<pre><code>&lt;div class="card"&gt;
+  &lt;img src="/images/employees/kaka-whoopsy.webp" alt="Kaka Whoopsy, big game hunter"&gt;
+  &lt;div class="card-body"&gt;
+    &lt;p class="card-text"&gt;Kaka Whoopsy, a former big game hunter who was famous for always staying on the spoor&lt;/p&gt;
+  &lt;/div&gt;
+&lt;/div&gt;</code></pre>
+<p>
+  Do that for the other 3 employees. Once that is completed, wrap all 4 cards in a <code>&lt;div&gt;</code> with a class of <code>employees</code>, like this (the cards are collapsed, obviously):
+</p>
+<pre><code>&lt;div class="employees"&gt;
+  &lt;div class="card"&gt;
+  &lt;/div&gt;
+  &lt;div class="card"&gt;
+  &lt;/div&gt;
+  &lt;div class="card"&gt;
+  &lt;/div&gt;
+  &lt;div class="card"&gt;
+  &lt;/div&gt;
+&lt;/div&gt;</code></pre>
+<p>
+  The HTML is in place. Now let’s turn to the main actor in this process, the CSS.
+</p>
+<p>
+  First of all, we need to transform <code>.employees</code> into a grid container, so do that. If you save <code>main.css</code> and look at the webpage using Live Preview, the images are huge! That is to be expected, because we haven’t really created a grid yet, just the container.
+</p>
+<p>
+  Let’s start defining our grid with 2 rows &amp; 2 columns using <code>grid-template-rows</code> &amp; <code>grid-template-columns</code>. Since we want 2 columns, and we want them to be the same width, we want to use <code>1fr</code> for each column. The <code>fr</code> unit is short for <i>fraction</i> of available space. By using it, we can proportionately divide that space amongst our grid items, giving us a nice, flexible layout.
+</p>
+<p>
+  After defining the grid columns, save &amp; review the results. Holy mackerel! Just doing that simple thing resulted in a 2&times;2 grid. There are a few issues, of course.
+</p>
+<p>
+  First, all of the grid items are crammed next to each other. To give them some space, we need to use the <code>gap</code> property. We could use <code>column-gap</code> &amp; <code>row-gap</code> separately, but why do that when we have the <code>gap</code> shortcut? <code>gap</code> allows us to specify 2 values after it, like <code>10px 20px</code>, which would set the space between rows and then columns, or we can just use one value, like <code>20px</code>, which would apply to both rows and columns. So let’s do that last one.
+</p>
+<p>
+  OK, that looks a lot better. However, the bottom two flex items are right against the border on top of the <code>&lt;footer&gt;</code>, so we need to put some margin under our grid container of about <code>2rem</code>.
+</p>
+<p>
+  Finally, there is too much space between the images &amp; <code>.card-text</code>. You might think that simply applying <code>margin-top: 0</code> to <code>.card-text</code> (which we defined in an earlier assignment) might fix the problem. It would here, but it would make <code>.card-text</code> too close on other webpages! We need to change the top margin to <code>0</code> for <code>.card-text</code>, but only if <code>.card-text</code> is a descendant of <code>.employees</code>. Set that in place, and your grid should now look something like this:
+</p>
+<p>
+  <img style="max-width: 100%; height: auto; border: 1px solid black;" src="https://granneman.com/downloads/web-dev-assignments/herbert-west-landscaping/images/grid-employees-2x2.webp" alt="Images of 4 employees in a 2 by 2 grid">
+</p>
+<p>
+  We have set up our grid, and it works, but the problem is that it is always 2&times;2, no matter how wide our browser’s viewport is. Grab the right edge of your browser and drag it to the left to make the viewport smaller. No matter how small you make it, there are still two rows &amp; two columns. Let’s fix that.
+</p>
+<!-- <blockquote>
+  <p>
+    I’ve been telling you to just grab the right (or left) edge of your Web browser and drag to get a sense of your responsive layout. While that works in a pinch, it’s not the most accurate representation. If you want to see what your layout will <em>really</em> look like on a tablet or phone, then you need to put your browser into <i>responsive mode</i>.
+  </p>
+  <p>
+    I’ll go into detail about how to get into and use responsive mode in Chromium-based browsers like Chrome and Brave first, because I know most of you use those. After that, I’ll cover the other two major browsers, Safari &amp; Firefox.
+  </p>
+  <p>
+    Open the <i>Inspector</i> (also known as <i>Chrome DevTools</i>) by right-clicking in the webpage and clicking on Inspect, or by pressing <code>⌥⌘I</code> (macOS)/<code>Ctrl+Shift+I</code> (Windows). Once the Inspector is open, click on the <i>Toggle Device Toolbar</i> button in the upper left of the Inspector window, shown below:
+  </p>
+  <figure>
+    <img style="max-width: 50%; height: auto; border: 1px solid black;" src="https://granneman.com/downloads/web-dev-assignments/herbert-west-landscaping/images/inspector-chromium-brave-toggle-device-toolbar-annotated.webp" alt="The Toggle Device Toolbar in the Chromium Inspector, called out">
+    <figcaption>
+      A box drawn around the Toggle Device Toolbar in the Chromium Inspector (DevTools)
+    </figcaption>
+  </figure>
+  <p>
+    Once you do that,
+  </p>
+  <p>
+
+  </p>
+</blockquote> -->
+<p>
+  Our fix will rely on <code>@media</code>, a CSS <i>at-rule</i> (for more on at-rules, jump to the <i>Media Types &amp; Media Features</i> section in the <i><a href="https://granneman.com/downloads/web-dev/Responsive-Web-Design.pdf">Responsive Web Design</a></i> presentation). <code>@media</code> allows you to apply parts of your stylesheet if certain conditions are met. For instance, you could use <code>@media print</code> to only apply certain styles if a webpage is printed. In our case, we are going to use <code>@media</code> queries that change which styles are used depending upon the width of the viewport looking at <code>fertilizers.html</code>.
+</p>
+<p>
+  For instance, let’s add code that will make all of our grid items one column wide when the viewport is the width of a cell phone. The generally-accepted <i>maximum</i> width in pixels for a mobile phone is <code>767</code>, so we’d put something like this in <code>main.css</code>:
+</p>
+<pre><code>@media (max-width: 767px) {
+  .employees {
+    display: block;
+  }
+
+  .employees > .card {
+    margin-bottom: 1rem;
+  }
+}</code></pre>
+<blockquote>
+  <p>
+    Notice that our new <code>@media</code> block ends with two <code>}</code> characters? That is to be expected. If you do not see two <code>}</code> characters at the end, you have a problem!
+  </p>
+</blockquote>
+<p>
+  When we first implemented a grid layout, we said that <code>.employees</code> used <code>display: grid</code>, but now that we are at phone size, we switch to <code>display: block</code>, which causes each grid item to stack on top of each other and take up 100% of the width of its container. This is exactly what we want on phones, as you can see:
+</p>
+<p>
+  <img style="max-width: 50%; height: auto; border: 1px solid black;" src="https://granneman.com/downloads/web-dev-assignments/herbert-west-landscaping/images/grid-employees-4x1.webp" alt="Images of 4 employees on a phone, stacked on top of each other">
+</p>
+<p>
+  Why do we need <code>margin-bottom: 1rem</code>? Comment that line out &amp; see what happens without it: when we are at phone size, the grid items are crammed next to each other vertically, so we need that <code>1rem</code> of space between them so they can breathe. You can see what our grid items look like without that bottom margin below; it’s not very attractive, is it?
+</p>
+<p>
+  <img style="max-width: 50%; height: auto; border: 1px solid black;" src="https://granneman.com/downloads/web-dev-assignments/herbert-west-landscaping/images/grid-employees-4x1-no-bottom-margin-annotated.webp" alt="Images of 4 employees on a phone, stacked on top of each other, without a bottom margin">
+</p>
+<p>
+  We now have used grid to create a layout for phones with viewports up to 767px wide (1&times;4, or 1 column &amp; 4 rows, or each grid item stacked). We did not specify a viewport width with our original grid code, so right now that 2&times;2 grid is going to appear with any viewport 768px or larger, even if looks kind of silly (I’ll bet those employee images look ridiculously large on your laptop or desktop screen). Time to make things look better on laptops and desktops.
+</p>
+<p>
+  At the beginning of this assignment I stated that the pixel widths for laptops and desktops range from 1200px&ndash;1399px wide, and that the layout we wanted for that viewport size was 2 rows with 3 columns. If we go ahead now and use <code>@media</code> to specify a layout for that range in viewport size, we will therefore limit our 2&times;2 grid to viewports that are between 768px and 1199px.
+</p>
+<p>
+  Our code for laptops and desktops is this:
+</p>
+<pre><code>@media (min-width: 1200px) and (max-width: 1399px) {
+  .employees {
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: repeat(2, 1fr);
+  }
+}</code></pre>
+<p>
+  Now that this code is in <code>main.css</code>, as you resize your Web browser from phone size on up, you will see the layout change from 1&times;4, to 2&times;2, to 3&times;2, as you can see in the following video:
+</p>
+<video src="https://granneman.com/downloads/web-dev-assignments/herbert-west-landscaping/images/grid-1x4-2x2-3x2-2x2.mp4" poster="https://granneman.com/downloads/web-dev-assignments/herbert-west-landscaping/images/grid-1x4-2x2-3x2-2x2.webp" width="854" height="480" controls playsinline></video>
+<p>
+  Now that was weird. If you were watching carefully, you saw that as I was dragging my browser window to the right and making the viewport larger, the layout changed from 1&times;4, to 2&times;2, to 3&times;2, and back to 2&times;2 again! Why didn’t it stay at 3&times;2?
+</p>
+<p>
+  Look at the @media query we just used to see the answer: <code>(min-width: 1200px) and (max-width: 1399px)</code>. We specified that the 3&times;2 grid should only be used when the viewport is between 1200px and 1399px. But when the viewport got to 1400px and larger, it went back to the default we created at the beginning, which was 2&times;2! So it looks like we need to create our final grid layout for large monitors that are 1400px or larger.
+</p>
+<p>
+  The code for that layout is:
+</p>
+<pre><code>@media (min-width: 1400px) {
+  .employees {
+    grid-template-columns: repeat(4, 1fr);
+    grid-template-rows: 1fr;
+  }
+}</code></pre>
+<p>
+  This one should be pretty easy for you at this point: 4 columns and 1 row. Save it and try it out in your browser. It all works! We’ve done what we wanted to do, and grid is now changing its layout as the viewport changes. This is pretty cool, right?
+</p>
+<p>
+  Now I’m going to perhaps make you mad at me. All the code we have created so far works, and it’s all perfectly OK to use, but there’s a simpler, easier way to do everything. So why have I had you do all this other, extra work? Because it’s still good to understand those techniques!
+</p>
+<p>
+  So here’s what I want you to do: comment out everything we’ve done so far for <code>.employees</code> that involves <code>@media</code> (remember, to comment out lines of code, select them and then press <code>⌘/</code> for macOS &amp; <code>Ctrl+/</code> for Windows). In other words, after you comment those lines out, they should look like this:
+</p>
+<pre><code>/* @media (max-width: 767px) {
+  .employees {
+    display: block;
+  }
+
+  .employees > .card {
+    margin-bottom: 1rem;
+  }
+}
+
+@media (min-width: 1200px) and (max-width: 1399px) {
+  .employees {
+    grid-template-rows: repeat(2, 1fr);
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+@media (min-width: 1400px) {
+  .employees {
+    grid-template-columns: repeat(4, 1fr);
+    grid-template-rows: 1fr;
+  }
+} */</code></pre>
+<p>
+  Now go to the original code for <code>.employees</code> and comment out the lines for <code>grid-template-rows</code> &amp; <code>grid-template-columns</code> so that the style rule looks like this:
+</p>
+<pre><code>.employees {
+  display: grid;
+  /* grid-template-rows: 1fr 1fr; */
+  /* grid-template-columns: 1fr 1fr; */
+  gap: 20px;
+  margin-bottom: 2rem;
+}</code></pre>
+<p>
+  Now we’re going to add a new line into <code>.employees</code> (I would put it after the two commented-out lines), one that will seem like magic when you see its effect:
+</p>
+<pre><code>grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));</code></pre>
+<p>
+  Once that line is in place, save your work and then adjust the width of your Web browser. Everything will just work! What’s going on here?
+</p>
+<p>
+  We already looked at the <code>repeat()</code> function in my slides titled CSS Grid Layout Condensed. If you recall, it allows you to define repeated tracks in a grid so you don’t have to type the same thing out over and over. In my slides I provide examples like <code>grid-template-columns: repeat(3, 100px)</code>, which would create 3 columns, each 100px wide. <code>repeat()</code>, however, can be used in much more sophisticated ways.
+</p>
+<p>
+  Let’s break down what we used above. <code>auto-fit</code> is an option you can use with <code>repeat()</code> that tells the rendering engine that it may create new grid tracks when there is enough room in the grid container, but it must then resize tracks that have items so they fit inside that container.
+</p>
+<p>
+  So, when <code>auto-fit</code> is used with <code>repeat()</code>, the rendering engine automatically calculates the number of grid tracks that can fit within the grid container based on the size of the container and the size of the grid items. The <code>auto-fit</code> keyword makes sure that it automatically creates as many tracks as possible based on the available space, but without causing overflow, in which the tracks “bust out” of the container.
+</p>
+<p>
+  The part after <code>auto-fit</code> defines what those tracks look like. In this case, we are using the <code>minmax()</code> function (yes, that’s a function inside another function), which defines both the minimum width <em>and</em> the maximum width that all tracks can be.
+</p>
+<p>
+  <code>minmax(250px, 1fr)</code> thus states that the smallest a track can ever be is <code>250px</code> (which will result in 4 employee cards in a row, what we want on large monitors), while the largest it can ever be is <code>1fr</code> (which takes up the full width, exactly what we want on phones). Viewports in between phones and large monitors will lay out accordingly based on the combination of <code>auto-fit</code> and <code>minmax(250px, 1fr)</code>.
+</p>
+<p>
+  So yes, we can thereby replace 23 lines of CSS with 1, and it all works just as well. I hope you find this very useful to you. Grid is truly a wonderful tool to know and understand, as it can make difficult layouts simple, and simple layouts easy.
+</p>

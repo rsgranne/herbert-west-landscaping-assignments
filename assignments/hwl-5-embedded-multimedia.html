@@ -1,0 +1,284 @@
+<p>
+  <strong>IMPORTANT</strong>: Before you work on this assignment, make sure you have watched the video titled <i>Linking to Images & Text - HTML Overview</i>.
+</p>
+<p>
+  <strong>IMPORTANT</strong>: As of this writing (March 2023), there is a <a href="https://github.com/microsoft/vscode-livepreview/issues/189">bug</a> associated with using Live Preview to view <code>&lt;video&gt;</code> in Safari; namely, if you use Live Preview to view a webpage with <code>&lt;video&gt;</code> in it, the video will not display! If you instead uploaded your webpage to a Web server in the cloud & then opened it in Safari, the video would work fine. In other words, this is more of a <a href="https://github.com/microsoft/vscode-livepreview/issues/189">problem with Live Preview</a> than with Safari. What’s the solution: use Live Preview to open the page with <code>&lt;video&gt;</code> in Safari, & then copy the address & paste it into a new tab in Firefox or a Chromium-based browser (e.g., Brave, Edge, Chrome).
+</p>
+<p>
+  When you are finished with this assignment, text me (314-780-0489) &amp; we will go over it together. <strong>You cannot submit this assignment otherwise.</strong>
+</p>
+<p>
+  This assignment introduces new elements, which you will add to five different webpages:
+</p>
+<ul>
+  <li><code>/index.html</code></li>
+  <li><code>/services/custom-services.html</code></li>
+  <li><code>/services/index.html</code>, which is new</li>
+  <li><code>/services/landscape-maintenance.html</code></li>
+  <li><code>/products/seed.html</code>, which is new</li>
+</ul>
+<p>
+  You should use every one of these elements in order to complete the assignment. Note that you will <em>not</em> use every element on all pages! Look over the PDFs <em>carefully</em> so you don&rsquo;t miss any elements.
+</p>
+<ul>
+  <li><code>&lt;img&gt;</code></li>
+  <li><code>&lt;source&gt;</code></li>
+  <li><code>&lt;svg&gt;</code></li>
+  <li><code>&lt;video&gt;</code></li>
+</ul>
+
+<h2>Files you need for this project</h2>
+
+<h3>Images</h3>
+<p>
+  <a href="https://granneman.com/downloads/web-dev-assignments/herbert-west-landscaping/herbert-west-images.zip" target="_blank" rel="noopener">Download the images</a> you will need. Unzip the file (for a note on doing this, see the <i>Unzipping</i> section at the beginning of the <a href="https://granneman.com/downloads/web-dev/Visual-Studio-Code.pdf" target="_blank" rel="noopener">Visual Studio Code slides</a>), &amp; then move the <code>images</code> folder into the <code>herbert-west-landscaping</code> folder.
+</p>
+<blockquote>
+  <p>
+    <strong>Note for Windows users</strong>: when you unzip the file, you may find an <code>images</code> folder inside an <code>images</code> folder, because Windows is stupid. Move the <i>inner</i> images folder, the one that <em>contains</em> folders (e.g., <code>contact</code>, <code>home</code>, &amp; <code>products</code>) as well as files named <code>breadcrumb-arrow-hwl.svg</code> &amp; <code>hwl-logo.svg</code>. If there is an <code>images</code> folder inside <code>herbert-west-landscaping</code>, &amp; that <code>images</code> folder contains another <code>images</code> folder, you didn&rsquo;t do it correctly.
+  </p>
+</blockquote>
+<p>
+  Things should look like this once you have moved the <code>images</code> folder, with all the folders collapsed:
+</p>
+<p>
+  <img style="max-width: 40vw; height: auto;" src="https://granneman.com/downloads/web-dev-assignments/herbert-west-landscaping/images/root-images+index+services.webp" alt="Collapsed folder structure after uploading the images folder for Herbert West Landscaping assignment 4">
+</p>
+<p>
+  This is what your folder structure should look like if you expand all the folders (I&rsquo;m pretty sure this is only possible on a Mac; sorry, Windows users):
+</p>
+<p>
+  <img style="max-width: 40vw; height: auto;" src="https://granneman.com/downloads/web-dev-assignments/herbert-west-landscaping/images/root-images-expanded+index+services-cs-lm.webp" alt="Folder structure after uploading the images folder for Herbert West Landscaping assignment 4">
+</p>
+<p>
+  You will notice that all images are available as either SVG, WebP, or, in a few cases, as both JPG &amp; WebP. <strong>Read the following carefully</strong>:
+</p>
+<ul>
+  <li>If the <code>&lt;img&gt;</code> is an SVG, then obviously use the SVG.</li>
+  <li>If the only format for an <code>&lt;img&gt;</code> is WebP, then use that.</li>
+  <li>
+    <p>
+      However, if there is both a WebP <em>and</em> a JPG version of an image, then you are going to use the <code>srcset</code> attribute with the <code>&lt;img&gt;</code>, with the WebP as the <code>srcset</code> format, &amp; with JPG as the fallback in <code>src</code>. Don&rsquo;t worry&thinsp;&mdash;&thinsp;I only did that on a few webpages.
+    </p>
+    <p>
+      IMPORTANT: At this time, autocomplete doesn&rsquo;t work for the <code>srcset</code> attribute, so just copy the value of <code>src</code> (which points to the <code>jpg</code>) &amp; paste it into the value for <code>srcset</code>, & then change <code>jpg</code> to <code>webp</code>. Hopefully this will be fixed once I <a href="https://github.com/microsoft/vscode/issues/175807">file a bug to the makers of VS Code</a>.
+    </p>
+  </li>
+</ul>
+
+<h3>Videos</h3>
+<p>
+  <a href="https://granneman.com/downloads/web-dev-assignments/herbert-west-landscaping/herbert-west-videos.zip" target="_blank" rel="noopener">Download the videos</a> you will need. Unzip the file (for a note on doing this, see the <i>Unzipping</i> section at the beginning of the <a href="https://granneman.com/downloads/web-dev/Visual-Studio-Code.pdf" target="_blank" rel="noopener">Visual Studio Code slides</a>), &amp; then move the <code>video</code> folder into the <code>herbert-west-landscaping</code> folder.
+</p>
+<blockquote>
+  <p>
+    <strong>Note for Windows users</strong>: when you unzip the file, you may find a <code>video</code> folder inside a <code>video</code> folder, because Windows is stupid. Move the <i>inner</i> <code>video</code> folder, the one that <em>contains</em> the files named <code>seed.webm</code> &amp; <code>seed.mp4</code>. If there is a <code>video</code> folder inside <code>herbert-west-landscaping</code>, &amp; that <code>video</code> folder contains another <code>video</code> folder, you didn&rsquo;t do it correctly.
+  </p>
+</blockquote>
+<p>
+  Things should look like this once you have moved the <code>video</code> folder:
+</p>
+<p>
+  <img style="max-width: 40vw; height: auto;" src="https://granneman.com/downloads/web-dev-assignments/herbert-west-landscaping/images/root-images+index+services+video.webp" alt="Folder structure after uploading the video folder for Herbert West Landscaping assignment 5">
+</p>
+<p>
+  This is what your folder structure should look like if you expand all the folders:
+</p>
+<p>
+  <img style="max-width: 40vw; height: auto;" src="https://granneman.com/downloads/web-dev-assignments/herbert-west-landscaping/images/root-images-expanded+index+services-cs-lm+video-expanded.webp" alt="Folder structure after uploading the images folder for Herbert West Landscaping assignment 4">
+</p>
+<p>
+  You will notice that the video is available in two formats: WebM &amp; MP4. When you embed those into a webpage (detailed below), you will use the <code>&lt;video&gt;</code> element with the <code>poster</code>, <code>width</code>, &amp; <code>controls</code> attributes. In addition, since you have two videos, you will reference each one using the <code>&lt;source&gt;</code> element with the <code>src</code> &amp; <code>type</code> attributes.
+</p>
+
+<h2>Footer on every page</h2>
+<p>
+  The following information about the ever-evolving footer applies to every page you have already done, &amp; any going forward.
+</p>
+<p>
+  We now have little SVG icons for all of our social links. Let&rsquo;s <em>replace</em> the text for each social media service with its appropriate SVG icon. For Facebook, instead of linking to its SVG, embed it, so it should look like this:
+</p>
+<p>
+  <img style="max-width: 40vw; height: auto;" src="https://granneman.com/downloads/web-dev-assignments/herbert-west-landscaping/images/svg-embedded-facebook.webp" alt="Code example for an embedded SVG image">
+</p>
+<blockquote>
+  <p>
+    <b>NOTE:</b> Does that seem like a big chunk of code? This is a case where <i>code folding</i> really comes in handy!
+  </p>
+</blockquote>
+<p>
+  How do you get the real code for the Facebook SVG? Click on the <code>facebook-hwl.svg</code> file &amp; copy that code!
+</p>
+<p>
+  When you look at the resulting webpage using Live Preview, you will find that the SVG logo for Facebook is enormous. Look at the code, &amp; you&rsquo;ll see that width &amp; height is never defined (the <code>viewBox</code> defines the dimensions of the <i>SVG viewport</i>, which causes the problem). There are a few ways we could fix this:
+</p>
+<ul>
+  <li>Add <code>width="48" height="48"</code> to the <code>&lt;svg&gt;</code> element so that it looks like this: <code>&lt;svg viewBox="0 0 256 256" width="48" height="48"&gt;</code> &larr; For now, do this!</li>
+  <li>Use CSS. We haven&rsquo;t gotten into that yet, but you would do something like:</li>
+</ul>
+<pre style="margin-bottom: 0; margin-left: 2em;"><code>footer svg {
+  width: 48px;
+  height: auto;
+}
+</code></pre>
+<ul>
+  <li>Link to the SVG using <code>&lt;img&gt;</code> &amp; include the <code>width</code> &amp; <code>height</code> attributes, like you will do with the the other 3 logos (coming up next!)</li>
+</ul>
+<p>
+  For Mastodon, Instagram, &amp; LinkedIn, <em>link</em> to the SVGs. For example, Mastodon would look like this:
+</p>
+<p>
+  <img style="max-width: 40vw; height: auto;" src="https://granneman.com/downloads/web-dev-assignments/herbert-west-landscaping/images/svg-linked-mastodon.webp" alt="Code example for linking to an SVG image">
+</p>
+<p>
+  When you&rsquo;re finished, those icons should look like this (we&rsquo;ll take care of the little dots when we get to CSS):
+</p>
+<p>
+  <img style="max-width: 10vw; height: auto;" src="https://granneman.com/downloads/web-dev-assignments/herbert-west-landscaping/images/svg-social-media-icons-list.webp" alt="Social media icons for the Herbert West Landscaping project">
+</p>
+
+<!-- Header -->
+<h2>Header on every page</h2>
+<p>
+  The following information about the ever-evolving header applies to every page you have already done, &amp; any going forward.
+</p>
+<p>
+  Immediately after <code>&lt;body&gt;</code>, place the SVG logo (<code>hwl-logo.svg</code>) by linking to it in <code>&lt;img&gt;</code>. For <code>width</code> use <code>115</code>, &amp; for <code>height</code> use <code>30</code>. What should the value for the <code>alt</code> attribute be?
+</p>
+<p>
+  Right after that logo, make sure that the unordered list appears &amp; that it contains <code>Services</code>, <code>Projects</code>, <code>Products</code>, <code>Tips</code>, &amp; <code>Contact</code>.
+</p>
+<p>
+  Here&rsquo;s how the top of your webpages should look:
+</p>
+<p>
+  <img style="max-width: 40vw; height: auto;" src="https://granneman.com/downloads/web-dev-assignments/herbert-west-landscaping/images/navbar-logo+ul.webp" alt="Herbert West Landscaping logo and unordered navigation list">
+</p>
+
+<!-- index-5.html -->
+<h2>Home page (<span style="font-family: Monaco, Menlo, Consolas, 'Courier New', monospace; color: #d01a19;">/index.html</span>)</h2>
+<p>
+  This is the home page for the site, the <code>index.html</code> found in the root of your project that you have been working on.
+</p>
+<p>
+  After the unordered list at the top, place an ordered list with just one list item: <code>Home</code> (yes, this would normally be very silly, but it will make more sense later).
+</p>
+<p>
+  After the <code>&lt;h1&gt;</code>, place the <code>garden.webp</code> image. The image is 2500&times;1667. This is waaaaaay too big, so use the <code>width</code> & <code>height</code> attributes to make it display as <code>800&times;534</code>.
+</p>
+<p>
+  Now place the following images (they are going to be really large, so in each case, use the <code>width</code> &amp; <code>height</code> attributes to change the displayed size to <code>800&times;450</code>):
+</p>
+<ul>
+  <li>Above &ldquo;The Lambert Family&rdquo; place <code>family-lambert.webp</code>. Use an <code>alt</code> attribute with a value of <code>The insidious Lambert family</code>)</li>
+  <li>Above &ldquo;The Torrance Family&rdquo; place <code>family-torrance.webp</code>. Use an <code>alt</code> attribute with a value of <code>The shining bright Torrance family</code>.</li>
+  <li>Above &ldquo;The Oswalt Family&rdquo; place <code>family-oswalt.webp</code>. Use an <code>alt</code> attribute with a value of <code>The sinister Oswalt family</code>.</li>
+</ul>
+<p>
+  Your webpage should now look like this: <a href="https://granneman.com/downloads/web-dev-assignments/herbert-west-landscaping/index-5.pdf" target="_blank" rel="noopener">index-5.pdf</a>
+</p>
+<p>
+  <strong>IMPORTANT:</strong> The image dimensions are so large that they are causing huge blank areas to appear when printed to PDF. Ignore those! Your webpage should <em>not</em> have huge blank areas on it!
+</p>
+
+<h2>Services</h2>
+<p>
+  In previous assignments we created a <code>services</code> folder &amp; then created two files in that folder named <code>custom-services.html</code> & <code>landscape-maintenance.html</code>. We are now going to create another webpage in the <code>services</code> folder using the <code>HTML.html</code> template named <code>index.html</code> Yes, there will be an <code>index.html</code> in the main root folder of your project &amp; a different <code>index.html</code> inside <code>services</code> (for more on why we&rsquo;re doing this, look up <i>Default Pages</i> in the <a href="https://granneman.com/downloads/web-dev/HTML-Overview-Condensed.pdf" target="_blank" rel="noopener">HTML Overview Condensed slides</a>; we&rsquo;ll be covering it when we get to Links, which is coming right up).
+</p>
+<p>
+  There should now be three files inside <code>services</code>, like this:
+</p>
+<p>
+  <img style="max-width: 40vw; height: auto;" src="https://granneman.com/downloads/web-dev-assignments/herbert-west-landscaping/images/root-images+index+services-cs-i-lm+video.webp" alt="Herbert West Landscaping showing the images folder, index.html, the services folder with 3 files in it, and the videos folder">
+</p>
+<p>
+  As I said above when discussing the header, the first thing on every page will be the SVG logo, <code>hwl-logo.svg</code>. Be lazy&thinsp;&mdash;&thinsp;copy &amp; paste from the site&rsquo;s home page, <code>index.html</code>!
+</p>
+<p>
+  At the bottom of every page in the website will be the <code>&lt;hr&gt;</code> followed by the Contact, Legal, &amp; Social sections we created on the <code>index.html</code> home page for the website. Be lazy&thinsp;&mdash;&thinsp;copy &amp; paste from <code>index.html</code> in the root of your project folder!
+</p>
+
+<!-- custom-services-3.html -->
+<h3 style="font-family: Monaco, Menlo, Consolas, 'Courier New', monospace !important; color: #d01a19;">/services/custom-services.html</h3>
+<p>
+  Reproduce this webpage: <a href="https://granneman.com/downloads/web-dev-assignments/herbert-west-landscaping/custom-services-3.pdf" target="_blank" rel="noopener">custom-services-3.pdf</a>
+</p>
+<p>
+  After the <code>&lt;h1&gt;</code>, place the <code>custom.webp</code> image. The image is 2000&times;400, but we want it to display as <code>800&times;160</code>. What would a good value for <code>alt</code> be?
+</p>
+
+<!-- /services/index-1.html -->
+<h3 style="font-family: Monaco, Menlo, Consolas, 'Courier New', monospace !important; color: #d01a19;">/services/index.html</h3>
+<p>
+  Reproduce this webpage: <a href="https://granneman.com/downloads/web-dev-assignments/herbert-west-landscaping/services-index-1.pdf" target="_blank" rel="noopener">services-index-1.pdf</a>. Please understand that the images in that PDF are a lot bigger than they will probably appear on your webpage!
+</p>
+<p>
+  Copy the text from <a href="https://granneman.com/downloads/web-dev-assignments/herbert-west-landscaping/services-index-1.txt" target="_blank" rel="noopener"><span>services-index-1.txt</span></a>.
+</p>
+<p>
+  The <code>&lt;title&gt;</code> of <code>/services/index.html</code> is <code>Services :: Herbert West Landscaping</code>.
+</p>
+<p>
+  After the <code>&lt;h1&gt;</code>, place the <code>services.webp</code> image. The image is 2000&times;400, but we want it to display as <code>800&times;160</code>. What would a good value for <code>alt</code> be?
+</p>
+<p>
+  <code>&lt;main&gt;</code> goes above the <code>&lt;h1&gt;</code>, while <code>&lt;/main&gt;</code> goes right above the <code>&lt;hr&gt;</code>.
+</p>
+<p>
+  Place the appropriate images <em>above</em> the <code>&lt;h3&gt;</code> headings on this page. Make each one display as <code>800&times;450</code>.
+</p>
+<ul>
+  <li>Landscape Maintenance: <code>maintenance-full.webp</code></li>
+  <li>Seasonal: <code>seasonal-full.webp</code></li>
+  <li>Custom Services: <code>custom-full.webp</code></li>
+</ul>
+
+<!-- landscape-maintenance-2.html -->
+<h3 style="font-family: Monaco, Menlo, Consolas, 'Courier New', monospace !important; color: #d01a19;">/services/landscape-maintenance.html</h3>
+<p>
+  After the unordered list, place an ordered list with the following 3 list items: <code>Home</code>, <code>Services</code>, &amp; <code>Landscape Maintenance</code>.
+</p>
+<p>
+  After the <code>&lt;h1&gt;</code>, place the <code>maintenance.webp</code> image. The image is 2000&times;400, but we want it to display as <code>800&times;160</code>. What would a good value for <code>alt</code> be?
+</p>
+<p>
+  Your webpage should now look like this: <a href="https://granneman.com/downloads/web-dev-assignments/herbert-west-landscaping/landscape-maintenance-2.pdf" target="_blank" rel="noopener">landscape-maintenance-2.pdf</a>.
+</p>
+
+<h2>Products</h2>
+<p>
+  You need to create a new folder inside the <code>herbert-west-landscaping</code> project named <code>products</code>; inside <code>products</code> you will create a new file named <code>seed.html</code> by using the <code>HTML.html</code> template. The result should look like this:
+</p>
+<p>
+  <img style="max-width: 30vw; height: auto;" src="https://granneman.com/downloads/web-dev-assignments/herbert-west-landscaping/images/root-images+index+products-seed+services+video.webp" alt="Folder structure for Herbert West Landscaping project, emphasizing products folder with seed.html inside">
+</p>
+
+<!-- /products/seed-1.html -->
+<h3 style="font-family: Monaco, Menlo, Consolas, 'Courier New', monospace !important; color: #d01a19;">/products/seed.html</h3>
+<p>
+  The text you need is found in <a class="inline_disabled" href="https://granneman.com/downloads/web-dev-assignments/herbert-west-landscaping/seed-1.txt" target="_blank" rel="noopener noreferrer">seed-1.txt</a>.
+</p>
+<p>
+  Reproduce this webpage: <a class="inline_disabled" href="https://granneman.com/downloads/web-dev-assignments/herbert-west-landscaping/seed-1.pdf" target="_blank" rel="noopener">seed-1.pdf</a>.
+</p>
+<p>
+  The <code>&lt;title&gt;</code> is <code>Seed Products :: Herbert West Landscaping</code>.
+</p>
+<p>
+  After the <code>&lt;h1&gt;</code>, place the <code>seeds.webp</code> image that’s inside <code>products</code>. The image is 2500&times;499, but we want it to display as <code>800&times;160</code>. What would a good value for <code>alt</code> be? Also, please note that there is a <code>webp</code> version of that image, so don’t forget to use <code>srcset</code>!
+</p>
+<p>
+  After the paragraph that starts &ldquo;After a good night’s sleep&rdquo; but before the heading that says “We’re taking over the world!”, you are going to insert <code>&lt;video&gt;</code>. There are two formats: WebM (the video sister to WebP’s image format) and MP4, which should be presented in that order using <code>&lt;source&gt;</code>. The <code>&lt;video&gt;</code> should be sized to <code>800&times;450</code>. The <code>poster</code> image is <code>seed-video-poster.webp</code>.
+</p>
+<p>
+  <strong>NOTE</strong>: If you are using Safari with Live Preview, please read my second note labeled IMPORTANT at the top of this page in order to reduce frustration & confusion.
+</p>
+<p>
+  Above the paragraph that starts with &ldquo;Our salesmen have been hard at work&rdquo; insert the image named <code>seed-sales.webp</code>. It should display at <code>800&times;396</code>.
+</p>
+<p>
+  Above the paragraph that starts with &ldquo;We started in a small town&rdquo; insert the image named <code>seed-distribution-1956.webp</code>. It should display at <code>800&times;396</code>.
+</p>
+<p>
+  <code>&lt;main&gt;</code> goes above the <code>&lt;h1&gt;</code>, while <code>&lt;/main&gt;</code> goes right above <code>&lt;h2&gt;We’ve taking over the world!&lt;/h2&gt;</code>.
+</p>

@@ -1,0 +1,186 @@
+<!-- <p>
+  <code>main-3.css</code>
+</p> -->
+<p>
+  When you are finished with this assignment, text me (314-780-0489) &amp; we will go over it together. <strong>You cannot submit this assignment otherwise.</strong>
+</p>
+<p>
+  In this assignment you will use these new CSS properties, sorted into categories:
+</p>
+<ul>
+  <li>
+    Typography
+    <ul>
+      <li><code>text-decoration</code>: Allows you to insert or remove lines above, below, & through text. This is what browsers use to automatically put lines under <code>&lt;a&gt;</code>s. Of course, you can also use this property to <i>remove</i> lines from under <code>&lt;a&gt;</code>s as well. For more on this property, look for the <code>text-decoration</code> section in the <i><a href="https://granneman.com/presentations/all-presentations#css-typography-fonts--formatting">CSS - Typography</a></i> presentation.</li>
+    </ul>
+  </li>
+  <li>
+    <i>Multi-column layout</i> lets you specify a number of columns &amp; then have content flow from the first column into the second, &amp; from the second into the third, &amp; so on, much like a newspaper article does when it reaches the bottom of a column &amp; continues in the next. For more on these properties, look for the “Multi-Column Layout” section in the <i><a href="https://granneman.com/presentations/all-presentations#css-layout-the-visual-formatting-model">CSS Layout: The Visual Formatting Model</a></i> presentation.
+    <ul>
+      <li><code>column-count</code>: Specifies the number of columns you want for your content.</li>
+      <li><code>column-width</code>: Acts as a hint to the browser of your optimal width for the columns. Depending upon the width of the columns&rsquo; container, the actual width may be wider or narrower. If you set this to <code>auto</code> instead of a number, the browser will determine the width based on <code>column-count</code> & other related CSS properties.</li>
+      <li style="margin-bottom: 1rem"><code>column-gap</code>: The size of the gutter between your columns, specified using the normal CSS lengths, such as <code>px</code>, <code>em</code>, or <code>rem</code>.</li>
+      <li><code>column-rule-width</code>: You can create a line, or <i>rule</i>, between your columns. Just as you can with <code>border</code>, you can set the rule&rsquo;s width, style, & color. This property sets the <i>width</i> of the rule, specified using the normal CSS lengths.</li>
+      <li><code>column-rule-style</code>: Sets the <i>style</i> of the column rule. Possibilities include the same values you saw with <code>border-style</code>, such as <code>solid</code>, <code>dotted</code>, or <code>none</code>.</li>
+      <li style="margin-bottom: 1rem"><code>column-rule-color</code>: Sets the color of the rule, using the same ways to specify colors that you can use anywhere you need to do so in CSS.</li>
+      <li><code>column-rule</code>: This acts as a shortcut for <code>column-rule-width</code>, <code>column-rule-style</code>, &amp; <code>column-rule-color</code>, for example, <code>column-rule: 2px dotted #222</code>. Yes, this is very similar to the <code>border</code> shortcut. And just like <code>border</code>, the order of values doesn&rsquo;t matter.</li>
+    </ul>
+  </li>
+</ul>
+
+<p>
+  In addition to the simple selectors you used in the last assignment, you will use the following kinds of selectors here:
+</p>
+<ul>
+  <li>Complex using the child combinator</li>
+  <li>Complex using the descendant combinator</li>
+</ul>
+
+<!-- <footer>
+<hr> -->
+<h2 style="font-family: Monaco, Menlo, Consolas, 'Courier New', monospace !important; color: #d01a19;">&lt;footer&gt;</h2>
+<p>
+  We want all of the <code>&lt;a&gt;</code>s inside the <code>&lt;footer&gt;</code> to:
+</p>
+<ul>
+  <li>Be this color: <code>hsl(150, 70%, 31%)</code> (HSL is a way to specify color that is extremely useful, as opposed to hexadecimal values like <code>#7c392e</code>, which are impossible to understand without looking them up)</li>
+  <li>Have the underline removed, but show up while a user is hovering over the link</li>
+</ul>
+<p>
+  Be aware that the <code>&lt;a&gt;</code> is unique among elements because it can have 4 states, all indicated using <i>pseudo-classes</i>, which always start with a <code>:</code> (for more on pseudo-classes, look for the “Width & Height” section in the <i><a href="https://granneman.com/presentations/all-presentations#css-layout-the-visual-formatting-model">CSS Layout: The Visual Formatting Model</a></i> presentation.) The 4 pseudo-classes associated with <code>&lt;a&gt;</code> are:
+</p>
+<ul>
+  <li><code>a:link</code>, which lets you style <i>unvisited</i> links; the defaults are blue &amp; underlined</li>
+  <li><code>a:visited</code>, which lets you style <i>visited</i> links; the defaults are purple &amp; underlined</li>
+  <li><code>a:hover</code>, which lets you style links while your mouse <i>hovers</i> over them (obviously this doesn&rsquo;t work on mobile!); the defaults are to change the cursor into a hand.</li>
+  <li><code>a:active</code>, which lets you style links the very brief moment during which they are <i>clicked</i>; the defaults are red with the hand cursor.</li>
+</ul>
+<p>
+  <b>IMPORTANT</b>: you must specify those pseudo-classes in that order, or changes might not appear the way you want them to. Let&rsquo;s say I have a black background &amp; I want all my links on the entire page to be yellow all of the time, unless one is being clicked on, in which case I want it to become orange. This is how I would do it (notice that the first selector is a list):
+</p>
+<pre><code>a:link,
+a:visited,
+a:hover {
+  color: yellow;
+}
+
+a:active {
+  color: orange;
+}
+</code></pre>
+<p>
+  Note that I kept the order listed above, which is <i>LVHA</i>, for <code>:link</code>, <code>:visited</code>, <code>:hover</code>, & <code>:active</code>. There are <a href="https://en.wikipedia.org/wiki/Special:Search?search=mnemonic">mnemonics</a> to help you remember this: <i>Licks very hairy arms</i> (<i>that</i> is memorable!), <i>Lazy vultures hopped awkwardly</i> (great mental image!), or the classic <i>LoVe HAte</i> (which is pretty clever, I have to say).
+</p>
+<p>
+  Once you’re finished, links should look like this if you’re not hovering over them:
+</p>
+<p>
+  <img style="max-width: 30vw; height: auto; border: 1px solid black;" src="https://granneman.com/downloads/web-dev-assignments/herbert-west-landscaping/images/footer-a-link.webp" alt="Links in the footer if you are not hovering over them">
+</p>
+<p>
+  When you hover over a link, it should look like this (note the hand in the image):
+</p>
+<p>
+  <img style="max-width: 30vw; height: auto; border: 1px solid black;" src="https://granneman.com/downloads/web-dev-assignments/herbert-west-landscaping/images/footer-a-hover.webp" alt="A link in the footer if you are hovering over it">
+</p>
+
+<!-- pesticides-3.html -->
+<h2 style="font-family: Monaco, Menlo, Consolas, 'Courier New', monospace !important; color: #d01a19;">/products/pesticides.html</h2>
+<p>
+  In an effort to reduce the space inside the <code>&lt;figure&gt;</code> between the <code>&lt;p&gt;</code> containing the <code>&lt;img&gt;</code> &amp; the <code>&lt;figcaption&gt;</code> after it, your last assignment had you set <code>margin-top: 0;</code> for the <code>figcaption</code>. However, after making that change, there was still space there! Now let&rsquo;s fix the problem completely.
+</p>
+<p>
+  To understand why there is still space between <code>&lt;p&gt;</code> containing the <code>&lt;img&gt;</code> &amp; <code>&lt;figcaption&gt;</code>, you need to learn about a CSS concept called <i>margin collapsing</i>. Margin collapsing occurs when two vertical margins&thinsp;&mdash;&thinsp;the bottom of one block box, say, and the top of the block box that comes right after it&thinsp;&mdash;&thinsp;come into contact &amp; merge into a single margin, taking the larger of the two values.
+</p>
+<p>
+  In other words, if a <code>&lt;p&gt;</code> with <code>margin-bottom: 1.5em;</code> is followed by a <code>&lt;div&gt;</code> with <code>margin-top: 1em;</code>, the distance between the two boxes will <b>not</b> be <code>2.5em</code> (<code>1.5em</code> + <code>1em</code>). Instead, since the margins collapse <i>into</i> each other, it will be the larger of the two, so the distance will actually be <b><code>1.5em</code></b>, because that is bigger than <code>1em</code> (of course, if they are <em>both</em> <code>1em</code>, they simply collapse into each other so that the combined margin will be <code>1em</code>!).
+</p>
+<p>
+  Here&rsquo;s an example showing the concept in action:
+</p>
+<p>
+  <img style="max-width: 50vw; height: auto; border: 1px solid black;" src="https://granneman.com/downloads/web-dev-assignments/herbert-west-landscaping/images/margin-collapsing-example.webp" alt="An example of margin collapsing between two adjacent siblings" width="" height="" srcset="">
+</p>
+<p>
+  Margin collapsing is really useful, as it helps maintain a consistent layout while removing unnecessary space between elements. For more on this concept, look for the “Margin Collapsing” section in the <i><a href="https://granneman.com/presentations/all-presentations#css-layout-the-visual-formatting-model">CSS Layout: The Visual Formatting Model</a></i> presentation.
+</p>
+<p>
+  With that explained, hopefully now you understand why, even after you set <code>margin-top: 0;</code> for the <code>figcaption</code>, there was still space left between the <code>&lt;p&gt;</code> containing the <code>&lt;img&gt;</code> &amp; <code>&lt;figcaption&gt;</code>! You need to change any <code>&lt;p&gt;</code> that is the child of a <code>&lt;figure&gt;</code> so that it&rsquo;s bottom margin is also <code>0</code>. Try that &amp; fire up Live Preview to check your work, &amp; you should be a happy camper.
+</p>
+
+<!-- /services/landscape-maintenance-6.html -->
+<h2 style="font-family: Monaco, Menlo, Consolas, 'Courier New', monospace !important; color: #d01a19;">/services/landscape-maintenance.html</h2>
+<!-- .social-media-icons -->
+<h3>Social media icons</h3>
+<p>
+  In the last assignment, we created <code>.social-media-icons</code> in <code>main.css</code> &amp; made all the icons on <code>landscape-maintenance.html</code> lay out horizontally, without bullets. However, they were all crammed together, which looks terrible. Let’s fix that.
+</p>
+<p>
+  To do so, add a <code>.5rem</code> margin to the right of all the <code>&lt;li&gt;</code>s that are the children of <code>.social-media-icons</code>.
+</p>
+<p>
+  Once you’re finished, they should look like this:
+</p>
+<p>
+  <img style="max-width: 30vw; height: auto; border: 1px solid black;" src="https://granneman.com/downloads/web-dev-assignments/herbert-west-landscaping/images/social-media-icons-correct-margins.webp" alt="The 4 social media icons, now with a margin on the right of each one">
+</p>
+<blockquote>
+  <p>
+    <b>NOTE</b>: Why are we only changing the social media icons on this one page? Because when we get to Bootstrap we will get rid of our code &amp; use Bootstrap’s methods for laying out these images.
+  </p>
+</blockquote>
+
+<!-- Multi-column layout -->
+<h3>Multi-column layout</h3>
+<p>
+  You know the big list that is on this page, the one with all those colors? Since the list is so long, there is a lot of empty space to the right of it. While there is nothing per se wrong with white space (in fact, it&rsquo;s very much a good thing in most designs!), it looks a bit strange here. Let&rsquo;s fix that by making that list flow in a multi-column layout.
+</p>
+<p>
+  The only thing we need to change in the HTML is adding <code>class="multi-column"</code> to the <code>&lt;ul&gt;</code>. That’s it! Everything else is in the CSS (well, until the very end).
+</p>
+<p>
+  Now we need to style the <code>.multi-column</code> class in <code>main.css</code>. Let’s do the following:
+</p>
+<ul>
+  <li>3 columns</li>
+  <li>Let the browser determine the width of the columns</li>
+  <li><code>40px</code> of space between each column</li>
+  <li>Create a line between each column that is <code>2px</code> wide, <code>solid</code>, &amp; with a color of <code>hsl(150, 70%, 31%)</code></li>
+  <li>Add a margin to the bottom equal to <code>2rem</code></li>
+</ul>
+<p>
+  Save that &amp; take a look via Live Preview. Hmmm. That column rule is a bit too strong, so let’s change change <code>solid</code> to <code>dotted</code>. Save &amp; take another look. I like that better. It’s not as heavy.
+</p>
+<p>
+  This list might’ve looked fine as a bulleted list when it was running down the page, but now that it’s in 3 columns, those bullets create a lot of visual noise on the page&thinsp;&mdash;&thinsp;and they're too close to the column rules. Let’s set <code>list-style-type: none;</code> so that the bullets go bye-bye. Take a look.
+</p>
+<p>
+  Now we have two problems:
+</p>
+<ol>
+  <li>There&rsquo;s too much space to the left of the first column, because we took away the bullets but didn&rsquo;t do anything about the padding that goes in front of list items</li>
+  <li>Because there are no bullets, it can be confusing when a long list item like “Staring Into the Void of Space Until It Stares Back Black” wraps</li>
+</ol>
+<p>
+  Let&rsquo;s take care of the first one by setting <code>padding</code> to <code>0</code> for <code>.multi-column</code>.
+</p>
+<p>
+  To take care of the second problem, we need to create a new selector, one that targets the <code>&lt;li&gt;</code>s that are the children of <code>.multi-column</code>. Set the bottom margin to <code>.5em</code> for anything that matches that selector. Take a look now. Better, right?
+</p>
+<p>
+  Finally, to see a multi-column layout in action, add two new entries to the list, right after <code>Hickory</code>: <code>Presidential Orange</code> &amp; <code>Pink Elephant</code>. Save the page &amp; notice how the list re-flowed between the 3 columns. Neat, huh?
+</p>
+<p>
+  Once you’re finished, things should look like this (your columns may contain different list items in them):
+</p>
+<p>
+  <img style="max-width: 100%; height: auto; border: 1px solid black;" src="https://granneman.com/downloads/web-dev-assignments/herbert-west-landscaping/images/multi-column-layout.webp" alt="A list displayed using multi-column layout">
+</p>
+<p>
+  This is a very useful layout technique you&rsquo;ve learned, but there are some big caveats.
+</p>
+<ul>
+  <li>Only use multi-column layouts when the resulting content will not be very tall. If you did a whole page like that, your reader would get to the bottom of a column &amp; then have to scroll back to the top of the page to continue reading, repeating this for each column. This would very quickly get annoying. Our list is so short that a usability issue like that won&rsquo;t be possible.</li>
+  <li>That brings us to mobile. Obviously this layout would suck on phones! That&rsquo;s why we would use responsive layout to turn this layout off for phones &amp; maybe even tablets too.</li>
+  <li>Finally, accessibility. Multi-column layouts can present challenges for users with visual impairments or those using assistive technologies like screen readers, so keep that in mind.</li>
+</ul>

@@ -1,0 +1,238 @@
+<!-- <p>
+  main-7.css, index-9.html; ~2000 words
+</p> -->
+<p>
+  When you are finished with this assignment, text me (314-780-0489) &amp; we will go over it together. <strong>You cannot submit this assignment otherwise.</strong>
+</p>
+<p>
+  In this assignment you will use these CSS properties:
+</p>
+<ul>
+  <li>Flexbox
+    <ul>
+      <li><code>flex-direction</code></li>
+      <li><code>flex-grow</code></li>
+      <li><code>flex-shrink</code></li>
+      <li><code>flex-basis</code></li>
+      <li><code>flex</code></li>
+      <li><code>column-gap</code></li>
+    </ul>
+  </li>
+  <li><code>border-radius</code>
+    <ul>
+      <li><code>border-top-left-radius</code></li>
+      <li><code>border-top-right-radius</code></li>
+    </ul>
+  </li>
+</ul>
+
+<!-- flexbox -->
+<h2 style="font-family: Monaco, Menlo, Consolas, 'Courier New', monospace !important; color: #d01a19;">index.html</h2>
+<p>
+  The family testimonials on the home page were always meant to be laid out as cards. <i>Cards</i> are rectangular- or square-shaped design patterns that contain specific information, such as an image, heading, text, and buttons. Cards are usually arranged in a horizontal row on large monitors and in a vertical stack on small screens (see Figure 1).
+</p>
+<figure>
+  <img src="https://granneman.com/downloads/web-dev-assignments/herbert-west-landscaping/images/cards-diagram-horizontal.webp" width="100" height="100" alt="Horizontal layout for cards"><img src="https://granneman.com/downloads/web-dev-assignments/herbert-west-landscaping/images/cards-diagram-vertical.webp" width="100" height="100" alt="Vertical layout for cards">
+  <figcaption>
+    Layouts for cards: horizontal &amp; then vertical
+  </figcaption>
+</figure>
+<h3>HTML</h3>
+<p>
+  Flexbox is an excellent method to use when laying out cards. In order to use it with the cards on <code>index.html</code>, we are going to have to re-do the HTML, but I’ll walk you carefully through what you need to do.
+</p>
+<p>
+  To start with, let’s look at one of the family testimonials that will eventually become one of the three cards we’re going to make. Currently the code looks like this:
+</p>
+<pre><code>&lt;p&gt;
+  &lt;img src="/images/home/family-lambert.webp" alt="The insidious Lambert family" width="800" height="450"&gt;
+&lt;/p&gt;
+&lt;h3&gt;The Lambert Family&lt;/h3&gt;
+&lt;p&gt;
+  “&lt;b&gt;It looks even better than we imagined.&lt;/b&gt; You did everything that you stated you would do, when you stated you would do it, and went further and further to ensure the job was perfect. I am very grateful for your honesty, integrity, and skills. And that the wild Shoggoths only ate one of our dogs.”
+&lt;/p&gt;</code></pre>
+<p>
+  To start with, add a class named <code>card-title</code> to the <code>&lt;h3&gt;</code>. Then add a class named <code>card-text</code> to the <code>&lt;p&gt;</code> after the <code>&lt;h3&gt;</code>.
+</p>
+<p>
+  Once that’s done, wrap that <code>&lt;h3&gt;</code> and the <code>&lt;p&gt;</code> after it in a <code>&lt;div&gt;</code> with a class of <code>card-body</code>.
+</p>
+<p>
+  After that, get rid of any <code>&lt;p&gt;</code>s around the <code>&lt;img&gt;</code>. Then wrap the <code>&lt;img&gt;</code> and the <code>&lt;div class="card-body"&gt;</code> inside a <code>&lt;div&gt;</code> with two classes: <code>card</code> & <code>h-100</code>. Finally, wrap <code>&lt;div class="card h-100"&gt;</code> inside <code>&lt;section&gt;</code>.
+</p>
+<p>
+  Your code should now look like this:
+</p>
+<p>
+  <img style="max-width: 100%; height: auto; border: 1px solid black;" src="https://granneman.com/downloads/web-dev-assignments/herbert-west-landscaping/images/flexbox-testimonials-card.webp" alt="A Testimonials card after correctly coding it">
+</p>
+<p>
+  Now that you’ve done that for the first card, do the same thing to the other two. Once you have finished, if you collapse the cards, you should now have this:
+</p>
+<p>
+  <img style="max-width: 20%; height: auto; border: 1px solid black;" src="https://granneman.com/downloads/web-dev-assignments/herbert-west-landscaping/images/flexbox-testimonials-3-sections.webp" alt="3 sections">
+</p>
+<p>
+  The <code>&lt;h2&gt;</code> for Testimonials goes right above the 3 <code>&lt;section&gt;</code>s.
+</p>
+<p>
+  Now wrap the 3 <code>&lt;section&gt;</code>s in a <code>&lt;div&gt;</code> with a class of row. After that, wrap the <code>&lt;h2&gt;</code>, followed by the <code>&lt;div class="row"&gt;</code>, in a <code>&lt;div&gt;</code> with a class of <code>container</code>. Once you have done that, you should see this (note the <code>&lt;/main&gt;</code> just after the <code>&lt;/div&gt;</code> that closes <code>&lt;div class="container"&gt;</code>):
+</p>
+<p>
+  <img style="max-width: 50%; height: auto; border: 1px solid black;" src="https://granneman.com/downloads/web-dev-assignments/herbert-west-landscaping/images/flexbox-testimonials-div-container-3-sections.webp" alt="The finished HTML for the container & the cards">
+</p>
+<h3>CSS</h3>
+<p>
+  We have the HTML in place, so now it’s time to style things.
+</p>
+<p>
+  First of all, let’s style <code>.container</code>. We want it to have the following characteristics:
+</p>
+<ul>
+  <li>a width of <code>100%</code></li>
+  <li>bottom margin of <code>2rem</code></li>
+</ul>
+<p>
+  After doing that, take a look at how your webpage looks. Other than a small margin, not much will have changed. Let’s keep going.
+</p>
+<p>
+  Now let’s style <code>.row</code>. This is going to be our flex container, so use the <code>display</code> property to set that. This should also have a width of <code>100%</code>.
+</p>
+<p>
+  If you look at the results, things are starting to get there, but we still have a long way to go. But at least all of the cards are now getting laid out horizontally!
+</p>
+<p>
+  We are going to come back later to our <code>.row</code>, but for now, let’s focus on the <code>.card</code>. Cards very often have borders around them, so let’s do the same, with a <code>1px</code> width, <code>solid</code> style, and <code>lightgray</code> color. In addition to that, let’s round each corner of the card to <code>.5rem</code> (remember what property we use to do that?).
+</p>
+<p>
+  Those cards are really big! To bring them down to the point of usefulness, let’s style the <code>&lt;img&gt;</code>s that are the direct children of <code>.card</code>. Set the width of those images to <code>100%</code> and their height to <code>auto</code>, so they fit inside the card in terms of width while keeping their aspect ratio in regards to height.
+</p>
+<p>
+  If you look carefully, you will notice that the bottoms of our cards are rounded, but the tops are not. Actually, the border corners on top are rounded, but we can’t see them because of the top image corners, which are straight. To fix that, we could use <code>border-radius</code> <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/border-radius#syntax">with some complicated values</a>, but instead, since we only care about the top left and the top right, we can use the <code>border-top-left-radius</code> &amp; <code>border-top-right-radius</code> properties, with each set to <code>.5rem</code> to match the earlier rounded corners we set on <code>.card</code>.
+</p>
+<p>
+  After all the work we’ve done, our cards now look like this, &amp; yes, I am well aware that we still have work to do:
+</p>
+<p>
+  <img style="max-width: 100%; height: auto; border: 1px solid black;" src="https://granneman.com/downloads/web-dev-assignments/herbert-west-landscaping/images/flexbox-testimonials-cards-1-still-rough.webp" alt="The cards are starting to come together, but are still rough">
+</p>
+<p>
+  What problems do the cards have?
+</p>
+<ol>
+  <li>They're not the same height</li>
+  <li>They're not the same width</li>
+  <li>The text is crammed up against the borders</li>
+  <li>The images are different sizes</li>
+</ol>
+<p>
+  Let’s fix the height first. That one’s pretty easy. Remember the <code>.h-100</code> class we created and placed on each card? Let’s define that in <code>main.css</code> to mean that the <code>height</code> is <code>100%</code>. Save it and boom! Now they’re all the same height. Yeah yeah, there are still issues, but at least that one is gone.
+</p>
+<p>
+  Now let’s take on number 3, the text. This one’s not too bad either. All of the text is inside a <code>&lt;div&gt;</code> with a class of <code>card-body</code>. Let’s add <code>padding</code> to all 4 sides of <code>.card-body</code>, and make it <code>1rem</code>. Take a look now.
+</p>
+<p>
+  That looks better, but there is too much space between <code>.card-title</code> and <code>.card-text</code>, and too much space below <code>.card-text</code>. That shouldn’t be too hard to fix.
+</p>
+<p>
+  For <code>.card-body</code>, let’s give it a <code>margin-top</code> of <code>0</code>. Check it out. Looking good.
+</p>
+<p>
+  As for <code>.card-text</code>, we need to zero out the bottom margin. Do that, and now you should see this:
+</p>
+<p>
+  <img style="max-width: 100%; height: auto; border: 1px solid black;" src="https://granneman.com/downloads/web-dev-assignments/herbert-west-landscaping/images/flexbox-testimonials-cards-same-height-different-width.webp" alt="The cards have easy-to-read text and are the same height, but not the same width">
+</p>
+<p>
+  We’re so close now. Basically, we need to take care of problem #2 above&thinsp;&mdash;&thinsp;different widths!&thinsp;&mdash;&thinsp;which might just fix problem #4 too. Will it? Stay tuned to find out!
+</p>
+<p>
+  To do this, we need to select the <code>&lt;section&gt;</code>s that are the direct children of <code>.row</code>, which means a selector of <code>.row > section</code>. In order to understand the declarations we will need, we have to dive into the details of flexbox and how to size flex items like <code>&lt;section&gt;</code>.
+</p>
+<p>
+  By default, flex items are sized to their content. Longer content means a longer flex item. That’s why some of the <code>&lt;section&gt;</code>s are wider than others: more content. That most definitely is not what we want; instead, we want all of the flex items to be the same width. To understand how to do that, we need to look at 3 key flex-related properties having to do with sizing flex items:
+</p>
+<ul>
+  <li><code>flex-shrink</code>: Allows flex items to shrink if necessary to fit into their flex container. The default is <code>1</code>, which means that shrink is allowed.</li>
+  <li><code>flex-grow</code>: Allows flex items to grow if necessary to fit into their flex container. The default is <code>0</code>, which means that growing is <em>not</em> allowed.</li>
+  <li><code>flex-basis</code>: Defines initial main size of flex items <em>before</em> changes caused by <code>flex-grow</code> or <code>flex-shrink</code> are applied. The default is <code>auto</code>, which tells rendering engines to size flex items based on their content. Aha! That is why flex items are sized to fit their content by default! Clearly we do not want that if we want all of our flex items to have the same width.</li>
+</ul>
+<p>
+  By default, all flex items can shrink, which translates to a declaration of <code>flex-shrink: 1</code>. Since that is the default, we don’t need to add that. In fact, we <em>want</em> our flex items to be able to shrink if needed. There’s a reason that it’s a default&thinsp;&mdash;&thinsp;it’s normally what you want.
+</p>
+<p>
+  However, we do want our flex items to <em>grow</em> as needed. By default, flex items do <em>not</em> grow (<code>flex-grow: 0</code>). We need to change that behavior by using <code>flex-grow: 1</code>, which tells the rendering engine to make our flex items wider if necessary.
+</p>
+<p>
+  Hmmm. Adding that didn’t fix the differing widths. That’s because of <code>flex-basis</code>, which has the following possible values:
+</p>
+<ul>
+  <li><code>auto</code>: The default, which sizes based on content. We already know we don’t want this one.</li>
+  <li><code>max-content</code>: Sizes flex items to the widest they need to be based on the maximum size of their content, which means they can expand as much as needed (text will still wrap though). We definitely do not want that.</li>
+  <li><code>min-content</code>: Sizes flex items to the narrowest they need to be, based on the widest content, in other words, the longest word or image! Since we are using <code>flex-grow: 1</code>, <code>min-content</code> doesn’t have a lot of effect, but if you changed <code>flex-grow</code> to the default of <code>0</code> and then used <code>flex-basis: min-content</code>, you’d see something pretty silly. So yeah, we don’t want this one.</li>
+  <li><code>&lt;width&gt;</code>: That’s not an element (there isn’t any), but is instead representing any allowed width in CSS, like <code>1rem</code> or <code>20px</code>. First off, using <code>&lt;width&gt;</code> sets a fixed size, which kind of goes against the whole responsive thing, because the flex items can’t resize as the viewport width changes. In fact, our flex items could either overflow or truncate if the available space in the flex container is not enough to accommodate their fixed size. We sure don’t want that.</li>
+  <li><code>0</code>: Do not base the initial size of flex items on content, so growing and shrinking occur without content in mind. Hmmm. That one sounds promising&hellip;</li>
+</ul>
+<p>
+  OK, let’s think about this. In order to get all of our cards the same size…
+</p>
+<ul>
+  <li>We want our flex items to be able to <i>shrink</i> as needed, so <code>flex-shrink: 1</code> (which is the default)</li>
+  <li>We want our flex items to be able to <i>grow</i> as needed, so <code>flex-grow: 1</code> (the opposite of the default)</li>
+  <li>We want the initial size of our flex to <i>ignore the size of content</i>, so shrinking and growing can occur without content causing an issue. That means <code>flex-basis: 0</code>.</li>
+</ul>
+<p>
+  So add those declarations to <code>.row > section</code>. Save it and look at the results using Live Preview. Great Googly-Moogly, they’re all the same width! And the images are all the same size too!
+</p>
+<p>
+  <img style="max-width: 100%; height: auto; border: 1px solid black;" src="https://granneman.com/downloads/web-dev-assignments/herbert-west-landscaping/images/flexbox-testimonials-cards-same-height-same-width-no-gutter.webp" alt="The cards are now the same height and width, but need space between them">
+</p>
+<p>
+  They sure are awful close to each other, though. This is easy. Let’s assign a <code>column-gap</code> of <code>1rem</code> on our flex container <code>.row</code>. Save it, and you should now, at long last, see this:
+</p>
+<p>
+  <img style="max-width: 100%; height: auto; border: 1px solid black;" src="https://granneman.com/downloads/web-dev-assignments/herbert-west-landscaping/images/flexbox-testimonials-cards-same-height-same-width-gutter.webp" alt="The cards are finished: same height, same width, with space between them">
+</p>
+<p>
+  Before we leave our cards, I do want to point out one thing to you. Earlier we specified <code>flex-shrink</code>, <code>flex-grow</code>, &amp; <code>flex-basis</code> to size our cards. Actually, there is shorthand that you can use instead: <code>flex</code>. Yep. You can just use <code>flex</code> and that way you don’t need to specify <code>flex-shrink</code>, <code>flex-grow</code>, &amp; <code>flex-basis</code>.
+</p>
+<p>
+  If you use <code>flex</code>, the values have to be in this order: <code>flex-grow</code> <code>flex-shrink</code> <code>flex-basis</code>. Therefore, what we did earlier could instead be expressed as:
+</p>
+<pre><code>flex: 1 1 0</code></pre>
+<p>
+  However, there’s an even <em>shorter</em> way to do that (shorthand for shorthand?!). If you simply follow <code>flex</code> with <code>1</code>, then <code>flex</code> uses that number for the first position, <code>flex-grow</code>. The second <code>1</code> is already the default for <code>flex-shrink</code>. And <code>0</code> for <code>flex-basis</code> is assumed in this case. Therefore, each of the following 3 are equivalent.
+</p>
+<p>
+  All property-value pairs:
+</p>
+<pre><code>flex-shrink: 1;
+flex-grow: 1;
+flex-basis: 0;</code></pre>
+<p>
+  Shorthand, specifying all values:
+</p>
+<pre><code>flex: 1 1 0;</code></pre>
+<p>
+  Shorthand with one number that specifies the value of <code>flex-grow</code> only:
+</p>
+<pre><code>flex: 1;</code></pre>
+<p>
+  Me, I like to use the last one. If you wanted, you could use all 3 in <code>main.css</code> with comments for each one, like this:
+</p>
+<pre><code>/* All property-value pairs: */
+flex-shrink: 1;
+flex-grow: 1;
+flex-basis: 0;
+/* Shorthand, specifying all values: */
+flex: 1 1 0;
+/* Shorthand with one number that specifies the value of <code>flex-grow</code> only: */
+flex: 1;</code></pre>
+<p>
+  The last one is the one that will be used, of course.
+</p>
+<p>
+  One last thing: everything we just did will be replaced by Bootstrap soon. Another sand mandala…
+</p>
+<!-- Style the <aside> on seasonal.html -->
+<!-- Get rid of .multi-column > li & replace with column-gap: .5rem -->

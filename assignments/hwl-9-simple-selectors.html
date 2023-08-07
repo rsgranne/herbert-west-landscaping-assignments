@@ -1,0 +1,157 @@
+<!-- <p>
+  <code>main-2.css</code>
+</p> -->
+<p>
+  When you are finished with this assignment, text me (314-780-0489) &amp; we will go over it together. <strong>You cannot submit this assignment otherwise.</strong>
+</p>
+<p>
+  In this assignment you will use these new CSS properties, sorted into categories:
+</p>
+<ul>
+  <li>
+    Typography
+    <ul>
+      <li><code>font-size</code>: Changes the size of text. The default <code>font-size</code> is <code>16px</code>. You can size text in a variety of methods, including <code>px</code> (<i>pixels</i>), <code>em</code> (<code>1em</code> is equivalent to the <code>line-height</code> of the current font, so if the current font is <code>18px</code>, <code>1em</code> would be equivalent to <code>18px</code>), & <code>rem</code> (<code>1rem</code> is equivalent to the <code>font-size</code> for <code>html</code> (<code>rem</code> stands for <i>root em</i>, because <code>html</code> is the root element), which defaults to <code>16px</code>). For more on the sizing units you can use with font-size, look for the <code>&lt;length&gt;</code> section in the <i><a href="https://granneman.com/presentations/all-presentations#css-data-types">CSS - Data Types</a></i> presentation.</li>
+      <li><code>font-style</code>: Lets you italicize text. For more on this property, look for the <code>font-style</code> section in the <i><a href="https://granneman.com/presentations/all-presentations#css-typography-fonts--formatting">CSS - Typography</a></i> presentation.</li>
+    </ul>
+  </li>
+  <li>Lists: <code>list-style-type</code>: Makes it possible to change the <i>marker</i> (e.g., the bullet or number, or a large variety of other choices) in front of list items. In addition, you can use this property to <em>remove</em> the marker so that list items have nothing in front of them. For more on this property, look for the <code>list-style-type</code> section in the <i><a href="https://granneman.com/presentations/all-presentations#tables--lists-organized-data">Tables & Lists: Organized Data</a></i> presentation.</li>
+  <li>
+    Layout
+    <ul>
+      <li><code>display</code>: This is a very complex property that allows you set whether an element generates a block or inline box; further, it can determine how the element’s children lay out. There are 18 different possible values for <code>display</code>, and they each do something slightly different, hence the complexity. For more on this property, look for the <code>display</code> section in the <i><a href="https://granneman.com/presentations/all-presentations#css-layout-the-visual-formatting-model">CSS Layout: The Visual Formatting Model</a></i> presentation.</li>
+      <li><code>width</code>: Obviously sets the width of an element. For more on this property, look for the “Width & Height” section in the <i><a href="https://granneman.com/presentations/all-presentations#css-layout-the-visual-formatting-model">CSS Layout: The Visual Formatting Model</a></i> presentation.</li>
+    </ul>
+  </li>
+  <li>
+    Box Model (to read more about all the properties in this section, look for the “Box Model” section in the <i><a href="https://granneman.com/presentations/all-presentations#css-layout-the-visual-formatting-model">CSS Layout: The Visual Formatting Model</a></i> presentation)
+    <ul>
+      <li><code>border</code>: Sets the border <code>size</code>, <code>style</code>, & <code>width</code> for all 4 sides of an element.</li>
+      <li><code>border-left</code>: Sets the left border’s <code>size</code>, <code>style</code>, & <code>width</code> of an element.</li>
+      <li style="margin-bottom: 1rem"><code>border-radius</code>: Rounds the corners of borders.</li>
+      <li><code>margin</code>: Sets the size of the <i><code>margin</code></i> (the area <em>outside</em> the border) for all 4 sides of an element.</li>
+      <li><code>margin-left</code>: Sets the size of the <em>left</em> <code>margin</code> for an element.</li>
+      <li style="margin-bottom: 1rem"><code>margin-right</code>: Sets the size of the <em>right</em> <code>margin</code> for an element.</li>
+      <li><code>padding</code>: Sets the size of the <i><code>padding</code></i> (the area <em>inside</em> the border) for all 4 sides of an element.</li>
+      <li><code>padding-left</code>: Sets the size of the <em>left</em> <code>padding</code> for an element.</li>
+    </ul>
+  </li>
+</ul>
+
+<!-- blockquote • /services/custom-services-5.html-->
+<h2 style="font-family: Monaco, Menlo, Consolas, 'Courier New', monospace !important; color: #d01a19;">blockquote</h2>
+<p>
+  Let’s style the <code>blockquote</code> element. To see the results, open the <code>/services/custom-services.html</code> page in Live Preview.
+</p>
+<p>
+  Set the <code>font-style</code> property to <code>italic</code>.
+</p>
+<p>
+  Now let’s style the <em>left</em> border for the <code>blockquote</code> element. We could set the <code>border-left-width</code> to <code>.5rem</code>, the <code>border-left-style</code> to <code>solid</code> (others include <code>dotted</code>, <code>dashed</code>, <code>solid</code>, &amp; <code>double</code>), &amp; <code>border-left-color</code> to <code>#ccc</code>. If we did, it would look like this:
+</p>
+<pre><code>border-left-width: .5rem;
+border-left-style: solid;
+border-left-color: #ccc;</code></pre>
+<p>
+  However, instead of writing all 3 declarations like that, you can use CSS <i>shorthand</i>. Only certain groups of properties can be reduced by using shorthand, & fortunately, this is a great example. Instead of writing all 3 declarations, we can reduce the property to <code>border-left</code>, & then list the <code>width</code>, <code>style</code>, & <code>color</code>. The order doesn’t matter at all. The results would look like this:
+</p>
+<pre><code>border-left: .5rem solid #ccc;</code></pre>
+<p>
+  We are now going to set the <code>padding</code> for the <em>left</em> side of the <code>blockquote</code> element. This will separate the text from the border we just created. Let’s try out <code>.25rem</code>. Take a look at that. Too small! Let’s change it to <code>1rem</code>. Take a look. Too much! Let’s be like Goldilocks & pick a width that’s just right: <code>.5rem</code>. Take a look. Not bad, right?
+</p>
+<p>
+  Once you’re finished, things should look like this:
+</p>
+<p>
+  <img style="max-width: 50vw; height: auto; border: 1px solid black;" src="https://granneman.com/downloads/web-dev-assignments/herbert-west-landscaping/images/css-blockquote-border-left.webp" alt="The blockquote with a gray left border after some simple styling">
+</p>
+
+<!-- figcaption • /products/pesticides-1.html -->
+<h2 style="font-family: Monaco, Menlo, Consolas, 'Courier New', monospace !important; color: #d01a19;">figcaption</h2>
+<p>
+  Time to style the <code>figcaption</code> element. To see the results, open the <code>/products/pesticides.html</code> page in Live Preview.
+</p>
+<p>
+  Set the <code>font-style</code> property to <code>italic</code>.
+</p>
+<p>
+  Take a look at the 2 <code>&lt;figure&gt;</code> elements. It would sure look nice if we could reduce the space between <code>&lt;img&gt;</code> &amp; <code>&lt;figcaption&gt;</code>. Let’s see what happens if we remove the <code>margin</code> on the top of the <code>figcaption</code>; in other words, we want to set that top <code>margin</code> to <code>0</code>. Make the change & take a look. Hmmm. There’s still that space there! Why? For now, we haven’t done enough, but we will actually fix it very soon, so just be patient.
+</p>
+<p>
+  Once you’re finished, things should look like this:
+</p>
+<p>
+  <img style="max-width: 50vw; height: auto; border: 1px solid black;" src="https://granneman.com/downloads/web-dev-assignments/herbert-west-landscaping/images/css-figcaption-1.webp" alt="The figcaption with italic text after some simple styling">
+</p>
+
+<!-- /services/landscape-maintenance-5.html -->
+<h2 style="font-family: Monaco, Menlo, Consolas, 'Courier New', monospace !important; color: #d01a19;">/services/landscape-maintenance.html</h2>
+<p>
+  We are going to make 2 changes to the <code>landscape-maintenance.html</code> page by adding 2 classes & a tiny bit of HTML.
+</p>
+
+<!-- .callout -->
+<h3 style="font-family: Monaco, Menlo, Consolas, 'Courier New', monospace !important; color: #d01a19;">.callout</h3>
+<p>
+  Let’s style the Edging heading &amp; the paragraph under it. To do that, wrap both the heading and the paragraph inside a <code>&lt;div&gt;</code>. Apply a class to the <code>&lt;div&gt;</code> named <code>callout</code>.
+</p>
+<p>
+  In <code>main.css</code>, add a new class named <code>callout</code>. Let’s make several changes. To make sure things are working, open <code>landscape-maintenance.html</code> in Live Preview &amp; check it as you add your CSS.
+</p>
+<p>
+  First of all, set the <code>background-color</code> to <code>#313D2B</code>, which is a very dark green. Of course, now you can’t read the text, so let’s change the <code>color</code> to <code>#eee</code>. While we’re at it, let’s set the <code>font-size</code> to <code>1.25rem</code>. Check your work!
+</p>
+<p>
+  The text is way too close to the edge of the background. To fix that, let’s set the <code>padding</code>. To start out with, try this:
+</p>
+<pre><code>padding: 1rem;</code></pre>
+<p>
+  Go take a look in your Web browser. The left &amp; right sides look good, but there’s too much space at the top &amp; bottom. We can set all 4 sides of <code>padding</code> by using 4 values, representing, in order, the top, right, bottom, &amp; left (TRBL, which sounds like “trouble”, which is how I remember the order), like this:
+</p>
+<pre><code>padding: 0 1rem 0 1rem;</code></pre>
+<p>
+  The 1st value, <code>0</code>, removes the <code>padding</code> from the top of the box. The 2nd value, <code>1rem</code>, sets the right side. The 3rd value, <code>0</code>, removes the <code>padding</code> from the bottom of the box. The 4th value, <code>1rem</code>, sets the left side.
+</p>
+<p>
+  However, we can use shorthand here (again!) by using 2 values instead of 4, like this:
+</p>
+<pre><code>padding: 0 1rem;</code></pre>
+<p>
+  In this case, the 1st value, <code>0</code>, removes the <code>padding</code> from the top and bottom of the box (the T and the B of TRBL). The 2nd value, <code>1rem</code>, sets the <code>padding</code> for the right and left sides of the box (the R and the L of TRBL).
+</p>
+<p>
+  What about a border for our box? Let’s use shorthand again for the property, as we did above, but this time let’s set the value to <code>2px</code> width, <code>solid</code> style, & <code>#ccc</code> for the color. Take a look in your browser to make sure it’s all working.
+</p>
+<p>
+  Let’s give the corners of that border a little pizzazz by rounding them with the <code>border-radius</code> property. For the value, try <code>.2rem</code>, then change it to <code>.4rem</code>, & then change it to <code>.6rem</code>, where it will remain. After each change, see what the value looks like in the Web browser.
+</p>
+<p>
+  Now let’s set the <code>width</code> of the <code>&lt;div class="callout"&gt;</code> to <code>80%</code>. That’s nice, but the box is aligned to the left, which looks pretty silly. To fix that, set <code>margin-left</code> and <code>margin-right</code> to <code>auto</code>. This tells the browser to divide the space evenly around the <code>&lt;div&gt;</code>, which results in it being horizontally centered. Nice!
+</p>
+<p>
+  Once you’re finished, things should look like this:
+</p>
+<p>
+  <img style="max-width: 50vw; height: auto; border: 1px solid black;" src="https://granneman.com/downloads/web-dev-assignments/herbert-west-landscaping/images/css-callout-1.webp" alt="A callout with a dark green background & light text">
+</p>
+
+<!-- .social-media-icons -->
+<h3 style="font-family: Monaco, Menlo, Consolas, 'Courier New', monospace !important; color: #d01a19;">.social-media-icons</h3>
+<p>
+  Right now the 4 social media icons look like they’re in a unordered list, because they are. Obviously we don’t want them to look like that, so let’s fix it. We’re going to utilize some CSS that won’t make a ton of sense until we get to flexbox in a few weeks, but just go with me here.
+</p>
+<p>
+  First of all, apply the <code>social-media-icons</code> class to the <code>&lt;ul&gt;</code> that holds the social media icons (clever class name, amiright?!). Add the class to <code>main.css</code>, & then add some declarations.
+</p>
+<p>
+  First get rid of the bullets with the <code>list-style-type</code> property and a value of <code>none</code>. Check your work. The bullets should be gone, but notice how the icons are still indented, as though the bullet was still there. To fix that, set <code>padding</code> and <code>margin</code> both to <code>0</code>. Look in your browser. Things are looking a lot better, but the icons are still ordered vertically.
+</p>
+<p>
+  Let’s apply the <code>display</code> property with a value of <code>flex</code>. Boom! Now the icons are ordered horizontally. However, they are too close together. We’ll fix that when we learn about complex selectors, which is coming right up. For now, just know you have used flexbox for the first time, so you should feel proud of yourself!
+</p>
+<p>
+  Once you’re finished, things should look like this:
+</p>
+<p>
+  <img style="max-width: 30vw; height: auto;" src="https://granneman.com/downloads/web-dev-assignments/herbert-west-landscaping/images/css-social-media-icons-1.webp" alt="Social media icons laid out horizontally, but still too close together">
+</p>

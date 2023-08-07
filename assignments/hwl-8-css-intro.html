@@ -1,0 +1,232 @@
+<!-- <p>
+  <code>main-1.css</code>
+</p> -->
+<p>When you are finished with this assignment, text me (314-780-0489) &amp; we will go over it together. <strong>You cannot submit this assignment otherwise.</strong></p>
+
+<p>
+  In this assignment we will update every webpage we have created so far in the Herbert West Landscaping Project. However, we will not actually edit any HTML! Instead, we will make a few small changes in <code>/css/main.css</code>. Then, when you view your pages using Live Preview, you will see how every single webpage has changed. It&rsquo;s very cool!
+</p>
+<blockquote>
+  <p>
+    Hey! Hey you! C&rsquo;mere. Shhhh! I&rsquo;m telling you this &amp; not the other students because <em>you</em> are the smart one! If you want to know a bit of technical detail about what we&rsquo;re changing in this assignment, we are creating <i>type selectors</i> in our CSS to match elements in our HTML. If you want to read ahead &amp; learn more, search for a title slide that says &ldquo;Type&rdquo; in <i>CSS Overview Condensed</i> &amp; read the 4 or so slides after it. Keep it a secret!
+  </p>
+</blockquote>
+<p>
+  In addition, we will be <em>updating</em> one of the shim webpages we created in the Links assignment (if you remember, we created the pages from the HTML.html template &amp; then changed the <code>&lt;title&gt;</code> &amp; <code>&lt;h1&gt;</code>, & that was it): <code>/contact/index.html</code>.
+</p>
+
+<h2>CSS</h2>
+<p>
+  Strap in &amp; buckle your seatbelt! You’re about to create some CSS!
+</p>
+<h3>Setting up</h3>
+<p>
+  If you look at any of the webpages that we have created so far using the HTML.html template, you will see that line 7 has always been <code>&lt;link rel=&quot;stylesheet&quot; href=&quot;/css/main.css&quot;&gt;</code>. We have been referencing a file— <code>main.css</code> that lives inside a folder— <code>/css</code>, neither of which exists. Let’s fix that.
+</p>
+<p>
+  In the root of your project folder you should create a new folder named <code>css</code>. That folder should be a sibling of <code>contact</code>, <code>images</code>, <code>services</code>, & the <code>index.html</code> file that serves as the home page for the Herbert West Landscaping website.
+</p>
+<p>
+  Create a new file named <code>main.css</code> inside that <code>css</code> folder, but <em>do not use the HTML.html template</em> since this file is not HTML. It’s CSS. Therefore, simply right-click on <code>css</code>, choose New File,hellip;, &amp; name it <code>main.css</code>.
+</p>
+<p>
+  When you finish, the <code>css</code> folder should now look like this:
+</p>
+<p>
+  <img style="max-width: 30vw; height: auto;" src="https://granneman.com/downloads/web-dev-assignments/herbert-west-landscaping/images/root-contact+css-main.css+images+index+products+projects+services+tips+video.webp" alt="Herbert West Landscaping project after adding the css folder">
+</p>
+<p>
+  Open <code>main.css</code> in VS Code.
+</p>
+
+<h3>Terms &amp; definitions</h3>
+<p>
+  I’m going to have you type some things that won’t really make complete sense until the next assignment. However, you will still be able to start picking up how CSS works just by trying out my instructions.
+</p>
+<p>
+  Look at the following example that you might find in <code>main.css</code> (but don’t type it in there&thinsp;&mdash;&thinsp;this is just an example!):
+</p>
+<pre><code>p {
+  color: red; 
+}</code></pre>
+<p>
+  This whole thing, from <code>p</code> to the final <code>}</code>, is a CSS <i>style rule</i>. Let’s break down the components of that style rule so you know what I am referencing below.
+</p>
+<p>
+  The <code>p</code> is a CSS <i>selector</i>. A selector in the CSS should match something in the DOM. There are many different kinds of selectors, &amp; in this case, the <code>p</code> is a <i>type selector</i>. Any time the selector is an HTML element, that is a type selector. So here, I am telling the browser’s rendering engine to look for any <code>&lt;p&gt;</code> elements in the DOM &amp; do something to them.
+</p>
+<p>
+  OK, so what do I want done to <code>p</code>, my type selector? To find that out, the browser’s rendering engine looks at the style rule’s <i>declaration block</i>, which consists of everything inside the <code>{</code> and <code>}</code> (those are called <i>curly braces</i>). Each line in the declaration block is called a <i>declaration</i>, and declarations always end with a <code>;</code> (semicolon). In this case, we only have one declaration inside our declaration block: <code>color: red;</code>.
+</p>
+<p>
+  <code>color</code> is a <i>property</i>, while <code>red</code> is a <i>value</i>, so a declaration always consists of a property & a value, separated by a <code>:</code> (colon) and ending with a <code>;</code>.
+</p>
+<p>
+  A <i>property</i> is the aspect of the selector that you want to change. In this case, we want to change the <em>color</em> of the text, so we use the <code>color</code> property (not all properties are that simple!). A <i>value</i> tells the rendering engine <em>how</em> we want to change that aspect of the selector. In this case, we want the rendering engine to change the color of <em>all</em> <code>&lt;p&gt;</code> elements to red.
+</p>
+<p>
+  And yes, in this case, we would change the text inside every <code>&lt;p&gt;</code> to red. This would look absolutely terrible, so we are not actually going to do that&thinsp;&mdash;&thinsp;but you get the idea.
+</p>
+<p>
+  Here’s a table covering the terms I’ve explained so far:
+</p>
+<table style="border-collapse: collapse;">
+  <thead style="text-align: left;">
+    <tr>
+      <th style="padding: 0.75rem; vertical-align: top; vertical-align: bottom; border-bottom: 2px solid #dee2e6; text-align: left;">
+        CSS
+      </th>
+      <th style="padding: 0.75rem; vertical-align: top; vertical-align: bottom; border-bottom: 2px solid #dee2e6; text-align: left;">
+        Term
+      </th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr style="background-color: rgba(0, 0, 0, 0.05);">
+      <td style="padding: 0.75rem; vertical-align: top; border-top: 1px solid #dee2e6;">
+        <pre><code>p {
+  color: red; 
+}</code></pre>
+      </td>
+      <td style="padding: 0.75rem; vertical-align: top; border-top: 1px solid #dee2e6;">
+        Style rule
+      </td>
+    </tr>
+    <tr>
+      <td style="padding: 0.75rem; vertical-align: top; border-top: 1px solid #dee2e6;">
+        <code>p</code>
+      </td>
+      <td style="padding: 0.75rem; vertical-align: top; border-top: 1px solid #dee2e6;">
+        Selector
+      </td>
+    </tr>
+    <tr style="background-color: rgba(0, 0, 0, 0.05);">
+      <td style="padding: 0.75rem; vertical-align: top; border-top: 1px solid #dee2e6;">
+        <code>{ &hellip; }</code>
+      </td>
+      <td style="padding: 0.75rem; vertical-align: top; border-top: 1px solid #dee2e6;">
+        Declaration block
+      </td>
+    </tr>
+    <tr>
+      <td style="padding: 0.75rem; vertical-align: top; border-top: 1px solid #dee2e6;">
+        <code>color: red;</code>
+      </td>
+      <td style="padding: 0.75rem; vertical-align: top; border-top: 1px solid #dee2e6;">
+        Declaration
+      </td>
+    </tr>
+    <tr style="background-color: rgba(0, 0, 0, 0.05);">
+      <td style="padding: 0.75rem; vertical-align: top; border-top: 1px solid #dee2e6;">
+        <code>color</code>
+      </td>
+      <td style="padding: 0.75rem; vertical-align: top; border-top: 1px solid #dee2e6;">
+        Property
+      </td>
+    </tr>
+    <tr>
+      <td style="padding: 0.75rem; vertical-align: top; border-top: 1px solid #dee2e6;">
+        <code>red</code>
+      </td>
+      <td style="padding: 0.75rem; vertical-align: top; border-top: 1px solid #dee2e6;">
+        Value
+      </td>
+    </tr>
+  </tbody>
+</table>
+
+<h3>Your first CSS</h3>
+<p>
+  Please note that we are going to use CSS to change our webpages, but things are still going to be pretty ugly for a while!
+</p>
+<p>
+  In this assignment you will use 3 different CSS properties:
+</p>
+<ul>
+  <li><code><a href="https://developer.mozilla.org/en-US/docs/Web/CSS/background-color">background-color</a></code>: Changes the background color of DOM boxes. There are <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/color_value">many ways to express colors</a>.</li>
+  <li><code><a href="https://developer.mozilla.org/en-US/docs/Web/CSS/color">color</a></code>: Changes the color of text. When people created this property, they made a mistake: they should have named it <code>text-color</code>, which would have made its purpose far more clear.</li>
+  <li><code><a href="https://developer.mozilla.org/en-US/docs/Web/CSS/font-family">font-family</a></code>: Tells the rendering engine which typefaces you want to use, in order from most desired to generic fallback, e.g., <code>font-family: Verdana, Arial, Helvetica, sans-serif;</code>. The rendering engine will try to use the first one in the list, but if it can’t find that typeface, it will move to the second one. If the rendering engine can use that typeface, it will; if it cannot, it will move to the next one in the list, and so on, until it finally reaches the generic family name, which can be either <code>serif</code>, <code>sans-serif</code>, <code>monospace</code>, <code>cursive</code>, or <code>fantasy</code>.</li>
+</ul>
+
+<h4 style="font-family: Monaco, Menlo, Consolas, 'Courier New', monospace !important; color: #d01a19;">html</h4>
+<p>
+  Given what you know above, let’s start at the top of <code>main.css</code> by changing the typeface (the <code>font-family</code>) for the <code>html</code> selector. The <code>font-family</code> you should use will be:
+</p>
+<p>
+  <code>"Source Sans 3", Verdana, Geneva, Tahoma, sans-serif</code>
+</p>
+<blockquote>
+  <p>
+    Why are there quotation marks around <code>Source Sans 3</code>? Because there are multiple words in the typeface name. In other words, you would put quotation marks around <code>Times New Roman</code> (like this: <code>"Times New Roman"</code>) but not around <code>Times</code> (&amp; yes, those are different typefaces).
+  </p>
+</blockquote>
+<p>
+  As soon as you hit Save in VS Code, you should notice a difference when you view a webpage using Live Preview; namely, that the rendering engine is now using a different typeface, probably Verdana, to display the webpage. If you do not see that, then check your CSS again. If you see numbers in the bottom left of the Status Bar in VS Code, click on those numbers to see if VS Code reports any problems in your CSS. If it still doesn’t work, get hold of me.
+</p>
+<blockquote>
+  <p>
+    The Live Preview button will not appear when you’re viewing a CSS page. It will only show up when you’re on an HTML page.
+  </p>
+</blockquote>
+
+<h4>Headings</h4>
+<p>
+  Now let’s set a different <code>font-family</code> for headings. It’s a common design trope to use one style of typeface for the body text &amp; a contrasting style for headings. In our case, we used a sans-serif typeface for the body &amp; a serif typeface for the headings (don’t worry if you’re not sure what that means&thinsp;&mdash;&thinsp;we’ll cover it later when we get to Typography).
+</p>
+<p>
+  Our selector will consist of every heading, even those we haven’t used yet, because you never know. To apply the same declaration block to multiple selectors, you use a <i>selector list</i>, like this:
+</p>
+<p>
+  <code>h1, h2, h3, h4, h5, h6</code>
+</p>
+<p>
+  The <code>font-family</code> we’ll use with this selector is:
+</p>
+<p>
+  <code>"Source Serif 4", "Iowan Old Style", Constantia, Georgia, serif</code>
+</p>
+<p>
+  Save <code>main.css</code> &amp; take a lot at your webpage. Now you should see a different typeface for all the headings.
+</p>
+<p>
+  Your headings should now look something like this (remember, you may not have the fonts installed that I do):
+</p>
+<p>
+  <img style="max-width: 40vw; height: auto;" src="https://granneman.com/downloads/web-dev-assignments/herbert-west-landscaping/images/css-headings-serif.webp" alt="Headings after applying CSS">
+</p>
+
+<h4 style="font-family: Monaco, Menlo, Consolas, 'Courier New', monospace !important; color: #d01a19;">footer</h4>
+<p>
+  Now let’s change the background color of the <code>&lt;footer&gt;</code>. That should be enough for you to figure out what the selector is. The property is <code>background-color</code>. At first, let’s try a value of <code>yellow</code> (yep, you can use names to specify colors, but there are only 145 names!). Save it &amp; take a look at your webpage. It should look terrible!
+</p>
+<p>
+  OK, clearly <code>yellow</code> is a terrible value for <code>background-color</code>. Let’s change <code>yellow</code> to <code>#eee</code>, which is another way to specify colors using <i>hexadecimal notation</i> (again, you’ll learn more about it later). Now go take a look. White would be specified by <code>#fff</code>, so <code>#eee</code> is juuuuust off-white.
+</p>
+<p>
+  I chose <code>/products/index.html</code> for this demo, so take a look at the footer on <a href="https://granneman.com/downloads/web-dev-assignments/herbert-west-landscaping/products-index-3.pdf">products-index-3.pdf</a>.
+</p>
+
+<h4 style="font-family: Monaco, Menlo, Consolas, 'Courier New', monospace !important; color: #d01a19;">aside</h4>
+<p>
+  Finally, let’s change how the <code>&lt;aside&gt;</code> looks. Let’s start by changing the background color to <code>#333</code>. Black would be <code>#000</code>, so <code>#333</code> is a bit off-black but still pretty dark. Save it &amp; take a look at the <code>/products/seed.html</code> page to verify that it worked.
+</p>
+<p>
+  Of course, if the background color is now pretty dark, it’s going to be difficult to read the text. Let’s change the color of the text to <code>#eee</code>. Yes, that means you now have 2 declarations inside the declaration block for the <code>&lt;aside&gt;</code> selector.
+</p>
+<p>
+  <code>/products/seed.html</code> should now look something like this: <a href="https://granneman.com/downloads/web-dev-assignments/herbert-west-landscaping/seed-4.pdf">seed-4.pdf</a>.
+</p>
+
+<h2 style="font-family: Monaco, Menlo, Consolas, 'Courier New', monospace !important; color: #d01a19;">/contact/index.html</h2>
+<p>
+  Let’s go ahead &amp; add content to this shim page.
+</p>
+<p>
+  Reproduce this webpage: <a href="https://granneman.com/downloads/web-dev-assignments/herbert-west-landscaping/contact-2.pdf" target="_blank" rel="noopener">contact-2.pdf</a>
+</p>
+<p>
+  Copy the text from <a href="https://granneman.com/downloads/web-dev-assignments/herbert-west-landscaping/contact-1.txt" target="_blank" rel="noopener">contact-1.txt</a>
+</p>
+<p>
+  After the <code>&lt;h1&gt;</code>, place the <code>contact.webp</code> image. The image is 2000&times;400, but we want it to display as <code>800&times;160</code>. What would a good value for <code>alt</code> be?
+</p>

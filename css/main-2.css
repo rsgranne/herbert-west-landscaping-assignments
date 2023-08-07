@@ -1,0 +1,52 @@
+html {
+  font-family: "Source Sans 3", Verdana, Geneva, Tahoma, sans-serif;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: "Source Serif 4", "Iowan Old Style", Constantia, Georgia, serif;
+}
+
+footer {
+  background-color: yellow;
+  background-color: #eee;
+}
+
+aside {
+  background-color: #333;
+  color: #eee;
+}
+
+blockquote {
+  font-style: italic;
+  padding-left: .5rem;
+  border-left: .5rem solid #ccc;
+}
+
+figcaption {
+  font-style: italic;
+  margin-top: 0;
+}
+
+.callout {
+  background-color: #313D2B;
+  border: 2px solid #ccc;
+  color: #eee;
+  padding: 0 1rem;
+  width: 80%;
+  margin-left: auto;
+  margin-right: auto;
+  font-size: 1.25rem;
+  border-radius: .6rem;
+}
+
+.social-media-icons {
+  margin: 0;
+  list-style-type: none;
+  padding: 0;
+  display: flex;
+}

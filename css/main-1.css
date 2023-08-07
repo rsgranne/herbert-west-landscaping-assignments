@@ -1,0 +1,22 @@
+html {
+  font-family: "Source Sans 3", Verdana, Geneva, Tahoma, sans-serif;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: "Source Serif 4", "Iowan Old Style", Constantia, Georgia, serif;
+}
+
+footer {
+  background-color: yellow;
+  background-color: #eee;
+}
+
+aside {
+  background-color: #333;
+  color: #eee;
+}

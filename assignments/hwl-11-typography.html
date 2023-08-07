@@ -1,0 +1,285 @@
+<!-- <p>
+  main-4.css, /projects/index-3.html
+</p> -->
+<p>
+  When you are finished with this assignment, text me (314-780-0489) &amp; we will go over it together. <strong>You cannot submit this assignment otherwise.</strong>
+</p>
+<p>
+  There are no new CSS properties in this assignment.
+</p>
+<p>
+  There are no new selectors in this assignment.
+</p>
+
+<!-- Default font -->
+<h2>Default font</h2>
+<p>
+  In the first CSS assignment, we set the <code>font-family</code> for the <code>html</code> selector to this:
+</p>
+<pre><code>"Source Sans 3", Verdana, Geneva, Tahoma, sans-serif</code></pre>
+<p>
+  There is nothing <i>per se</i> wrong about that font stack, but there are a few issues.
+</p>
+<p>
+  First of all, I know I have Source Sans 3 installed, but I’m almost certain virtually no one else does. So that means hardly anyone will see the ideal font I’d like to use on this website.
+</p>
+<p>
+  Second, there is a way to have your computers download &amp; use the Source Sans 3 font on your computer using techniques discussed later in CSS Typography. However, that means an extra download, which slows down the page load time. Bummer.
+</p>
+<p>
+  In the last decade, many Web developers have moved toward the idea of using <i>native font stacks</i> as a way to solve these problems. Basically, instead of linking to specific fonts, you instead tell the browser’s rendering engine to use the default operating system user interface font for your device.
+</p>
+<ul>
+  <li>If you use a Mac with a version of macOS since 10.11 El Capitan (which rolled out in 2015!), then you are looking at Apple’s <i>San Francisco</i> typeface in menus, the Finder, the Desktop, &amp; basically anywhere on your Mac that is part of macOS (San Francisco has also been the default on iOS since version 9, also released in 2015).</li>
+  <li>If you use a PC with a version of Windows from Vista (also available since 2007) on up to today, then you constantly see a typeface named <i>Segoe UI</i> in the user interface.</li>
+  <li>Most Android phones have used Roboto since 2011, when it first appeared on Android 4.0 “Ice Cream Sandwich”.</li>
+</ul>
+<p>
+  With that in mind, here is the native font stack used by Bootstrap, which we will adopt today for the default font on the Herbert West Landscaping website (we will continue to use a serif-based font stack for headings, however):
+</p>
+<pre><code>system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", "Liberation Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji"</code></pre>
+<p>
+  Remember, the browser’s rendering engine will start with the first specified font &amp; go down the list until if gets to one it supports. Let’s break that font stack down so we understand why Bootstrap chose those fonts, with each operating system listed after each font.
+</p>
+<ul>
+  <li>
+    <code4>system-ui</code4>: This has come to mean “the default operating system font” for all modern browsers
+  </li>
+  <li><code>-apple-system</code>: Apple</li>
+  <li><code>"Segoe UI"</code>: Windows</li>
+  <li><code>Roboto</code>: Android</li>
+  <li><code>"Helvetica Neue"</code>: Older Apple devices</li>
+  <li><code>"Noto Sans"</code>: Linux</li>
+  <li><code>"Liberation Sans"</code>: Linux</li>
+  <li><code>Arial</code>: Basic fallback for almost all operating systems</li>
+  <li><code>sans-serif</code>: Generic family fallback</li>
+  <li><code>"Apple Color Emoji"</code>: Apple</li>
+  <li><code>"Segoe UI Emoji"</code>: Windows</li>
+  <li><code>"Segoe UI Symbol"</code>: Windows</li>
+  <li><code>"Noto Color Emoji"</code>: Linux</li>
+</ul>
+<p>
+  Set the font-family for <code>&lt;html&gt;</code> to the system font stack above. Save it &amp; take a look. What do you think?
+</p>
+
+<!-- /projects/index-3.html -->
+<h2 style="font-family: Monaco, Menlo, Consolas, 'Courier New', monospace !important; color: #d01a19;">/projects/index.html</h2>
+<p>
+  We created <code>/projects/index.html</code> a while back but didn’t place much content into it. Let’s fix that.
+</p>
+<p>
+  Reproduce this webpage: <a href="https://granneman.com/downloads/web-dev-assignments/herbert-west-landscaping/projects-3.pdf" target="_blank" rel="noopener">projects-3.pdf</a>. It’s going to take a while to get there, so be patient!
+</p>
+<p>
+  Copy the text from <a href="https://granneman.com/downloads/web-dev-assignments/herbert-west-landscaping/projects-3.txt" target="_blank" rel="noopener"><span>projects-3.txt</span></a>, but ignore the numbers. You’ll see why I put them there in just a moment.
+</p>
+<p>
+  After the <code>&lt;h1&gt;</code>, place the <code>projects.webp</code> image. The image is 2500&times;499, but we want it to display as <code>800&times;160</code>. What would a good value for <code>alt</code> be?
+</p>
+<p>
+  This page has a very repetitive structure, so I am going to help you with that by giving you an Emmet abbreviation that will do almost all of the work for you. Yes, I am awesome. After that, however, you will need to carefully fill in some content.
+</p>
+<p>
+  After the <code>&lt;h2&gt;</code>, enter the following &amp; press <code>Return</code> (macOS)/<code>Enter</code> (Windows or Linux). Make sure you do not do this inside the <code>&lt;h2&gt;</code> or you have a big mess!
+</p>
+<p>
+  <code>div>(.col>.card>img.img-fluid+.card-body>p.card-text)*9</code>
+</p>
+<blockquote>
+  <p>
+    <b>NOTE 1</b>: You are going to copy &amp; paste that, right? You’re not going to type that out &amp; screw it up accidentally, <em>right</em>? <strong>Right?!</strong>
+  </p>
+  <p>
+    When you do that, you will probably not see any indication that Emmet is going to work, &amp; pressing <code>Return</code> or <code>Enter</code> very well will do nothing. Here’s how to fix that:
+  </p>
+  <ul>
+    <li>After pasting, hit the backspace button to get rid of the <code>9</code>, & then type a <code>9</code> again. That should make it work.</li>
+    <li>Or press <code>Ctrl+Space</code> (macOS, Windows, &amp; Linux), which should make it work.</li>
+  </ul>
+</blockquote>
+<blockquote>
+  <p>
+    <b>NOTE 2</b>: You may be wondering about those class names. Those are from Bootstrap. I figured that if you’re adding the content to this page, you might as well go ahead & put the Bootstrap classes in there, especially since it would be a pain to put them in after the fact.
+  </p>
+</blockquote>
+<blockquote>
+  <p>
+    <b>NOTE 3</b>: Yes, the <code>&lt;img&gt;</code>s do not have <code>width</code> or <code>height</code> attributes. That is on purpose, as Bootstrap will handle the dimensions of the images. Be patient; you’ll see.
+  </p>
+</blockquote>
+<p>
+  You should see the following structure, but where I am only showing you two <code>&lt;div class="col"&gt;</code>, you should see 9.
+</p>
+<pre><code>&lt;div&gt;
+  &lt;div class="col"&gt;
+    &lt;div class="card"&gt;
+      &lt;img src="" alt="" class="img-fluid"&gt;
+      &lt;div class="card-body"&gt;
+        &lt;p class="card-text"&gt;
+          
+        &lt;/p&gt;
+      &lt;/div&gt;
+    &lt;/div&gt;
+  &lt;/div&gt;
+  &lt;div class="col"&gt;
+    &lt;div class="card"&gt;
+      &lt;img src="" alt="" class="img-fluid"&gt;
+      &lt;div class="card-body"&gt;
+        &lt;p class="card-text"&gt;
+          
+        &lt;/p&gt;
+      &lt;/div&gt;
+    &lt;/div&gt;
+  &lt;/div&gt;
+&lt;/div&gt;
+</code></pre>
+<p>
+  In your <code>main.css</code>, let’s create a new <code>.img-fluid</code> class &amp; style it for now to set <code>width</code> to <code>100%</code> &amp; <code>height</code> to <code>auto</code>. We will remove this when we get to Bootstrap, because <code>.img-fluid</code> is actually a Bootstrap class &amp; we will use that code, not ours.
+</p>
+<p>
+  Now let’s fill in our HTML structure with text &amp; images. The following list matches the content inside each <code>&lt;div class="card"&gt;</code>; there are 9 instances of <code>&lt;div class="card"&gt;</code>, so there are 9 list items.
+</p>
+<p>
+  It should be obvious where the image goes, &amp; don’t forget to come up with something good for each <code>alt</code> attribute.
+</p>
+<p>
+  The text goes inside the <code>&lt;p class="card-text"&gt;</code>. Look at the PDF carefully to note any special formatting of text!
+</p>
+<ol>
+  <li>First
+    <ol>
+      <li>Image: <code>project-1.webp</code></li>
+      <li>Text: <code>Such a beautifully-mowed lawn, with just a hint of yellow & purple as accents. Chef’s kiss. However, we do advise you to step carefully behind that bush. It’s Earl’s favorite place.</code></li>
+    </ol>
+  </li>
+  <li>Second
+    <ol>
+      <li>Image: <code>project-2.webp</code></li>
+      <li>Text: <code>Veeblefetzer University was very happy with how our grass perfectly marched alongside their styrofoam sidewalks.</code></li>
+    </ol>
+  </li>
+  <li>Third
+    <ol>
+      <li>Image: <code>project-3.webp</code></li>
+      <li>Text: <code>Lord Haffrrhengenden was most pleased with the lovely job we did on his familial estate out in Weggenwestershireton, East Sussex, Camton-Upon-Wensleydale. We even got a “Pip-pip!” and a “Tally-ho!” for our troubles!</code></li>
+    </ol>
+  </li>
+  <li>Fourth
+    <ol>
+      <li>Image: <code>project-4.webp</code></li>
+      <li>Text: <code>We were very proud of how our lawn work perfectly matched the ridiculously overdone lighting in this James Bond villain’s evil lair. Yes, he made us say that.</code></li>
+    </ol>
+  </li>
+  <li>Fifth
+    <ol>
+      <li>Image: <code>project-5.webp</code></li>
+      <li>
+        <p style="margin-top: 0">
+          Text: This is 3 paragraphs of text, &amp; each one has a class of <code>card-text</code>:
+        </p>
+        <p>
+          <code>You try getting all that grass lined up with stars like that. Go ahead. We dare you. It’s really hard!</code>
+        </p>
+        <p>
+          <code>One moment … I have just received a call from one of our workmen. It is in fact shockingly easy. My apologies.</code>
+        </p>
+        <p>
+          <code>Alright then. <em>You</em> try getting all those flowers lined up with stars like that. Go ahead. We dare you. It’s really hard!</code>
+        </p>
+      </li>
+    </ol>
+  </li>
+  <li>Sixth
+    <ol>
+      <li>Image: <code>project-6.webp</code></li>
+      <li>Text: <code>The lake nymphs in this grove are particularly vicious, causing us to lose eight men to siren calls that led to their eventual drowning, but once we figured out what was going on and how to fix the problem, we were able to do a great job. Thank you, dynamite!</code></li>
+    </ol>
+  </li>
+  <li>Seventh
+    <ol>
+      <li>Image: <code>project-7.webp</code></li>
+      <li>Text: <code>Please, dear sir, do come in to our lovely inn. Ignore the fish-people and the cultists and the tentacles and sign in. You will have a lovely stay— that we can assure you. Ph’nglui mglw’nafh Cthulhu R’lyeh wgah’nagl fhtagn!</code></li>
+    </ol>
+  </li>
+  <li>Eighth
+    <ol>
+      <li>Image: <code>project-8.webp</code></li>
+      <li>Text: <code>I have no idea why the owner wanted us to place giant pieces of mozzarella cheese on the lawn, but we do what we’re told.</code></li>
+    </ol>
+  </li>
+  <li>Ninth
+    <ol>
+      <li>Image: <code>project-9.webp</code></li>
+      <li>Text: <code>It seemed like it was do-able, so we brought the goats in. And then we discovered why you do not mix male and female goats if you want them to learn how to use riding lawnmowers.</code></li>
+    </ol>
+  </li>
+</ol>
+<p>
+  Now let’s style our HTML. To start with, apply the <code>.multi-column</code> class to the outermost <code>&lt;div&gt;</code>, the one right above the first <code>&lt;div class="col"&gt;</code>. As soon as you do that, you’ll see the layout change, as you can see in the image below. But it’s pretty ugly, so let’s fix it.
+</p>
+<p>
+  <img style="max-width: 100%; height: auto; border: 1px solid black;" src="https://granneman.com/downloads/web-dev-assignments/herbert-west-landscaping/images/projects-multi-column-1.webp" alt="A multi-column layout that looks pretty ugly">
+</p>
+<p>
+  Let’s start by making each <code>&lt;div&gt;</code> with a class of <code>col</code> on it look better. First we need a selector. We want to target every <code>.col</code> that is the direct child of <code>.multi-column</code>, so that’s our selector.
+</p>
+<p>
+  Once you have that selector in place, let’s set a border that is <code>1px</code> wide, <code>solid</code>, & <code>#ddd</code>. Save that &amp; take a look, but then those <code>&lt;div&gt;</code>s are too close to each other on the top &amp; bottom. To fix that, let’s add <code>margin-bottom: 1.5rem;</code> to our selector. Save &amp; look at it, &amp; now the <code>&lt;div&gt;</code>s are at least separated from each other now, as you can see:
+</p>
+<p>
+  <img style="max-width: 100%; height: auto; border: 1px solid black;" src="https://granneman.com/downloads/web-dev-assignments/herbert-west-landscaping/images/projects-multi-column-2-col-border-margin-bottom.webp" alt="Each box now has a border around it as well as a margin">
+</p>
+<p>
+  The text looks bad, however. It’s too close to the borders, &amp; the lines of text are too close together. To make it look better, we need to select any element that has the <code>.card-text</code> class, <em>if</em> that class is the descendant of an element with a class of <code>.col</code>, <em>if</em> that class is the child of an element with the <code>.multi-column</code> class. Think about what selector you might create, & then click &amp; drag on the empty area below to see the one you should use:
+</p>
+<p style="color: white;">
+  <code>.multi-column > .col .card-text</code>
+</p>
+<p>
+  Now that you have the selector in place, set padding on the top &amp; bottom to <code>0</code>, & on the right &amp; left to <code>1rem</code>. To fix the distance between the lines of text, set the <code>line-height</code> to <code>1.5</code>. Save & peek at it, &amp; it should look like this:
+</p>
+<p>
+  <img style="max-width: 100%; height: auto; border: 1px solid black;" src="https://granneman.com/downloads/web-dev-assignments/herbert-west-landscaping/images/projects-multi-column-3-card-text.webp" alt="An example of margin collapsing between two adjacent siblings">
+</p>
+<p>
+  Now the problem is that the multi-column rule is unnecessary &amp; looks too cluttered, given the borders around <code>.col</code>. We need to get rid of that rule. However, when we styled <code>.multi-column</code> in the previous assignment (around all the colors on <code>landscape-maintenance.html</code>), we wanted the rule there, but now we don’t. We can’t just remove <code>column-rule: 2px dotted hsl(150, 70%, 31%);</code> from <code>.multi-column</code>, since we want the rule to appear most of the time when we use that class. So what’s the solution?
+</p>
+<p>
+  The answer is to add the <code>no-rule</code> class to <code>&lt;div class="multi-column"&gt;</code> so that it looks like this: <code>&lt;div class="multi-column no-rule"&gt;</code>.
+</p>
+<p>
+  Then, in <code>main.css</code>, add a compound selector named <code>.multi-column.no-rule</code>. Remember, that will match any element with both the <code>multi-column</code> class <em>and</em> the <code>no-rule</code> class. Now, to override the column rule we already have in place for <code>.multi-column</code>, put this declaration in place for our new compound selector: <code>column-rule-width: 0;</code>. Save it &amp; look at the result in your browser, which should look like this:
+</p>
+<p>
+  <img style="max-width: 100%; height: auto; border: 1px solid black;" src="https://granneman.com/downloads/web-dev-assignments/herbert-west-landscaping/images/projects-multi-column-4-no-rule.webp" alt="An example of margin collapsing between two adjacent siblings">
+</p>
+<p>
+  Hey, this is looking pretty darn good! There’s another problem, though. To see it, scroll to the bottom of our multi-column layout, right above the <code>&lt;footer&gt;</code>. See how the multi-column layout is too close to the border on the <code>&lt;footer&gt;</code>?
+</p>
+<p>
+  <img style="max-width: 100%; height: auto; border: 1px solid black;" src="https://granneman.com/downloads/web-dev-assignments/herbert-west-landscaping/images/projects-multi-column-5-no-bottom-margin.webp" alt="An example of margin collapsing between two adjacent siblings">
+</p>
+<p>
+  To fix this, go back to the <code>.multi-column</code> selector in your styles &amp; add a <code>margin-bottom</code> of <code>2rem</code> to the declaration block. Save it &amp; now the bottom should look as good as the rest of our design!
+</p>
+<p>
+  <img style="max-width: 100%; height: auto; border: 1px solid black;" src="https://granneman.com/downloads/web-dev-assignments/herbert-west-landscaping/images/projects-multi-column-6-bottom-margin.webp" alt="An example of margin collapsing between two adjacent siblings">
+</p>
+<p>
+  One last thing: you might notice that a <code>&lt;div class="col"&gt;</code> wraps from the first into the second column, like this:
+</p>
+<p>
+  <img style="max-width: 100%; height: auto; border: 1px solid black;" src="https://granneman.com/downloads/web-dev-assignments/herbert-west-landscaping/images/projects-multi-column-7-wrapping-into-2nd-column.webp" alt="A div wrapping from the first column into the second">
+</p>
+<p>
+  To fix this, add <code>display: inline-block;</code> to the <code>.multi-column > .col</code> selector. Reload the page, &amp; you should see something like this:
+</p>
+<p>
+  <img style="max-width: 100%; height: auto; border: 1px solid black;" src="https://granneman.com/downloads/web-dev-assignments/herbert-west-landscaping/images/projects-multi-column-8-wrapping-into-2nd-column-fixed.webp" alt="Fixed the problem of a div wrapping from the first column into the second">
+</p>
+<p>
+  Why use <code>inline-block</code> with <code>display</code>? You know what <code>display: block</code> does, &amp; you know what <code>display: inline</code> does. When you use <code>inline-block</code>, you tell the rendering engine to display the element inline with other elements, but also apply some block-level properties to it, such as a fixed width or height, padding or margins, or borders.
+</p>
+<p>
+  When you apply <code>display: inline-block;</code> in this instance, the <code>block</code> part prevents the <code>&lt;div&gt;</code> from wrapping across into a new column, which is exactly what we want.
+</p>

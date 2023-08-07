@@ -1,0 +1,187 @@
+<p>
+  When you are finished with this assignment, text me (314-780-0489) &amp; we will go over it together. <strong>You cannot submit this assignment otherwise.</strong>
+</p>
+<p>
+  In this assignment we will update every webpage we have created so far in the Herbert West Landscaping Project. In addition, we will be <em>updating</em> the <code>/products/index.html</code> page &amp; <em>creating</em> two new pages:
+</p>
+<ul>
+  <li><code>/products/fertilizers.html</code></li>
+  <li><code>/products/pesticides.html</code></li>
+</ul>
+<p>
+  This assignment introduces the following elements. You should use every one of these elements in order to complete the assignment. Every page will use <code>&lt;footer&gt;</code>, <code>&lt;header&gt;</code>, &amp; <code>&lt;section&gt;</code>. <code>&lt;aside&gt;</code> will be used on a few pages, while <code>&lt;figure&gt;</code> & <code>&lt;figcaption&gt;</code> will only appear on one page.
+</p>
+<ul>
+  <li><code>&lt;aside&gt;</code></li>
+  <li><code>&lt;figcaption&gt;</code></li>
+  <li><code>&lt;figure&gt;</code></li>
+  <li><code>&lt;footer&gt;</code></li>
+  <li><code>&lt;header&gt;</code></li>
+  <li><code>&lt;section&gt;</code></li>
+</ul>
+
+<p>
+  Our goal with this assignment is to include landmarks for every line of HTML inside <code>&lt;body&gt;</code>. When you have finished with the assignment, if you collapse the sectioning elements that create landmarks (by clicking on the little caret, triangle, or plus&thinsp;&mdash;&thinsp;this will depend upon your theme!&thinsp;&mdash;&thinsp;to the right of the numbers in the gutter), then you should see something like this:
+</p>
+<p>
+  <img style="max-width: 30vw; height: auto;" src="https://granneman.com/downloads/web-dev-assignments/herbert-west-landscaping/images/sectioning-landmarks.webp" alt="index.html showing sectioning landmarks: header, nav & nav, main, & footer">
+</p>
+
+<!-- header -->
+<h2 style="font-family: Monaco, Menlo, Consolas, 'Courier New', monospace !important; color: #d01a19;">&lt;header&gt;</h2>
+<p>
+  You should already have the <i>unordered</i> list at the top of every page enclosed inside <code>&lt;nav aria-label="primary"&gt;</code>. If you do not, fix that. Now we need to move the HWL logo image inside <code>&lt;nav aria-label="primary"&gt;</code>, but above the <code>&lt;ul&gt;</code>.
+</p>
+<p>
+  You should already have the <i>ordered</i> list at the top of every page enclosed inside <code>&lt;nav aria-label="breadcrumb"&gt;</code>. If you do not, fix that. If a webpage does not already have an ordered list at the top, add it, using the examples of other pages to guide you.
+</p>
+<p>
+  Finally, both of the <code>&lt;nav&gt;</code> elements should both go inside <em>one</em> <code>&lt;header&gt;</code>.
+</p>
+
+<!-- footer -->
+<h2 style="font-family: Monaco, Menlo, Consolas, 'Courier New', monospace !important; color: #d01a19;">&lt;footer&gt;</h2>
+<p>
+  First let&rsquo;s use <code>&lt;section&gt;</code> around the 3 major parts of the footer at the bottom of every page. I would do this on 1 page & then copy & paste to all the others!
+</p>
+<p>
+  <code>&lt;section&gt;</code> goes around each of these groups of content at the bottom of your pages:
+</p>
+<ul>
+  <li>Contact &amp; its related content</li>
+  <li>Legal &amp; its related content</li>
+  <li>Social &amp; its related content</li>
+</ul>
+<p>
+  After you finish that, wrap the <code>&lt;hr&gt;</code> and those 3 sections in <code>&lt;footer&gt;</code>. Refer to the image above for guidance.
+</p>
+
+<h2 style="font-family: Monaco, Menlo, Consolas, 'Courier New', monospace !important; color: #d01a19;">&lt;main&gt;</h2>
+<p>
+  Anything that is not inside <code>&lt;footer&gt;</code>, <code>&lt;header&gt;</code>, or <code>&lt;section&gt;</code> should be nested inside <code>&lt;main&gt;</code>. Again refer to the image above.
+</p>
+
+<!-- aside -->
+<h2 style="font-family: Monaco, Menlo, Consolas, 'Courier New', monospace !important; color: #d01a19;">&lt;aside&gt;</h2>
+<h3 style="font-family: Monaco, Menlo, Consolas, 'Courier New', monospace !important; color: #d01a19;">/products/seed.html</h3>
+<p>
+  On <code>/products/seed.html</code> we need to wrap everything from the heading that says &ldquo;We&rsquo;ve taking over the world!&rdquo; to the paragraph that starts with &ldquo;We started in a small town&rdquo; inside <code>&lt;aside&gt;</code>. This <code>&lt;aside&gt;</code> will also go inside <code>&lt;main&gt;</code> with the other content that belongs in there.
+</p>
+<h3 style="font-family: Monaco, Menlo, Consolas, 'Courier New', monospace !important; color: #d01a19;">/services/seasonal.html</h3>
+<p>
+  On <code>/services/seasonal.html</code> we are going to take some of the words in an existing paragraph, copy them, & turn them into a <i>pull quote</i> (this is discussed in the HTML Overview Condensed slides in the section about <code>&lt;aside&gt;</code>). Note that we are <em>not moving</em> the words; we are <em>copying</em> them.
+</p>
+<p>
+  Copy this: &ldquo;Grass gets tired, so, so tired. It needs to be revitalized every few years.&rdquo;
+</p>
+<p>
+  Directly above the heading labeled &ldquo;Revitalization&rdquo;, create an <code>&lt;aside&gt;</code> with a <code>&lt;p&gt;</code> in it. Paste the copied words into that paragraph. At this point you won&rsquo;t see anything special&thinsp;&mdash;&thinsp;just a new paragraph, since <code>&lt;aside&gt;</code> does nothing visually by itself. Later we will style that <code>&lt;aside&gt;</code> with CSS.
+</p>
+<p>
+  Reproduce this webpage (look carefully for the new <code>&lt;aside&gt;</code>!): <a href="https://granneman.com/downloads/web-dev-assignments/herbert-west-landscaping/seasonal-2.pdf" target="_blank" rel="noopener">seasonal-2.pdf</a>
+</p>
+
+<!-- Products -->
+<h2>Products</h2>
+<p>
+  In previous assignments we created a <code>products</code> folder &amp; then created new files in that folder named <code>index.html</code> & <code>seed.html</code> We are now going to create the other 2 files that go in <code>products</code>: <code>fertilizers.html</code> &amp; <code>pesticides.html</code>. Of course, they will all use the <code>HTML.html</code> template.
+</p>
+<p>
+  When you finish, the <code>products</code> folder should now look like this:
+</p>
+<p>
+  <img style="max-width: 30vw; height: auto;" src="https://granneman.com/downloads/web-dev-assignments/herbert-west-landscaping/images/root-contact+images+index+products-expanded+projects+services+tips+video.webp" alt="Herbert West Landscaping project after filling out the products folder">
+</p>
+
+<h3 style="font-family: Monaco, Menlo, Consolas, 'Courier New', monospace !important; color: #d01a19;">/products/index.html</h3>
+<p>
+  We previously created <code>/products/index.html</code> but all we added into it was the text for the <code>&lt;title&gt;</code> & <code>&lt;h1&gt;</code>. Now we are going to finish the page.
+</p>
+<p>
+  Reproduce this webpage: <a href="https://granneman.com/downloads/web-dev-assignments/herbert-west-landscaping/products-index-2.pdf" target="_blank" rel="noopener">products-index-2.pdf</a>.
+</p>
+<p>
+  Copy the text from <a href="https://granneman.com/downloads/web-dev-assignments/herbert-west-landscaping/products-index-2.txt" target="_blank" rel="noopener"><span>products-index-2.txt</span></a>
+</p>
+<p>
+  After the <code>&lt;h1&gt;</code>, place the <code>products.jpg</code> image. We are going to use the <code>srcset</code> attribute with the <code>&lt;img&gt;</code>, & that is going to point to <code>products.webp</code>. The image is 2500&times;499, but we want it to display as <code>800&times;160</code>. What would a good value for <code>alt</code> be?
+</p>
+<p>
+  Remember, at this time, autocomplete doesn&rsquo;t work for the <code>srcset</code> attribute, so just copy the value of <code>src</code> (which points to the <code>jpg</code>) &amp; paste it into the value for <code>srcset</code>, & then change <code>jpg</code> to <code>webp</code>. Hopefully this will be fixed once I <a href="https://github.com/microsoft/vscode/issues/175807">file a bug to the makers of VS Code</a>.
+</p>
+<p>
+  Place the appropriate images <em>above</em> the <code>&lt;h3&gt;</code> headings on this page:
+</p>
+<ul>
+  <li>Fertilizers: <code>fertilizers-full.jpg</code>, with <code>fertilizers-full.webp</code> in the <code>srcset</code></li>
+  <li>Pesticides: <code>pesticides-full.jpg</code>, with <code>pesticides-full.webp</code> in the <code>srcset</code></li>
+  <li>Seeds: <code>seeds-full.jpg</code>, with <code>seeds-full.webp</code> in the <code>srcset</code></li>
+</ul>
+<p>
+  Each image is 800&times;450.
+</p>
+
+<h3 style="font-family: Monaco, Menlo, Consolas, 'Courier New', monospace !important; color: #d01a19;">/products/fertilizers.html</h3>
+<p>
+  <strong>IMPORTANT</strong>: Please be aware that this is the silliest, most juvenile content I have on the site. <strong>If you are offended by silly toilet humor</strong> (and by the way, there are no &ldquo;bad words&rdquo; on the page), <strong>you do not have to work on this page.</strong> Just do the <code>&lt;title&gt;</code>, listed below, & for the <code>&lt;h1&gt;</code> use “Sewage Is Our First Love”. And then stop there. You have been warned. 😃
+</p>
+<p>
+  Reproduce this webpage: <a href="https://granneman.com/downloads/web-dev-assignments/herbert-west-landscaping/fertilizers-1.pdf" target="_blank" rel="noopener">fertilizers-1.pdf</a>
+</p>
+<p>
+  Copy the text from <a href="https://granneman.com/downloads/web-dev-assignments/herbert-west-landscaping/fertilizers-1.txt" target="_blank" rel="noopener">fertilizers-1.txt</a>
+</p>
+<p>
+  The <code>&lt;title&gt;</code> of <code>fertilizers.html</code> is <code>Fertilizers :: Herbert West Landscaping</code>.
+</p>
+<p>
+  After the <code>&lt;h1&gt;</code>, place the <code>fertilizers.webp</code> image. The image is 2000&times;400, but we want it to display as <code>800&times;160</code>. What would a good value for <code>alt</code> be?
+</p>
+<p>
+  The images of the employees are all <code>300&times;300</code>.
+</p>
+
+<!-- pesticides.html -->
+<h3 style="font-family: Monaco, Menlo, Consolas, 'Courier New', monospace !important; color: #d01a19;">/products/pesticides.html</h3>
+<p>
+  Reproduce this webpage: <a href="https://granneman.com/downloads/web-dev-assignments/herbert-west-landscaping/pesticides-1.pdf" target="_blank" rel="noopener">pesticides-1.pdf</a> (link coming soon)
+</p>
+<p>
+  Copy the text from <a href="https://granneman.com/downloads/web-dev-assignments/herbert-west-landscaping/pesticides-1.txt" target="_blank" rel="noopener">pesticides-1.txt</a>
+</p>
+<p>
+  The <code>&lt;title&gt;</code> of <code>pesticides.html</code> is <code>Pesticides :: Herbert West Landscaping</code>.
+</p>
+<p>
+  After the <code>&lt;h1&gt;</code>, place the <code>pesticides.webp</code> image. The image is 2000&times;400, but we want it to display as <code>800&times;160</code>. What would a good value for <code>alt</code> be?
+</p>
+<p>
+  You are going to insert two large images into the page. For each one, enter a good value for <code>alt</code>.
+</p>
+<blockquote>
+  <p>
+    <b>IMPORTANT</b>: Note that I used <code>&lt;figure&gt;</code> & <code>&lt;figcaption&gt;</code> with each image & its caption. Information about those two elements is at the end of the <i>Embedded Multimedia</i> section in the <i>HTML Overview Condensed</i> slides (I just added it back in when I realized we needed it here).
+  </p>
+</blockquote>
+<ul>
+  <li>
+    The first large image is of a house roof.
+    <ul>
+      <li>The image is <code>2400&times;2028</code>, but change its display size to <code>800&times;676</code>. Place that image inside a <code>&lt;p&gt;</code>.</li>
+      <li>The text inside the <code>&lt;figcaption&gt;</code> (detailed in the next list items) should not go inside a <code>&lt;p&gt;</code>; instead, just put it right inside the <code>&lt;figcaption&gt;</code>.</li>
+      <li>“Spiders in the Belfry” links to https&colon;//onespeedgo.blogspot.com/2012/10/spiders-in-belfry.html</li>
+      <li>“CC BY-NC-SA 3.0” links to https&colon;//creativecommons.org/licenses/by-nc-sa/3.0/</li>
+    </ul>
+  </li>
+  <li>
+    The second large image is of a man watering plants.
+    <ul>
+      <li>The image is <code>2400&times;1350</code>, but change its display size to <code>800&times;450</code>. Place that image inside a &lt;p&gt;.</li>
+      <li>The text inside the <code>&lt;figcaption&gt;</code> (detailed in the next list item) should not go inside a <code>&lt;p&gt;</code>; instead, just put it right inside the <code>&lt;figcaption&gt;</code>.</li>
+      <li>“What If Giant Spiders Occupied Your City One Day” links to https&colon;//www.youtube.com/watch?v=AEw1zISBT-8</li>
+    </ul>
+  </li>
+</ul>
+<p>
+  Notice the last bit of text before the <code>&lt;footer&gt;</code>. What element should you use to do that?
+</p>

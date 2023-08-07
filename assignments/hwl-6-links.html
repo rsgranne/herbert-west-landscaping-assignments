@@ -1,0 +1,217 @@
+<p>
+  When you are finished with this assignment, text me (314-780-0489) &amp; we will go over it together. <strong>You cannot submit this assignment otherwise.</strong>
+</p>
+<p>
+  This assignment introduces new elements, which you will add to all existing pages & also to new webpages, to wit:
+</p>
+<ul>
+  <li><code>/contact/index.html</code></li>
+  <li><code>/products/index.html</code></li>
+  <li><code>/projects/index.html</code></li>
+  <li><code>/services/seasonal.html</code></li>
+  <li><code>/tips/index.html</code></li>
+</ul>
+<p>
+  This assignment introduces the following elements. You should use every one of these elements in order to complete the assignment. In this assignment, you <em>will</em> use every element on every webpage!
+</p>
+<ul>
+  <li><code>&lt;a&gt;</code></li>
+  <li><code>&lt;nav&gt;</code></li>
+</ul>
+<p>
+  When you add links with <code>a</code>, start by typing a <code>/</code> between the quotation marks in <code>href=""</code> & use Visual Studio Code’s autocomplete to fill in the paths to webpages. If you are not sure about this, watch my video titled “Linking to Images & Text - HTML Overview”, available in the previous module, HTML: Embedded Multimedia.
+</p>
+<ul>
+  <li>Do not manually type paths in! That is silly & a waste of your time. Automate!</li>
+  <li>Do not use the <code>\</code>, as that will only work on Windows & never on the Web!</li>
+</ul>
+
+<!-- Header -->
+<h2>Header on every page</h2>
+<p>
+  The following information about the ever-evolving header applies to every page you have already done, &amp; any going forward.
+</p>
+
+<!-- Logo -->
+<h3>Logo</h3>
+<p>
+  The logo should link back to the home page of the entire website, found in the root folder. Use the shortest link you possibly can! Think!
+</p>
+<p>
+  To turn an image into a link, simply surround the image with an <code>&lt;a&gt;</code> & then put the correct URL in as the the value for the <code>href</code> attribute.
+</p>
+
+<!-- Primary nav -->
+<h3>Primary <span style="font-family: Monaco, Menlo, Consolas, 'Courier New', monospace; color: #d01a19;">&lt;nav&gt;</span></h3>
+<p>
+  That unordered list at the top of every page is transforming into our main navigation, so we need to surround the HWL logo image <em>and</em> that entire list with <code>&lt;nav&gt;</code> (remember, <code>&lt;nav&gt;</code> will not cause anything to change visually when you look at a webpage using Live Preview).
+</p>
+<p>
+  As you will see below, both the unordered list <em>and</em> the ordered list at the top of your webpages will function as navigation. When you do that, you have to make each one unique using the global accessibility attribute <code>aria-label</code>. Therefore, the <code>&lt;nav&gt;</code> element for the unordered list would look like this: <code>&lt;nav aria-label="primary"&gt;</code>.
+</p>
+
+<!-- Primary nav links -->
+<h3>Primary <span style="font-family: Monaco, Menlo, Consolas, 'Courier New', monospace; color: #d01a19;"><code>&lt;nav&gt;</code></span> links</h3>
+<p>
+  You will add links to all of the webpages listed in the primary <code>&lt;nav&gt;</code>.
+</p>
+<ul>
+  <li>Services will link to the index page in the <code>services</code> folder</li>
+  <li>Projects will link to the index page in the <code>projects</code> folder</li>
+  <li>Products will link to the index page in the <code>products</code> folder</li>
+  <li>Tips will link to the index page in the <code>tips</code> folder</li>
+  <li>Contact will link to the index page in the <code>contact</code> folder</li>
+</ul>
+<p>
+  “Wait a minute!”, you might be thinking, “There isn’t any index page in the <code>projects</code> folder, much less a <code>projects</code> folder in the first place! What should I do? And why does my foot itch like that between my 3rd & 4th toes?”
+</p>
+<p>
+  I can’t help you with your foot (Ewww— keep that to yourself!), but by now you know how to create a folder & a webpage. So go ahead & create any folders that don’t yet exist & then create an <code>index.html</code> file in those if one does not exist already. If the case of <code>products</code>, that folder already exists, but there isn’t an index file; however, you will create that file later below.
+</p>
+<p>
+  Unless otherwise specified, you will need to copy the header & footer from one of your existing pages onto each of the following pages, so all of your webpages match.
+</p>
+<p>
+  The following will help you with each of these new index files that you will create. Don’t worry about any other content at this time unless you are told differently below.
+</p>
+<ul>
+  <li>
+    Projects
+    <ul>
+      <li><code>&lt;title&gt;</code>: <code>Projects :: Herbert West Landscaping</code></li>
+      <li><code>&lt;h1&gt;</code>: <code>Completed Projects for Happy Customers</code></li>
+    </ul>
+  </li>
+  <li>
+    Products
+    <ul>
+      <li><code>&lt;title&gt;</code>: <code>Products :: Herbert West Landscaping</code></li>
+      <li><code>&lt;h1&gt;</code>: <code>Some Good Stuff For Youse, Cheap!</code></li>
+    </ul>
+  </li>
+  <li>
+    Tips
+    <ul>
+      <li><code>&lt;title&gt;</code>: <code>Tips :: Herbert West Landscaping</code></li>
+      <li><code>&lt;h1&gt;</code>: <code>Helpful Hints, Tips, Tricks, Info, Suggestions, Advice, Guidelines, Recommendations, & Stuff</code></li>
+    </ul>
+  </li>
+  <li>
+    Contact
+    <ul>
+      <li><code>&lt;title&gt;</code>: <code>Contact :: Herbert West Landscaping</code></li>
+      <li><code>&lt;h1&gt;</code>: <code>We had better hear from you… or else</code> (note that <code>…</code> is a <i><a href="https://en.wikipedia.org/wiki/Ellipsis">horizontal ellipses</a></i>, <em>not</em> 3 periods!)</li>
+    </ul>
+  </li>
+</ul>
+<p>
+  When you have finished, your <code>herbert-west-landscaping</code> folder should look like this:
+</p>
+<p>
+  <img style="max-width: 40vw; height: auto;" src="https://granneman.com/downloads/web-dev-assignments/herbert-west-landscaping/images/root-contact-i+images+index+products-i-s+projects-i+services-cs-i-lm+tips-i+video.webp" alt="Herbert West Landscaping folder showing all folders & index files">
+</p>
+
+<!-- Breadcrumb nav -->
+<h3>Breadcrumb <span style="font-family: Monaco, Menlo, Consolas, 'Courier New', monospace; color: #d01a19;">&lt;nav&gt;</span></h3>
+<p>
+  Underneath our primary navigation will live our <i>breadcrumb navigation</i>. A reference to the trail of bread crumbs left by Hansel and Gretel (well, actually, it was Gretel; Hansel was just walking around with his mouth open looking at the squirrels) in the fairy tale, breadcrumb navigation on websites tells users what page they are on &amp; how that page fits into the website’s structure, &amp; also provides navigation within that immediate structure.
+</p>
+<p>
+  Here’s an example. Say you clicked on a link &amp; ended up on a page with this at the top: <code><a href="#🤓">Home</a> &gt; <a href="#😎">Creatures</a> &gt; Cthulhu</code> (those are fake links, so don’t try to click on them). You would know several things from seeing that breadcrumb nav:
+</p>
+<ol>
+  <li>You were currently on the Cthulhu page, because it’s the last page listed &amp; it is not a link</li>
+  <li>Cthulhu is a sub-page of Creatures, because of <code><a href="#😎">Creatures</a> &gt; Cthulhu</code></li>
+  <li>Creatures is a sub-page of Home, because of <code><a href="#🤓">Home</a> &gt; <a href="#😎">Creatures</a></code></li>
+  <li>You could click on Creatures to jump up a level to read about all the Creatures on this website, including Cthulhu, because <a href="#😎">Creatures</a> is a link</li>
+  <li>If you clicked on Home, you would end up on the home page for the website, because <a href="#🤓">Home</a> is a link</li>
+</ol>
+<p>
+  The ordered list is going to eventually become that breadcrumb navigation, but for now, simply surround that list with <code>&lt;nav&gt;</code>. As I mentioned above, for accessibility reasons we need to label each <code>&lt;nav&gt;</code>, so this one will be <code>&lt;nav aria-label="breadcrumb"&gt;</code>.
+</p>
+
+<!-- Breadcrumb nav links -->
+<h3>Breadcrumb <span style="font-family: Monaco, Menlo, Consolas, 'Courier New', monospace; color: #d01a19;">&lt;nav&gt;</span> links</h3>
+<p>
+  Please link items in the ordered list we have been creating at the top of every page as follows:
+</p>
+<ul>
+  <li><code>Home</code> should always link to the home page for the entire site, found in the root folder. Use the shortest link you possibly can! Think!</li>
+  <li>Any other folder name, like <code>Products</code> or <code>Services</code>, should be linked to the index page for that folder.</li>
+  <li>The last item in the ordered list should <em>not</em> be linked, because that is the page you are currently on, & it would be silly to link to a page you are already on. This rule is true for all pages!</li>
+</ul>
+
+<!-- header -->
+<h3><span style="font-family: Monaco, Menlo, Consolas, 'Courier New', monospace; color: #d01a19;">&lt;header&gt;</span></h3>
+<p>
+  Now wrap the site’s logo, the primary <code>&lt;nav&gt;</code>, &amp; the breadcrumb <code>&lt;nav&gt;</code> inside a single <code>&lt;header&gt;</code>.
+</p>
+
+<!-- footer -->
+<h2>Footer on every page</h2>
+<p>
+  The following information about the ever-evolving footer applies to every webpage you have already done, &amp; any going forward.
+</p>
+<h3>Contact</h3>
+<p>
+  The paragraph with the postal address should link to this address: <code>10 Barnes St Providence RI 02906</code>. You need to turn that into a maps link using the common method for doing that, which I went over in the slides & video covering Links.
+</p>
+<p>
+  The paragraph with the phone number should become a link that will open a telephone app on a user’s device. Again, use the method I covered in the slides & video covering Links.
+</p>
+<h3>Legal</h3>
+<p>
+  The email address should become a link that will open a user’s email program & pre-fill the To field with the Herbert West Landscaping email address. Once again, use the method I covered in the slides & video that went over Links.
+</p>
+<h3>Social</h3>
+<p>
+  You will link all of the icons listed in the footer in the Social section. To do this, simply surround each image with an <code>&lt;a&gt;</code> that contains the correct URL as the value for the <code>href</code> attribute. Since Herbert West Landscaping doesn’t really exist (What?! It doesn’t?!), just link to each company’s home page:
+</p>
+<ul>
+  <li>Facebook: <code>https://facebook.com</code></li>
+  <li>Mastodon: <code>https://joinmastodon.org</code> (or <code>https://mastodon.social</code> if you want the largest server&thinsp;&mdash;&thinsp;which I happen to be on)</li>
+  <li>Instagram: <code>https://www.instagram.com</code></li>
+  <li>LinkedIn: <code>https://www.linkedin.com</code></li>
+</ul>
+
+<h2>Building out the website</h2>
+
+<!-- /services/seasonal-1.html -->
+<h3 style="font-family: Monaco, Menlo, Consolas, 'Courier New', monospace; color: #d01a19; font-size: 1.3em;">/services/seasonal.html</h3>
+<p>
+  In previous assignments we created a <code>services</code> folder &amp; then created new files in that folder named <code>index.html</code>, <code>custom-services.html</code>, &amp; <code>landscape-maintenance.html</code>. We are now going to create the last file in <code>services</code>: <code>seasonal.html</code>. Of course, it will use the <code>HTML.html</code> template.
+</p>
+<p>
+  There should now be 4 files inside <code>services</code>, like this:
+</p>
+<p>
+  <img style="max-width: 30vw; height: auto;" src="https://granneman.com/downloads/web-dev-assignments/herbert-west-landscaping/images/root-contact+images+index+products+projects+services-expanded+tips+video.webp" alt="Herbert West Landscaping after filling out the services folder">
+</p>
+<p>
+  The <code>&lt;header&gt;</code> & the contents of our footer (the <code>&lt;hr&gt;</code> down through the <code>&lt;ul&gt;</code> containing all the social icons) should be similar to all the other pages. Don’t forget to update the breadcrumb navigation (the ordered list) for this specific webpage.
+</p>
+<p>
+  Reproduce this webpage: <a href="https://granneman.com/downloads/web-dev-assignments/herbert-west-landscaping/seasonal-1.pdf" target="_blank" rel="noopener">seasonal-1.pdf</a>
+</p>
+<p>
+  Copy the text from <a href="https://granneman.com/downloads/web-dev-assignments/herbert-west-landscaping/seasonal-1.txt" target="_blank" rel="noopener">seasonal-1.txt</a>
+</p>
+<p>
+  The <code>&lt;title&gt;</code> of <code>seasonal.html</code> is <code>Seasonal Services :: Herbert West Landscaping</code>.
+</p>
+<p>
+  After the <code>&lt;h1&gt;</code>, place the <code>seasonal.webp</code> image. The image is 2000&times;400, but we want it to display as <code>800&times;160</code>. What would a good value for <code>alt</code> be?
+</p>
+<p>
+  Surround everything from <code>&lt;h1&gt;</code> to just above the <code>&lt;hr&gt;</code> with <code>&lt;main&gt;</code>.
+</p>
+<p>
+  There are links in this document within the text. They link as follows:
+</p>
+<ul>
+  <li>“Weevil Wovvles”: <code>https://www.youtube.com/watch?v=aR55wJggZtg</code></li>
+  <li>“Shmiddish Beetle”: <code>https://www.straightdope.com/21343129/yiddish-shmiddish-why-do-we-repeat-a-word-but-start-it-with-shm</code></li>
+</ul>
+<p>
+  Look at the words in the text carefully. Are any being emphasized in some way?
+</p>
