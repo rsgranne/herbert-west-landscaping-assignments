@@ -1,3 +1,4 @@
+<!-- 1900 words -->
 <p>
   <strong>IMPORTANT</strong>: Before you work on this assignment, make sure you have watched the video titled <i>Linking to Images & Text - HTML Overview</i>.
 </p>
@@ -113,7 +114,7 @@
   When you look at the resulting webpage using Live Preview, you will find that the SVG logo for Facebook is enormous. Look at the code, &amp; you&rsquo;ll see that width &amp; height is never defined (the <code>viewBox</code> defines the dimensions of the <i>SVG viewport</i>, which causes the problem). There are a few ways we could fix this:
 </p>
 <ul>
-  <li>Add <code>width="48" height="48"</code> to the <code>&lt;svg&gt;</code> element so that it looks like this: <code>&lt;svg viewBox="0 0 256 256" width="48" height="48"&gt;</code> &larr; For now, do this!</li>
+  <li>Add <code>width="48" height="48"</code> to the <code>&lt;svg&gt;</code> element so that it looks like this: <code>&lt;svg viewBox="0 0 256 256" width="48" height="48"&gt;</code> &larr; For now, do this! (If you have gone over the <svg> section of the slides, you will remember that if you are embedding an SVG, you should remove xmlns="http://www.w3.org/2000/svg" from the <svg> element after you paste it in)</li>
   <li>Use CSS. We haven&rsquo;t gotten into that yet, but you would do something like:</li>
 </ul>
 <pre style="margin-bottom: 0; margin-left: 2em;"><code>footer svg {
@@ -265,7 +266,7 @@
   The <code>&lt;title&gt;</code> is <code>Seed Products :: Herbert West Landscaping</code>.
 </p>
 <p>
-  After the <code>&lt;h1&gt;</code>, place the <code>seeds.webp</code> image that’s inside <code>products</code>. The image is 2500&times;499, but we want it to display as <code>800&times;160</code>. What would a good value for <code>alt</code> be? Also, please note that there is a <code>webp</code> version of that image, so don’t forget to use <code>srcset</code>!
+  After the <code>&lt;h1&gt;</code>, place the <code>seeds.webp</code> image that’s inside <code>products</code>. The image is 2500&times;499, but we want it to display as <code>800&times;160</code>. What would a good value for <code>alt</code> be?
 </p>
 <p>
   After the paragraph that starts &ldquo;After a good night’s sleep&rdquo; but before the heading that says “We’re taking over the world!”, you are going to insert <code>&lt;video&gt;</code>. There are two formats: WebM (the video sister to WebP’s image format) and MP4, which should be presented in that order using <code>&lt;source&gt;</code>. The <code>&lt;video&gt;</code> should be sized to <code>800&times;450</code>. The <code>poster</code> image is <code>seed-video-poster.webp</code>.
