@@ -43,7 +43,7 @@
 </p>
 <ul>
   <li>
-    <code4>system-ui</code4>: This has come to mean “the default operating system font” for all modern browsers
+    <code>system-ui</code>: This has come to mean “the default operating system font” for all modern browsers, so San Francisco for Apple devices, Segoe UI for Windows, &amp; so on.
   </li>
   <li><code>-apple-system</code>: Apple</li>
   <li><code>"Segoe UI"</code>: Windows</li>
@@ -143,7 +143,7 @@
   It should be obvious where the image goes, &amp; don’t forget to come up with something good for each <code>alt</code> attribute.
 </p>
 <p>
-  The text goes inside the <code>&lt;p class="card-text"&gt;</code>. Look at the PDF carefully to note any special formatting of text!
+  The text goes inside the <code>&lt;p class="card-text"&gt;</code> &amp; the <code>&lt;/p&gt;</code>. Look at the PDF carefully to note any special formatting of text!
 </p>
 <ol>
   <li>First
@@ -232,8 +232,8 @@
 <p>
   The text looks bad, however. It’s too close to the borders, &amp; the lines of text are too close together. To make it look better, we need to select any element that has the <code>.card-text</code> class, <em>if</em> that class is the descendant of an element with a class of <code>.col</code>, <em>if</em> that class is the child of an element with the <code>.multi-column</code> class. Think about what selector you might create, & then click &amp; drag on the empty area below to see the one you should use:
 </p>
-<p style="color: white;">
-  <code>.multi-column > .col .card-text</code>
+<p>
+  <code style="color: white; border-radius: 0; background-color: white; border: 0;">.multi-column > .col .card-text</code>
 </p>
 <p>
   Now that you have the selector in place, set padding on the top &amp; bottom to <code>0</code>, & on the right &amp; left to <code>1rem</code>. To fix the distance between the lines of text, set the <code>line-height</code> to <code>1.5</code>. Save & peek at it, &amp; it should look like this:
