@@ -230,10 +230,11 @@
   <img style="max-width: 100%; height: auto; border: 1px solid black;" src="https://granneman.com/downloads/web-dev-assignments/herbert-west-landscaping/images/projects-multi-column-2-col-border-margin-bottom.webp" alt="Each box now has a border around it as well as a margin">
 </p>
 <p>
-  The text looks bad, however. It’s too close to the borders, &amp; the lines of text are too close together. To make it look better, we need to select any element that has the <code>.card-text</code> class, <em>if</em> that class is the descendant of an element with a class of <code>.col</code>, <em>if</em> that class is the child of an element with the <code>.multi-column</code> class. Think about what selector you might create, & then click &amp; drag on the empty area below to see the one you should use:
+  The text looks bad, however. It’s too close to the borders, &amp; the lines of text are too close together. To make it look better, we need to select any element that has the <code>.card-text</code> class, <em>if</em> that class is the descendant of an element with a class of <code>.col</code>, <em>if</em> that class is the child of an element with the <code>.multi-column</code> class. Think about what selector you might create, & then click &amp; drag on the gray box below to more clearly see the one you should use (this would look a lot cooler if Canvas wasn’t so stupid):
 </p>
 <p>
-  <code style="color: white; border-radius: 0; background-color: white; border: 0;">.multi-column > .col .card-text</code>
+  <code style="color: black; border-radius: 0; background-color: gray; border: 0;">.multi-column > .col .card-text</code>
+  <!-- Click & hold here &rarr; <code style="color: white; border-radius: 0; background-color: white; border: 0;" onmousedown="this.style.color='black'" onmouseup="this.style.color='white'">.multi-column > .col .card-text</code> -->
 </p>
 <p>
   Now that you have the selector in place, set padding on the top &amp; bottom to <code>0</code>, & on the right &amp; left to <code>1rem</code>. To fix the distance between the lines of text, set the <code>line-height</code> to <code>1.5</code>. Save & peek at it, &amp; it should look like this:
