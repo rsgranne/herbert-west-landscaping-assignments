@@ -175,15 +175,14 @@ footer h2 {
   width: 100%;
   /* margin-left: -.75rem;
   margin-right: -.75rem; */
+  column-gap: 1rem;
 }
 
 .row > section {
-  flex-shrink: 1;
+  /* flex-shrink: 1;
   flex-grow: 1;
-  flex-basis: 0;
+  flex-basis: 0; */
   flex: 1;
-  padding-left: .75rem;
-  padding-right: .75rem;
 }
 
 .card {
@@ -204,6 +203,7 @@ footer h2 {
 
 .card-body {
   padding: 1rem;
+  margin-top: 0;
 }
 
 .card-title {
