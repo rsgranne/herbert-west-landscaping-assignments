@@ -1,0 +1,161 @@
+<!-- <p>
+  x.css, x.html; ~900 words;
+  Original instructions at https://chnsa.ws/25r
+</p> -->
+<p>
+  When you are finished with this assignment, text me (314-780-0489) &amp; we will go over it together. <strong>You cannot submit this assignment otherwise.</strong>
+</p>
+<p>
+  In this assignment you will learn:
+</p>
+<ul>
+  <li>How to use JavaScript to include fragments of other webpages into other webpages. As you will see, this is very helpful &amp; will save you a lot of time &amp; effort!</li>
+  <li>CSS pseudo-classes
+    <ul>
+      <li><code>:not</code></li>
+      <li><code>:last-child</code></li>
+    </ul>
+  </li>
+  <li>a CSS pseudo-element: <code>::after</code></li>
+  <li>a CSS property: <code>content</code></li>
+</ul>
+
+<h2>Footer</h2>
+<p>
+  Create two new folders: <code>js</code> &amp; <code>includes</code>.
+</p>
+<p>
+  Create a new file in <code>includes</code>: <code>footer.html</code>.
+</p>
+<p>
+  On <code>index.html</code>, cut <code>&lt;footer&gt; … &lt;/footer&gt;</code> (that’s <i>cut</i>, not <i>copy</i>, so use <code>⌘X</code> on macOS & <code>Ctrl+X</code> on Windows) &amp; paste into <code>footer.html</code> &amp; then save both files.
+</p>
+<p>
+  Create a new file in <code>js</code>: <code>include.js</code>.
+</p>
+<p>
+  Copy code from <a href="https://chnsa.ws/25p">https://chnsa.ws/25p</a> into <code>include.js</code> &amp; save it.
+</p>
+<p>
+  Where <code>&lt;footer&gt; … &lt;/footer&gt;</code> used to go, enter this instead:
+</p>
+<pre><code>&lt;script&gt;
+  includeHTML('/includes/footer.html', 'main');
+&lt;/script&gt;</code></pre>
+<p>
+  Enter <code>&lt;script src="/js/include.js"&gt;&lt;/script&gt;</code> in <code>&lt;head&gt;</code> (or at least above where you call the <code>includeHTML</code> function).
+</p>
+<p>
+  Use Live Preview to see if the footer appeared on <code>index.html</code>.
+</p>
+<p>
+  Now find &amp; replace <code>&lt;footer&gt; … &lt;/footer&gt;</code> with the <code>&lt;script&gt;</code> lines above.
+</p>
+<p>
+  Go look at the code for <code>/services/landscape-maintenance.html</code> &amp; you’ll notice that it didn’t get replaced. Manually do that.
+</p>
+<p>
+  Go to <code>footer.html</code> &amp; add <code>.social-media-icons</code> onto the <code>&lt;ul&gt;</code> that contains the icons.
+</p>
+<p>
+  Live Preview <code>/services/landscape-maintenance.html</code>.
+</p>
+
+<h2>Breadcrumb</h2>
+<p>
+  Create new file in <code>js</code>: <code>breadcrumb.js</code>.
+</p>
+<p>
+  Copy code from <a href="https://chnsa.ws/25q" rel="nofollow">https://chnsa.ws/25q</a> into <code>breadcrumb.js</code> &amp; save it.
+</p>
+<p>
+  Cut the following from <code>fertilizers.html</code>:
+</p>
+<pre><code>&lt;nav aria-label="breadcrumb"&gt;
+  &lt;ol&gt;
+    &lt;li&gt;&lt;a href="/"&gt;Home&lt;/a&gt;&lt;/li&gt;
+    &lt;li&gt;&lt;a href="/products/"&gt;Products&lt;/a&gt;&lt;/li&gt;
+    &lt;li&gt;Fertilizers&lt;/li&gt;
+  &lt;/ol&gt;
+&lt;/nav&gt;</code></pre>
+<p>
+  In its place, enter this:
+</p>
+<pre><code>&lt;script src="/js/breadcrumb.js"&gt;&lt;/script&gt;</code></pre>
+<p>
+  Add an ID of <code>header</code> onto the <code>&lt;header›</code> element, like this:
+</p>
+<pre><code>&lt;header id="header"&gt;</header></code></pre>
+<p>
+  Add this CSS:
+</p>
+<pre><code>.breadcrumb li:not(:last-child)::after {
+  content: "\00A0➤\00A0";
+}</code></pre>
+<p>
+  In short, <code>li:not(:last-child)::after</code> tells the rendering engine to insert <code>\00A0➤\00A0</code> after every <code>&lt;li&gt;</code>, but <em>not</em> after the one that is the last child of its parent. To understand exactly how it means that, read on.
+</p>
+<p>
+  First let’s look at the declaration: <code>content: "\00A0➤\00A0";</code>. <code>content</code> tells the rendering engine to insert whatever its value is. <code>00A0</code> is the Unicode number for a non-breaking space (in HTML we’d use <code>&amp;nbsp</code>, remember?). To insert Unicode ID numbers in CSS, you preface them with a <code>\</code> (a backslash). In the middle of the value is ➤, a Unicode character identified as “<a href="https://www.fileformat.info/info/unicode/char/27a4/index.htm" rel="nofollow">Black Right Arrowhead</a>”. Therefore, this declaration tells the rendering engine to insert a non-breaking space, then a ➤, &amp; then a non-breaking space.
+</p>
+<p>
+  Now let’s examine the selector.
+</p>
+<p>
+  <code>.breadcrumb li</code> is easy: select every <code>&lt;li&gt;</code> that is a descendant of a <code>&lt;breadcrumb&gt;</code>. It’s everything after the <code>li</code> that’s a wee bit complicated.
+</p>
+<p>
+  <code>::after</code> is a <em>pseudo-element</em> (you can tell by the <code>::</code> in front of it). If it simply said <code>li::after</code>, that would tell the rendering engine to insert the value of the <code>content</code> property (in this case, <code>\00A0➤\00A0</code>) after every <code>&lt;li&gt;</code>.
+</p>
+<p>
+  Remember that our breadcrumb looks like this:
+</p>
+<p>
+  Home / Products / Fertilizers
+</p>
+<p>
+  If the selector was simply <code>.breadcrumb li::after</code>, it would now look like this:
+</p>
+<p>
+  Home ➤ Products ➤ Fertilizers ➤
+</p>
+<p>
+  Hmmm. The first two uses of ➤ are fine, but we don’t want the one at the end! How do we tell the rendering engine to insert ➤ after every <code>&lt;li&gt;</code> <em>except</em> the last one? That’s where <code>:not(:last-child)</code> comes in.
+</p>
+<p>
+  <code>:last-child</code> is a <em>pseudo-class</em> (you can tell by the <code>:</code> in front of it) that selects the last child of a parent element. If our selector was <code>.breadcrumb li:last-child</code>, that would target the last <code>&lt;li&gt;</code> that was the child of a parent element, if that <code>&lt;li&gt;</code> was a descendant of <code>.breadcrumb</code>. Say we had this HTML:
+</p>
+<pre><code>&lt;div class="breadcrumb"&gt;
+  &lt;ul&gt;
+    &lt;li&gt;Cthulhu&lt;/li&gt;
+    &lt;li&gt;Nyarlathotep&lt;/li&gt;
+    &lt;li&gt;Shoggoth&lt;/li&gt;
+  &lt;/ul&gt;
+&lt;/div&gt;</code></pre>
+<p>
+  In this case, <code>.breadcrumb li:last-child</code> would select the <code>&lt;li&gt;</code> around <code>Shoggoth</code>, because that <code>&lt;li&gt;</code> is the last child of its parent (here, <code>&lt;ul&gt;</code>), &amp; that <code>&lt;li&gt;</code> is a descendant of an element with a class of <code>breadcrumb</code>.
+</p>
+<p>
+  Going back to <code>Home ➤ Products ➤ Fertilizers ➤</code>, we want to insert a ➤ after every <code>&lt;li&gt;</code> <em>except</em> the last child. That’s where <code>:not(:last-child)</code> comes in.
+</p>
+<p>
+  <code>:not()</code> is another <em>pseudo-class</em> that let’s you specify DOM objects you do <em>not</em> want to select. You specify what you do not want to target by putting that selector inside the <code>()</code> after <code>:not</code>. In other words, <code>li:not(:last-child)</code> tells the rendering element that you want to select every <code>&lt;li&gt;</code> <em>except</em> the <code>&lt;li&gt;</code> that is the last child of a parent.
+</p>
+<p>
+  Putting it all together, <code>li:not(:last-child)::after</code> specifies that you want to insert <code>\00A0➤\00A0</code> after every <code>&lt;li&gt;</code>, but <em>not</em> after the one that is the last child of its parent (and of course, those <code>&lt;li&gt;</code> elements have to be the descendant of an element with a class of <code>breadcrumb</code>).
+</p>
+<p>
+  Thus, given a CSS selector that looks like <code>.breadcrumb li:not(:last-child)::after</code>, our breadcrumb will now look like this:
+</p>
+<p>
+  Home ➤ Products ➤ Fertilizers
+</p>
+<p>
+  The selector told the rendering engine to insert <code>\00A0➤\00A0</code> after each <code>&lt;li&gt;</code> (here, Home &amp; Products), but not after the last child <code>&lt;li&gt;</code>, which here would be Fertilizers. Exactly what we want!
+</p>
+<p>
+  Hopefully you can now see how specifically CSS let’s you target selectors, &amp; you learned a bit more about pseudo-classes &amp; pseudo-selectors.
+</p>
+<p>
+  Use Live Preview to see if the breadcrumb appeared.
+</p>
