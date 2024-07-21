@@ -59,7 +59,7 @@
   <li><code>"Noto Color Emoji"</code>: Linux</li>
 </ul>
 <p>
-  Set the font-family for <code>&lt;html&gt;</code> to the system font stack above. Save it &amp; take a look. What do you think?
+  Set the <code>font-family</code> for <code>&lt;html&gt;</code> to the system font stack above. Save it &amp; take a look. What do you think?
 </p>
 
 <!-- /projects/index-3.html -->
@@ -219,6 +219,7 @@
 </p>
 <p>
   <img style="max-width: 100%; height: auto; border: 1px solid black;" src="https://granneman.com/downloads/web-dev-assignments/herbert-west-landscaping/images/projects-multi-column-1.webp" alt="A multi-column layout that looks pretty ugly">
+  <br><a href="https://granneman.com/downloads/web-dev-assignments/herbert-west-landscaping/images/projects-multi-column-1.webp"><i>See larger version of image</i></a>
 </p>
 <p>
   Let’s start by making each <code>&lt;div&gt;</code> with a class of <code>col</code> on it look better. First we need a selector. We want to target every <code>.col</code> that is the direct child of <code>.multi-column</code>, so that’s our selector.
@@ -228,9 +229,10 @@
 </p>
 <p>
   <img style="max-width: 100%; height: auto; border: 1px solid black;" src="https://granneman.com/downloads/web-dev-assignments/herbert-west-landscaping/images/projects-multi-column-2-col-border-margin-bottom.webp" alt="Each box now has a border around it as well as a margin">
+  <br><a href="https://granneman.com/downloads/web-dev-assignments/herbert-west-landscaping/images/projects-multi-column-2-col-border-margin-bottom.webp"><i>See larger version of image</i></a>
 </p>
 <p>
-  The text looks bad, however. It’s too close to the borders, &amp; the lines of text are too close together. To make it look better, we need to select any element that has the <code>.card-text</code> class, <em>if</em> that class is the descendant of an element with a class of <code>.col</code>, <em>if</em> that class is the child of an element with the <code>.multi-column</code> class. Think about what selector you might create, & then click &amp; drag on the gray box below to more clearly see the one you should use (this would look a lot cooler if Canvas wasn’t so stupid):
+  The text looks bad, however. It’s too close to the borders, &amp; the lines of text are too close together. To make it look better, we need to select any element that has the <code>.card-text</code> class, <em>if</em> that class is the descendant of an element with a class of <code>.col</code>, <em>if</em> that class is the child of an element with the <code>.multi-column</code> class. Think about what selector you might create, & then click &amp; drag on the gray box below to more clearly see the one you should use (this would look a lot cooler if Canvas wasn’t so stupid &amp; didn&rsquo;t prevent me from using JavaScript):
 </p>
 <p>
   <code style="color: black; border-radius: 0; background-color: gray; border: 0;">.multi-column > .col .card-text</code>
@@ -241,6 +243,7 @@
 </p>
 <p>
   <img style="max-width: 100%; height: auto; border: 1px solid black;" src="https://granneman.com/downloads/web-dev-assignments/herbert-west-landscaping/images/projects-multi-column-3-card-text.webp" alt="An example of margin collapsing between two adjacent siblings">
+  <br><a href="https://granneman.com/downloads/web-dev-assignments/herbert-west-landscaping/images/projects-multi-column-3-card-text.webp"><i>See larger version of image</i></a>
 </p>
 <p>
   Now the problem is that the multi-column rule is unnecessary &amp; looks too cluttered, given the borders around <code>.col</code>. We need to get rid of that rule. However, when we styled <code>.multi-column</code> in the previous assignment (around all the colors on <code>landscape-maintenance.html</code>), we wanted the rule there, but now we don’t. We can’t just remove <code>column-rule: 2px dotted hsl(150, 70%, 31%);</code> from <code>.multi-column</code>, since we want the rule to appear most of the time when we use that class. So what’s the solution?
@@ -253,30 +256,35 @@
 </p>
 <p>
   <img style="max-width: 100%; height: auto; border: 1px solid black;" src="https://granneman.com/downloads/web-dev-assignments/herbert-west-landscaping/images/projects-multi-column-4-no-rule.webp" alt="An example of margin collapsing between two adjacent siblings">
+  <br><a href="https://granneman.com/downloads/web-dev-assignments/herbert-west-landscaping/images/projects-multi-column-4-no-rule.webp"><i>See larger version of image</i></a>
 </p>
 <p>
   Hey, this is looking pretty darn good! There’s another problem, though. To see it, scroll to the bottom of our multi-column layout, right above the <code>&lt;footer&gt;</code>. See how the multi-column layout is too close to the border on the <code>&lt;footer&gt;</code>?
 </p>
 <p>
   <img style="max-width: 100%; height: auto; border: 1px solid black;" src="https://granneman.com/downloads/web-dev-assignments/herbert-west-landscaping/images/projects-multi-column-5-no-bottom-margin.webp" alt="An example of margin collapsing between two adjacent siblings">
+  <br><a href="https://granneman.com/downloads/web-dev-assignments/herbert-west-landscaping/images/projects-multi-column-5-no-bottom-margin.webp"><i>See larger version of image</i></a>
 </p>
 <p>
   To fix this, go back to the <code>.multi-column</code> selector in your styles &amp; add a <code>margin-bottom</code> of <code>2rem</code> to the declaration block. Save it &amp; now the bottom should look as good as the rest of our design!
 </p>
 <p>
   <img style="max-width: 100%; height: auto; border: 1px solid black;" src="https://granneman.com/downloads/web-dev-assignments/herbert-west-landscaping/images/projects-multi-column-6-bottom-margin.webp" alt="An example of margin collapsing between two adjacent siblings">
+  <br><a href="https://granneman.com/downloads/web-dev-assignments/herbert-west-landscaping/images/projects-multi-column-6-bottom-margin.webp"><i>See larger version of image</i></a>
 </p>
 <p>
   One last thing: you might notice that a <code>&lt;div class="col"&gt;</code> wraps from the first into the second column, like this:
 </p>
 <p>
   <img style="max-width: 100%; height: auto; border: 1px solid black;" src="https://granneman.com/downloads/web-dev-assignments/herbert-west-landscaping/images/projects-multi-column-7-wrapping-into-2nd-column.webp" alt="A div wrapping from the first column into the second">
+  <br><a href="https://granneman.com/downloads/web-dev-assignments/herbert-west-landscaping/images/projects-multi-column-7-wrapping-into-2nd-column.webp"><i>See larger version of image</i></a>
 </p>
 <p>
   To fix this, add <code>display: inline-block;</code> to the <code>.multi-column > .col</code> selector. Reload the page, &amp; you should see something like this:
 </p>
 <p>
   <img style="max-width: 100%; height: auto; border: 1px solid black;" src="https://granneman.com/downloads/web-dev-assignments/herbert-west-landscaping/images/projects-multi-column-8-wrapping-into-2nd-column-fixed.webp" alt="Fixed the problem of a div wrapping from the first column into the second">
+  <br><a href="https://granneman.com/downloads/web-dev-assignments/herbert-west-landscaping/images/projects-multi-column-8-wrapping-into-2nd-column-fixed.webp"><i>See larger version of image</i></a>
 </p>
 <p>
   Why use <code>inline-block</code> with <code>display</code>? You know what <code>display: block</code> does, &amp; you know what <code>display: inline</code> does. When you use <code>inline-block</code>, you tell the rendering engine to display the element inline with other elements, but also apply some block-level properties to it, such as a fixed width or height, padding or margins, or borders.

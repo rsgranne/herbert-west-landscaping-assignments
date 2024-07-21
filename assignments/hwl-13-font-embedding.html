@@ -83,14 +83,14 @@
   In the search box in the upper left corner, type in <code>Rokkit</code>, which will filter the list to our desired typeface. Click on it and the main content of the page should change to show you Rokkit.
 </p>
 <p>
-  Step 1 is &ldquo;Select charsets&rdquo;, &amp; we have 3 choices: latin (which is already checked), latin-ext, and vietnamese. &ldquo;Latin&rdquo; means western European, which includes English, French, Spanish, and the like. Do we need &ldquo;latin-ext&rdquo; (the &ldquo;ext&rdquo; is short for &ldquo;extended&rdquo;)?
+  Step 1 is &ldquo;Select charsets&rdquo;, &amp; we have 3 choices: <i>latin</i> (which is already checked), <i>latin-ext</i>, and <i>vietnamese</i>. &ldquo;Latin&rdquo; means western European, which includes English, French, Spanish, and the like. Do we need &ldquo;latin-ext&rdquo; (the &ldquo;ext&rdquo; is short for &ldquo;extended&rdquo;)?
 </p>
 <p>
   According to Wikipedia, <a href="https://en.wikipedia.org/wiki/Latin_Extended-A">Latin Extended-A</a> includes alphabets for Afrikaans, Catalan, Croatian, Czech, Esperanto, Greenlandic, Hungarian, Kashubian, Kurdish, Latin, Latvian, Lithuanian, Maltese, Northern Sami, Polish, Romanian, Serbian, Slovak, Slovene, Sorbian, Turkish, &amp; Welsh. Do we need these for this assignment? Nope. So we do <em>not</em> need to check &ldquo;latin-ext&rdquo;!
 </p>
 <blockquote>
   <p>
-    These are not included when you choose &ldquo;latin-ext&rdquo;. I just thought it might be interesting to point out the other, additional categories of Latin Extended that UTF-8 supports, but not Google Fonts (unless a particular web font says otherwise).
+    There are other, additional categories of Latin Extended that UTF-8 supports, but not Google Fonts (unless a particular web font says otherwise).
   </p>
   <p>
     <a href="https://en.wikipedia.org/wiki/Latin_Extended-B">Latin Extended-B</a> includes alphabets for <a href="https://en.wikipedia.org/wiki/Africa_Alphabet">Africa</a>, <a href="https://en.wikipedia.org/wiki/Americanist_phonetic_notation">Americanist</a>, Khoisan, Pan-Nigerian, Pinyin, &amp; Romanian. I&rsquo;ll stop there, but if you&rsquo;re interested, check out Latin Extended-<a href="https://en.wikipedia.org/wiki/Latin_Extended-C">C</a>, <a href="https://en.wikipedia.org/wiki/Latin_Extended-D">D</a>, <a href="https://en.wikipedia.org/wiki/Latin_Extended-E">E</a>, <a href="https://en.wikipedia.org/wiki/Latin_Extended-F">F</a>, &amp; <a href="https://en.wikipedia.org/wiki/Latin_Extended-G">G</a>.
@@ -100,20 +100,20 @@
   Step 2 is &ldquo;Select styles&rdquo;. Notice that &ldquo;regular&rdquo; (which is 400) is already checked by default. We don&rsquo;t want that one, but we cannot uncheck it until we have checked something else. The styles we want are 700 &amp; 700 italic, so check those and then uncheck 400.
 </p>
 <p>
-  Step 3 is &ldquo;Copy CSS&rdquo;. Since we don&rsquo;t care about older browsers that do not support WOFF and WOFF2, we will select Modern Browsers instead of Best Support.
-</p>
-<p>
-  Before we copy the CSS, however, I always go ahead to step 4, &ldquo;Download files&rdquo;, and click on the big blue button to start the download. That will download a file named something like <code>rokkitt-v34-latin.zip</code> into your <code>Downloads</code> folder. Leave it alone for now and go back to step 3.
+  Step 3 is &ldquo;Copy CSS&rdquo;. Since we don&rsquo;t care about older browsers that do not support WOFF2 (<a href="https://caniuse.com/woff2">97% of all browsers support WOFF2</a>, as of March 2024), we will select Modern Browsers instead of Legacy Support or Historic Support (go ahead &amp; click on those if you want to see what they include).
 </p>
 <p>
   At the bottom of step 3 it says &ldquo;Customize folder prefix (optional):&rdquo; and the default is set to <code>../fonts/</code>. This is not a good default and it certainly is nothing like the paths we have been using, so we need to change it to <code>/fonts/</code>. <strong>Make sure you do this</strong>. As soon as you do you should see the code in the gray box change to conform to what we entered.
+</p>
+<p>
+  Before we copy the CSS, however, I always go ahead to step 4, &ldquo;Download files&rdquo;, and click on the big blue button to start the download. That will download a file named something like <code>rokkitt-v34-latin.zip</code> into your <code>Downloads</code> folder. Leave it alone for now and go back to step 3.
 </p>
 <h3 style="font-family: Monaco, Menlo, Consolas, 'Courier New', monospace !important; color: #d01a19;">main.css</h3>
 <p>
   Time to copy that CSS, so just click anywhere in the gray box, which will select all of that code. Press <code>⌘C</code> if you are on a Mac or <code>Ctrl+C</code> if you use Windows or Linux to copy the code.
 </p>
 <p>
-  Go to <code>main.css</code> and paste in that CSS at the very top of the file, before anything else. It should look like this:
+  Go to <code>main.css</code> and paste in that CSS <em>at the very top of the file, before anything else</em>. It should look like this:
 </p>
 <pre><code>/* rokkitt-700 - latin */
 @font-face {
@@ -210,25 +210,25 @@ h6 {
   Go back to your <code>Downloads</code> folder and move the <code>rokkitt-v34-latin.zip</code> file into the <code>fonts</code> folder in <code>herbert-west-landscaping</code>. What? There is no <code>fonts</code> folder? Then let&rsquo;s create one. At the same level as <code>images</code> &amp; <code>video</code> &amp; <code>css</code> we now need to create a new <code>fonts</code> folder. Do that, &amp; your <code>herbert-west-landscaping</code> folder should now look like this:
 </p>
 <p>
-  <img style="max-width: 30%; height: auto;" src="https://granneman.com/downloads/web-dev-assignments/herbert-west-landscaping/images/typography-project-folder-with-fonts-folder.webp" alt="Herbert West Landscaping project folder after adding the fonts folder">
+  <img style="max-width: 40%; height: auto;" src="https://granneman.com/downloads/web-dev-assignments/herbert-west-landscaping/images/typography-project-folder-with-fonts-folder.webp" alt="Herbert West Landscaping project folder after adding the fonts folder">
 </p>
 <p>
   OK, now move <code>rokkitt-v34-latin.zip</code> into the <code>fonts</code> folder, so that it now looks like this:
 </p>
 <p>
-  <img style="max-width: 30%; height: auto;" src="https://granneman.com/downloads/web-dev-assignments/herbert-west-landscaping/images/typography-project-folder-with-fonts-folder-expanded-with-zip.webp" alt="Herbert West Landscaping project folder after adding the zip file to the fonts folder">
+  <img style="max-width: 50%; height: auto;" src="https://granneman.com/downloads/web-dev-assignments/herbert-west-landscaping/images/typography-project-folder-with-fonts-folder-expanded-with-zip.webp" alt="Herbert West Landscaping project folder after adding the zip file to the fonts folder">
 </p>
 <p>
   Now you need to unzip that folder so that only the font files are in the <code>fonts</code> folder. When you unzip, you may end up with a folder named <code>rokkitt-v34-latin</code> next to <code>rokkitt-v34-latin.zip</code>, like this:
 </p>
 <p>
-  <img style="max-width: 30%; height: auto;" src="https://granneman.com/downloads/web-dev-assignments/herbert-west-landscaping/images/typography-project-folder-with-fonts-folder-expanded-unzipped.webp" alt="Herbert West Landscaping fonts folder after installing the font files">
+  <img style="max-width: 50%; height: auto;" src="https://granneman.com/downloads/web-dev-assignments/herbert-west-landscaping/images/typography-project-folder-with-fonts-folder-expanded-unzipped.webp" alt="Herbert West Landscaping fonts folder after installing the font files">
 </p>
 <p>
   Windows users, you will probably have a folder named <code>rokkitt-v34-latin</code> inside another folder named <code>rokkitt-v34-latin</code> (*sigh*). In either case, move the font files (which end in either <code>woff</code> or <code>woff2</code>) out of the <code>rokkitt-v34-latin</code> folder and into <code>fonts</code>, and then delete the now-empty <code>rokkitt-v34-latin</code> folder and the <code>rokkitt-v34-latin.zip</code> file, since we don&rsquo;t need them. Things should now look like this:
 </p>
 <p>
-  <img style="max-width: 40%; height: auto;" src="https://granneman.com/downloads/web-dev-assignments/herbert-west-landscaping/images/typography-project-folder-with-fonts-folder-expanded-with-only-fonts.webp" alt="Herbert West Landscaping project folder after installing the other font files">
+  <img style="max-width: 60%; height: auto;" src="https://granneman.com/downloads/web-dev-assignments/herbert-west-landscaping/images/typography-project-folder-with-fonts-folder-expanded-with-only-fonts.webp" alt="Herbert West Landscaping project folder after installing the other font files">
 </p>
 <p>
   <strong>Make sure you have only font files with either <code>woff</code> or <code>woff2</code> extensions, and no folders, inside that <code>fonts</code> folder!</strong>
@@ -325,7 +325,7 @@ h6 {
   Move the <code>raleway-v28-latin.zip</code> file into the <code>fonts</code> folder in <code>herbert-west-landscaping</code>, unzip it, and move the actual files so they are directly inside the <code>fonts</code> folder along with the <code>rokkit</code> files from earlier. <code>fonts</code> should now look like this:
 </p>
 <p>
-  <img style="max-width: 40%; height: auto;" src="https://granneman.com/downloads/web-dev-assignments/herbert-west-landscaping/images/typography-project-folder-with-fonts-folder-expanded-with-all-fonts-installed.webp" alt="Herbert West Landscaping project folder after adding the other font files to the fonts folder">
+  <img style="max-width: 60%; height: auto;" src="https://granneman.com/downloads/web-dev-assignments/herbert-west-landscaping/images/typography-project-folder-with-fonts-folder-expanded-with-all-fonts-installed.webp" alt="Herbert West Landscaping project folder after adding the other font files to the fonts folder">
 </p>
 <p>
   Now once again, test your work by using Live Preview. If you see the new fonts in the headings and the body, congratulations! It all worked. If you don&rsquo;t, go back through these instructions and double-check everything.
@@ -384,7 +384,7 @@ h6 {
 <!-- The Box Model; index-8.html, main-6.css -->
 <h2 style="font-family: Monaco, Menlo, Consolas, 'Courier New', monospace !important; color: #d01a19;">&lt;footer&gt;</h2>
 <p>
-  Since we’ve also learned about the Box Model today (to review, see the slide deck titled <i><a href="https://granneman.com/downloads/web-dev/CSS-Layout-Condensed.pdf">CSS Layout Condensed</a></i> and search for the section titled <i>Box Model</i>), we are going to update something that has been around since the earliest assignments: that silly <code>&lt;hr&gt;</code> that has been associated with the <code>&lt;footer&gt;</code>!
+  We will learn about the Box Model in the next class (to get ready for that, see the slide deck titled <i><a href="https://granneman.com/downloads/web-dev/CSS-Layout-Condensed.pdf">CSS Layout Condensed</a></i> and search for the section titled <i>Box Model</i>), but we are going to go ahead &amp; update something that has been around since the earliest assignments: that silly <code>&lt;hr&gt;</code> that has been associated with the <code>&lt;footer&gt;</code>!
 </p>
 <h3>Remove <span style="font-family: Monaco, Menlo, Consolas, 'Courier New', monospace !important; color: #d01a19;">&lt;hr&gt;</span> using search &amp; replace</h3>
 <p>
@@ -394,7 +394,7 @@ h6 {
   This is actually very easy. First of all, let’s get rid of the <code>&lt;hr&gt;</code> on every page. To do that, click on the magnifying glass in the Activity Bar on the left side of Visual Studio Code, which will load the Search View in the Sidebar, which should look like this:
 </p>
 <p>
-  <img style="max-width: 40%; height: auto;" src="https://granneman.com/downloads/web-dev-assignments/herbert-west-landscaping/images/vscode-search-view-in-activity-bar-and-sidebar.webp" alt="Visual Studio Code with the Search sidebar showing">
+  <img style="max-width: 100%; height: auto;" src="https://granneman.com/downloads/web-dev-assignments/herbert-west-landscaping/images/vscode-search-view-in-activity-bar-and-sidebar.webp" alt="Visual Studio Code with the Search sidebar showing">
 </p>
 <p>
   In the Search box, enter the following:
@@ -415,19 +415,22 @@ h6 {
   In order to proceed further, take a look at this annotated diagram that explains what the various user interface buttons do:
 </p>
 <p>
-  <img style="max-width: 75%; height: auto;" src="https://granneman.com/downloads/web-dev-assignments/herbert-west-landscaping/images/vscode-search-view-replace-hr-2-annotated.webp" alt="Visual Studio Code’s Search & Replace interface annotated">
+  <img style="max-width: 100%; height: auto;" src="https://granneman.com/downloads/web-dev-assignments/herbert-west-landscaping/images/vscode-search-view-replace-hr-2-annotated.webp" alt="Visual Studio Code’s Search & Replace interface annotated">
+  <br><a href="https://granneman.com/downloads/web-dev-assignments/herbert-west-landscaping/images/vscode-search-view-replace-hr-2-annotated.webp"><i>See larger version of image</i></a>
 </p>
 <p>
   To make sure that your find &amp; replace will work, click on one of the examples shown beneath a file name, called out here:
 </p>
 <p>
-  <img style="max-width: 30%; height: auto;" src="https://granneman.com/downloads/web-dev-assignments/herbert-west-landscaping/images/vscode-search-view-replace-hr-3-click-for-preview.webp" alt="Visual Studio Code’s Search & Replace interface annotated with a box around where you click to see  before and after">
+  <img style="max-width: 70%; height: auto;" src="https://granneman.com/downloads/web-dev-assignments/herbert-west-landscaping/images/vscode-search-view-replace-hr-3-click-for-preview.webp" alt="Visual Studio Code’s Search & Replace interface annotated with a box around where you click to see  before and after">
+  <br><a href="https://granneman.com/downloads/web-dev-assignments/herbert-west-landscaping/images/vscode-search-view-replace-hr-3-click-for-preview.webp"><i>See larger version of image</i></a>
 </p>
 <p>
   When you do that, you should see a new tab open with content similar to this:
 </p>
 <p>
-  <img style="max-width: 75%; height: auto; border: 1px solid black;" src="https://granneman.com/downloads/web-dev-assignments/herbert-west-landscaping/images/vscode-search-view-replace-hr-4-before-after-preview.webp" alt="Visual Studio Code’s Search & Replace preview showing before & after">
+  <img style="max-width: 100%; height: auto; border: 1px solid black;" src="https://granneman.com/downloads/web-dev-assignments/herbert-west-landscaping/images/vscode-search-view-replace-hr-4-before-after-preview.webp" alt="Visual Studio Code’s Search & Replace preview showing before & after">
+  <br><a href="https://granneman.com/downloads/web-dev-assignments/herbert-west-landscaping/images/vscode-search-view-replace-hr-4-before-after-preview.webp"><i>See larger version of image</i></a>
 </p>
 <p>
   If everything looks good, close that tab and go ahead and click on the button to the right of the Replace box, the one that changes every file (as shown above). <strong>Make sure the correct search & replace will happen, because there is no Undo for this!</strong>
@@ -437,14 +440,14 @@ h6 {
   After it’s finished (which should happen virtually instantaneously), you should now see this on every page on your site:
 </p>
 <p>
-  <img style="max-width: 25%; height: auto; border: 1px solid black;" src="https://granneman.com/downloads/web-dev-assignments/herbert-west-landscaping/images/vscode-search-view-replace-hr-5-footer-blank-line-section.webp" alt="After performing the search and replace: footer, then blank line, then section">
+  <img style="max-width: 70%; height: auto; border: 1px solid black;" src="https://granneman.com/downloads/web-dev-assignments/herbert-west-landscaping/images/vscode-search-view-replace-hr-5-footer-blank-line-section.webp" alt="After performing the search and replace: footer, then blank line, then section">
   <br><code>&lt;footer&gt;</code>, then a blank line, then <code>&lt;section&gt;</code>
 </p>
 <p>
   You may alternatively, depending upon how your original code looked, see this:
 </p>
 <p>
-  <img style="max-width: 25%; height: auto; border: 1px solid black;" src="https://granneman.com/downloads/web-dev-assignments/herbert-west-landscaping/images/vscode-search-view-replace-hr-6-footer-section.webp" alt="After performing the search and replace: footer, then section">
+  <img style="max-width: 70%; height: auto; border: 1px solid black;" src="https://granneman.com/downloads/web-dev-assignments/herbert-west-landscaping/images/vscode-search-view-replace-hr-6-footer-section.webp" alt="After performing the search and replace: footer, then section">
   <br><code>&lt;footer&gt;</code>, then <code>&lt;section&gt;</code>
 </p>
 <p>
@@ -488,7 +491,7 @@ h6 {
   Once you are done, the <code>&lt;footer&gt;</code> should now look like this:
 </p>
 <p>
-  <img style="max-width: 40%; height: auto; border: 1px solid black;" src="https://granneman.com/downloads/web-dev-assignments/herbert-west-landscaping/images/footer-border-top.webp" alt="Herbert West Landscaping footer apply styling the top border">
+  <img style="max-width: 100%; height: auto; border: 1px solid black;" src="https://granneman.com/downloads/web-dev-assignments/herbert-west-landscaping/images/footer-border-top.webp" alt="Herbert West Landscaping footer apply styling the top border">
 </p>
 <p>
   Looks much better than that <code>&lt;hr&gt;</code> did, doesn’t it? Thank {deity} that’s now gone!

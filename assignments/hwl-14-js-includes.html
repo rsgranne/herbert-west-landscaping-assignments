@@ -1,5 +1,5 @@
 <!-- <p>
-  x.css, x.html; ~900 words;
+  x.css, x.html; ~1,350 words;
   Original instructions at https://chnsa.ws/25r
 </p> -->
 <p>
@@ -20,6 +20,37 @@
   <li>a CSS property: <code>content</code></li>
 </ul>
 
+<h2>Reasoning</h2>
+<p>
+  Up until now you have copied the <code>&lt;footer&gt;</code> from webpage to webpage, which is tedious. On top of that, if you needed to make a change, you had to make that change to the <code>&lt;footer&gt;</code> on every page, which is also tedious &amp; error-prone. The same thing has been true, by and large, for the <code>&lt;header&gt;</code>.
+</p>
+<p>
+  What if there was a better, less tedious way to work with the <code>&lt;footer&gt;</code>? Ideally, you would only have to update the <code>&lt;footer&gt;</code> in one place, &amp; it would automatically update everywhere that <code>&lt;footer&gt;</code> was used. That would be great!
+</p>
+<p>
+  In this assignment, you will learn how to do just that. You will remove the <code>&lt;footer&gt;</code> section from every current webpage &amp; will instead put the <code>&lt;footer&gt;</code> code into a single file named <code>footer.html</code> (this will <em>not</em> be a complete HTML file; instead, it will <em>only</em> contain the content of the <code>&lt;footer&gt;</code> in it). You will then use JavaScript to automatically place the contents of <code>footer.html</code> into each webpage where the <code>&lt;footer&gt;</code> used to go. When a user loads the webpage, the contents of <code>footer.html</code> will appear. If you need to change the <code>&lt;footer&gt;</code>, you simply update it once in <code>footer.html</code>, &amp; the next time someone loads a webpage, your changes will appear. That’s cool!
+</p>
+<p>
+  A few notes:
+</p>
+<p>
+  Yes, we can use JavaScript to insert other sections that are common to all webpages on the site. The nice thing about <code>&lt;footer&gt;</code> is that it is always exactly the same on every webpage on the site. That makes the JavaScript pretty simple.
+</p>
+<p>
+  However, the second half of this assignment uses JavaScript to automatically place the breadcrumb navigation on every page. This is more complicated, because while every page has a breadcrumb, they are all different! Fortunately, JavaScript is a pretty powerful programming language &amp; can automatically generate &amp; insert the code for the breadcrumb on every webpage. As a result, the JavaScript is quite a bit more complicated. But that’s OK, since the purpose of this assignment is not to teach you JavaScript; instead, it’s to teach you how to <em>use</em> JavaScript.
+</p>
+<p>
+  Second, yes, you could use PHP to do the same things we are using JavaScript for in this assignment. However, I decided against that for two reasons:
+</p>
+<ol>
+  <li>PHP is a huge subject that is way beyond the scope of this course.</li>
+  <li>PHP requires that you use a different path to <code>footer.html</code> depending upon the page. In other words, sometimes you link to <code>includes/footer.html</code>, sometimes to <code>../includes/footer.html</code>, &amp; sometimes to <code>../../includes/footer.html</code>. After hours of research &amp; testing, it appears that there is no easy way to simply use <code>/includes/footer.html</code> every single time with PHP. You can, however, do exactly that with JavaScript, &amp; since that fits in with what we’ve been using with every other link in Herbert West Landscaping, that’s what we’ll use.</li>
+</ol>
+<p>
+  With all that out of the way, let’s dive into the assignment.
+</p>
+
+<!-- footer.html & include.js -->
 <h2>Footer</h2>
 <p>
   Create two new folders: <code>js</code> &amp; <code>includes</code>.
@@ -28,7 +59,7 @@
   Create a new file in <code>includes</code>: <code>footer.html</code>.
 </p>
 <p>
-  On <code>index.html</code>, cut <code>&lt;footer&gt; … &lt;/footer&gt;</code> (that’s <i>cut</i>, not <i>copy</i>, so use <code>⌘X</code> on macOS & <code>Ctrl+X</code> on Windows) &amp; paste into <code>footer.html</code> &amp; then save both files.
+  On <code>index.html</code> (the home page for Herbert West Landscaping), cut <code>&lt;footer&gt; … &lt;/footer&gt;</code> (that’s <i>cut</i>, not <i>copy</i>, so use <code>⌘X</code> on macOS & <code>Ctrl+X</code> on Windows) &amp; paste into <code>footer.html</code> &amp; then save both files.
 </p>
 <p>
   Create a new file in <code>js</code>: <code>include.js</code>.
@@ -61,6 +92,7 @@
   Live Preview <code>/services/landscape-maintenance.html</code>.
 </p>
 
+<!-- breadcrumb.js -->
 <h2>Breadcrumb</h2>
 <p>
   Create new file in <code>js</code>: <code>breadcrumb.js</code>.
