@@ -1,5 +1,5 @@
 <!-- <p>
-  x.css, x.html; ~1,350 words;
+  x.css, x.html; ~1,520 words;
   Original instructions at https://chnsa.ws/25r
 </p> -->
 <p>
@@ -119,7 +119,19 @@
 </p>
 <pre><code>&lt;header id="header"&gt;</header></code></pre>
 <p>
-  Add this CSS:
+  To start with, let’s make this ordered list look a lot less like an ordered list. We are going to re-use the CSS we used on the social media icons in the <code>&lt;footer&gt;</code>, so put this in <code>main.css</code>:
+</p>
+<pre><code>.breadcrumb {
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+}</code></pre>
+<p>
+  &ldquo;Hey, Scott&rdquo;, you may be asking, &ldquo;We’re using this <code>.breadcrumb</code> class, but I don’t where it is in the HTML. Where is it? Huh? Huh? Where?&rdquo; First I’m going to ask you to stop being so insistent, calm down, &amp; please back up, because you are in my space. Next, I&rsquo;ll let you know that the JavaScript is writing out the <code>&lt;ul&gt;</code> that we are styling, & part of that process is adding the class of <code>.breadcrumb</code> (if you don’t believe me, look at line 29 of <code>breadcrumb.js</code> &amp; you will see it there).
+</p>
+<p>
+  With that finished, let&rsquo;s add this very complicated looking CSS:
 </p>
 <pre><code>.breadcrumb li:not(:last-child)::after {
   content: "\00A0➤\00A0";
