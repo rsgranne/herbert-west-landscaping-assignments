@@ -1,4 +1,4 @@
-<!-- 1900 words -->
+<!-- 2060 words -->
 <p>
   <strong>IMPORTANT</strong>: Before you work on this assignment, make sure you have watched the video titled <i>Linking to Images & Text - HTML Overview</i>.
 </p>
@@ -97,10 +97,19 @@
   The following information about the ever-evolving footer applies to every page you have already done, &amp; any going forward.
 </p>
 <p>
-  We now have little SVG icons for all of our social links. Let&rsquo;s <em>replace</em> the text for each social media service with its appropriate SVG icon. For Facebook, instead of linking to its SVG, embed it, so it should look like this:
+  Since we downloaded the images, we now have little SVG icons for all of our social media services. Let&rsquo;s <em>replace</em> the text for each social media service with its appropriate SVG icon. Remember that you can either <i>link</i> to an SVG or <i>embed</i> the SVG code directly in HTML. We are going to do both.
 </p>
 <p>
-  <img style="max-width: 40vw; height: auto;" src="https://granneman.com/downloads/web-dev-assignments/herbert-west-landscaping/images/svg-embedded-facebook.webp" alt="Code example for an embedded SVG image">
+  For Mastodon, Instagram, &amp; LinkedIn, I want you to <em>link</em> to the SVGs, which is pretty easy. For example, Mastodon would look like this:
+</p>
+<p>
+  <img style="max-width: 100%; height: auto;" src="https://granneman.com/downloads/web-dev-assignments/herbert-west-landscaping/images/svg-linked-mastodon.webp" alt="Code example for linking to an SVG image">
+</p>
+<p>
+  For Facebook, however, I want you to replace the word &ldquo;Facebook&rdquo; with the SVG code. In other words, you are <em>embedding</em> the SVG code for <code>facebook-logo-hwl.svg</code> in the HTML where the word &ldquo;Facebook&rdquo; was. How do you get the code for the Facebook SVG? Click on the <code>facebook-logo-hwl.svg</code> file &amp; then copy &amp; paste that code! When you are done, it should look like this:
+</p>
+<p>
+  <img style="max-width: 100%; height: auto;" src="https://granneman.com/downloads/web-dev-assignments/herbert-west-landscaping/images/svg-embedded-facebook.webp" alt="Code example for an embedded SVG image">
 </p>
 <blockquote>
   <p>
@@ -108,14 +117,13 @@
   </p>
 </blockquote>
 <p>
-  How do you get the real code for the Facebook SVG? Click on the <code>facebook-hwl.svg</code> file &amp; copy that code!
-</p>
-<p>
   When you look at the resulting webpage using Live Preview, you will find that the SVG logo for Facebook is enormous. Look at the code, &amp; you&rsquo;ll see that width &amp; height is never defined (the <code>viewBox</code> defines the dimensions of the <i>SVG viewport</i>, which causes the problem). There are a few ways we could fix this:
 </p>
 <ul>
-  <li>Add <code>width="48" height="48"</code> to the <code>&lt;svg&gt;</code> element so that it looks like this: <code>&lt;svg viewBox="0 0 256 256" width="48" height="48"&gt;</code> &larr; For now, do this! (If you have gone over the <svg> section of the slides, you will remember that if you are embedding an SVG, you should remove xmlns="http://www.w3.org/2000/svg" from the <svg> element after you paste it in)</li>
-  <li>Use CSS. We haven&rsquo;t gotten into that yet, but you would do something like:</li>
+  <li>Add <code>width="48" height="48"</code> to the <code>&lt;svg&gt;</code> element so that it looks like this: <code>&lt;svg viewBox="0 0 256 256" width="48" height="48"&gt;</code> &larr; For now, do this! (If you have gone over the SVG section of the slides, you will remember that if you are embedding an SVG, you should remove <code>xmlns=&quot;http://www.w3.org/2000/svg&quot;</code> from the <code>&lt;svg&gt;</code> element after you paste it in)</li>
+  <li>
+    Use CSS. We haven&rsquo;t gotten into that yet, but you would do something like:
+  </li>
 </ul>
 <pre style="margin-bottom: 0; margin-left: 2em;"><code>footer svg {
   width: 48px;
@@ -126,13 +134,7 @@
   <li>Link to the SVG using <code>&lt;img&gt;</code> &amp; include the <code>width</code> &amp; <code>height</code> attributes, like you will do with the the other 3 logos (coming up next!)</li>
 </ul>
 <p>
-  For Mastodon, Instagram, &amp; LinkedIn, <em>link</em> to the SVGs. For example, Mastodon would look like this:
-</p>
-<p>
-  <img style="max-width: 40vw; height: auto;" src="https://granneman.com/downloads/web-dev-assignments/herbert-west-landscaping/images/svg-linked-mastodon.webp" alt="Code example for linking to an SVG image">
-</p>
-<p>
-  When you&rsquo;re finished, those icons should look like this (we&rsquo;ll take care of the little dots when we get to CSS):
+  When you&rsquo;re finished, the four social media icons should look like this (we&rsquo;ll take care of the little dots when we get to CSS):
 </p>
 <p>
   <img style="max-width: 10vw; height: auto;" src="https://granneman.com/downloads/web-dev-assignments/herbert-west-landscaping/images/svg-social-media-icons-list.webp" alt="Social media icons for the Herbert West Landscaping project">
@@ -171,10 +173,13 @@
   Now place the following images (they are going to be really large, so in each case, use the <code>width</code> &amp; <code>height</code> attributes to change the displayed size to <code>800&times;450</code>):
 </p>
 <ul>
-  <li>Above &ldquo;The Lambert Family&rdquo; place <code>family-lambert.webp</code>. Use an <code>alt</code> attribute with a value of <code>The insidious Lambert family</code>)</li>
-  <li>Above &ldquo;The Torrance Family&rdquo; place <code>family-torrance.webp</code>. Use an <code>alt</code> attribute with a value of <code>The shining bright Torrance family</code>.</li>
-  <li>Above &ldquo;The Oswalt Family&rdquo; place <code>family-oswalt.webp</code>. Use an <code>alt</code> attribute with a value of <code>The sinister Oswalt family</code>.</li>
+  <li>Above &ldquo;The Lambert Family&rdquo; place <code>family-lambert.webp</code>. Use an <code>alt</code> attribute with a value of <code>The insidious Lambert family:</code>.</li>
+  <li>Above &ldquo;The Torrance Family&rdquo; place <code>family-torrance.webp</code>. Use an <code>alt</code> attribute with a value of <code>The shining bright Torrance family:</code>.</li>
+  <li>Above &ldquo;The Oswalt Family&rdquo; place <code>family-oswalt.webp</code>. Use an <code>alt</code> attribute with a value of <code>The sinister Oswalt family:</code>.</li>
 </ul>
+<p>
+  In all three cases, after <code>family:</code> you need to put a space & then a short, <code>alt</code>-appropriate description of each family. Why? Because a blind person is not going to know what the &ldquo;insidious Lambert family&rdquo; looks like! Therefore, you need to describe the families after you give their names.
+</p>
 <p>
   Your webpage should now look like this: <a href="https://granneman.com/downloads/web-dev-assignments/herbert-west-landscaping/index-5.pdf" target="_blank" rel="noopener">index-5.pdf</a>
 </p>
