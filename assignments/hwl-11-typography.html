@@ -1,5 +1,5 @@
 <!-- <p>
-  main-4.css, /projects/index-3.html; 2050 words
+  main-4.css, /projects/index-3.html; 2340 words
 </p> -->
 <p>
   When you are finished with this assignment, text me (314-780-0489) &amp; we will go over it together. <strong>You cannot submit this assignment otherwise.</strong>
@@ -38,6 +38,7 @@
   With that in mind, here is the native font stack used by Bootstrap, which we will adopt today for the default font on the Herbert West Landscaping website (we will continue to use a serif-based font stack for headings, however):
 </p>
 <pre><code>system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", "Liberation Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji"</code></pre>
+
 <p>
   Remember, the browser’s rendering engine will start with the first specified font &amp; go down the list until if gets to one it supports. Let’s break that font stack down so we understand why Bootstrap chose those fonts, with each operating system listed after each font.
 </p>
@@ -61,7 +62,24 @@
 <p>
   Set the <code>font-family</code> for <code>&lt;html&gt;</code> to the system font stack above. Save it &amp; take a look. What do you think?
 </p>
-
+<blockquote>
+  <p>
+    <b>WARNING</b>: <strong>Do not delete</strong> the original font stack you used in the earlier assignment! Instead, put this new font stack <em>after</em> the old one, so it would look like this:
+  </p>
+  <pre><code>html {
+  font-family: "Source Sans 3", Verdana…
+  font-family: system-ui, -apple-system…
+}</code></pre>
+  <p>
+    When you do that, you should notice that the native font stack is used, not that earlier one. Why is that?
+  </p>
+  <p>
+    By the way, in real life you would never do that. You would just delete the first one &amp; replace it with the second one. Why are we leaving it here? So I can more easily grade your work! 😃
+  </p>
+</blockquote>
+<p>
+  After changing the font stack for the <code>html</code> selector, we have now changed the font family for every bit of text on the page except the headings. Oops! To use native typefaces for the headings, we need to comment out what you had earlier for <code>h1, h2, h3</code> &amp; so on. Don’t remember how to do that? Look in the CSS Overview presentation & search for the word “comment”.
+</p>
 <!-- /projects/index-3.html -->
 <h2 style="font-family: Monaco, Menlo, Consolas, 'Courier New', monospace !important; color: #d01a19;">/projects/index.html</h2>
 <p>
