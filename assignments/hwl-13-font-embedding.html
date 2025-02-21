@@ -1,6 +1,9 @@
-<!-- <p>
-  <code>main-6.css</code>; ~3442 words
-</p> -->
+<!-- 
+index-8;
+main-6.css,
+@font-face;
+~3442 words
+-->
 <p>
   When you are finished with this assignment, text me (314-780-0489) &amp; we will go over it together. <strong>You cannot submit this assignment otherwise.</strong>
 </p>
@@ -391,101 +394,16 @@ h6 {
 <p>
   We will learn about the Box Model in the next class (to get ready for that, see the slide deck titled <i><a href="https://granneman.com/downloads/web-dev/CSS-Layout-Condensed.pdf">CSS Layout Condensed</a></i> and search for the section titled <i>Box Model</i>), but we are going to go ahead &amp; update something that has been around since the earliest assignments: that silly <code>&lt;hr&gt;</code> that has been associated with the <code>&lt;footer&gt;</code>!
 </p>
-<h3>Remove <span style="font-family: Monaco, Menlo, Consolas, 'Courier New', monospace !important; color: #d01a19;">&lt;hr&gt;</span> using search &amp; replace</h3>
 <p>
-  Way back then I mentioned that eventually we were going to replace that <code>&lt;hr&gt;</code> by styling the border of the <code>&lt;footer&gt;</code>. Well, now is the time!
+  Way back then I mentioned that eventually we were going to replace that <code>&lt;hr&gt;</code> by styling the border of the <code>&lt;footer&gt;</code>. Well, now is the time! Open <code>index.html</code> (the home page), scroll down until you see <code>&lt;footer&gt;</code>, & delete <code>&lt;hr&gt;</code>.
 </p>
+<blockquote>
+  <p>
+    <b>NOTE</b>: We are only going to do this on <code>index.html</code> (the home page) for now. Soon we will fix things everywhere, however.
+  </p>
+</blockquote>
 <p>
-  This is actually very easy. First of all, let’s get rid of the <code>&lt;hr&gt;</code> on every page. To do that, click on the magnifying glass in the Activity Bar on the left side of Visual Studio Code, which will load the Search View in the Sidebar, which should look like this:
-</p>
-<p>
-  <img style="max-width: 100%; height: auto;" src="https://granneman.com/downloads/web-dev-assignments/herbert-west-landscaping/images/vscode-search-view-in-activity-bar-and-sidebar.webp" alt="Visual Studio Code with the Search sidebar showing">
-</p>
-<p>
-  In the Search box, enter the following:
-</p>
-<pre><code>&lt;footer&gt;
-      &lt;hr&gt;</code></pre>
-<p>
-  In the Replace box, enter the following
-</p>
-<pre><code>&lt;footer&gt;</code></pre>
-<p>
-  You should now see something like this (note that I have shortened this image; it is actually much longer):
-</p>
-<p>
-  <img style="max-width: 30vw; height: auto;" src="https://granneman.com/downloads/web-dev-assignments/herbert-west-landscaping/images/vscode-search-view-replace-hr-1.webp" alt="Removing the horizontal rule element from Herbert West Landscaping">
-</p>
-<p>
-  In order to proceed further, take a look at this annotated diagram that explains what the various user interface buttons do:
-</p>
-<p>
-  <img style="max-width: 100%; height: auto;" src="https://granneman.com/downloads/web-dev-assignments/herbert-west-landscaping/images/vscode-search-view-replace-hr-2-annotated.webp" alt="Visual Studio Code’s Search & Replace interface annotated">
-  <br><a href="https://granneman.com/downloads/web-dev-assignments/herbert-west-landscaping/images/vscode-search-view-replace-hr-2-annotated.webp"><i>See larger version of image</i></a>
-</p>
-<p>
-  To make sure that your find &amp; replace will work, click on one of the examples shown beneath a file name, called out here:
-</p>
-<p>
-  <img style="max-width: 70%; height: auto;" src="https://granneman.com/downloads/web-dev-assignments/herbert-west-landscaping/images/vscode-search-view-replace-hr-3-click-for-preview.webp" alt="Visual Studio Code’s Search & Replace interface annotated with a box around where you click to see  before and after">
-  <br><a href="https://granneman.com/downloads/web-dev-assignments/herbert-west-landscaping/images/vscode-search-view-replace-hr-3-click-for-preview.webp"><i>See larger version of image</i></a>
-</p>
-<p>
-  When you do that, you should see a new tab open with content similar to this:
-</p>
-<p>
-  <img style="max-width: 100%; height: auto; border: 1px solid black;" src="https://granneman.com/downloads/web-dev-assignments/herbert-west-landscaping/images/vscode-search-view-replace-hr-4-before-after-preview.webp" alt="Visual Studio Code’s Search & Replace preview showing before & after">
-  <br><a href="https://granneman.com/downloads/web-dev-assignments/herbert-west-landscaping/images/vscode-search-view-replace-hr-4-before-after-preview.webp"><i>See larger version of image</i></a>
-</p>
-<p>
-  If everything looks good, close that tab and go ahead and click on the button to the right of the Replace box, the one that changes every file (as shown above). <strong>Make sure the correct search & replace will happen, because there is no Undo for this!</strong>
-</p>
-<h3>Clean up the code</h3>
-<p>
-  After it’s finished (which should happen virtually instantaneously), you should now see this on every page on your site:
-</p>
-<p>
-  <img style="max-width: 70%; height: auto; border: 1px solid black;" src="https://granneman.com/downloads/web-dev-assignments/herbert-west-landscaping/images/vscode-search-view-replace-hr-5-footer-blank-line-section.webp" alt="After performing the search and replace: footer, then blank line, then section">
-  <br><code>&lt;footer&gt;</code>, then a blank line, then <code>&lt;section&gt;</code>
-</p>
-<p>
-  You may alternatively, depending upon how your original code looked, see this:
-</p>
-<p>
-  <img style="max-width: 70%; height: auto; border: 1px solid black;" src="https://granneman.com/downloads/web-dev-assignments/herbert-west-landscaping/images/vscode-search-view-replace-hr-6-footer-section.webp" alt="After performing the search and replace: footer, then section">
-  <br><code>&lt;footer&gt;</code>, then <code>&lt;section&gt;</code>
-</p>
-<p>
-  Either one is fine! However, if your code looks like the first image above&thinsp;&mdash;&thinsp;<code>&lt;footer&gt;</code>, then a blank line, then <code>&lt;section&gt;</code>&thinsp;&mdash;&thinsp;then continue on for my advice.
-</p>
-<p>
-  I am going to recommend one more optional change. After finishing that find &amp; replace, my &lt;footer&gt; now looks like this:
-</p>
-<pre><code>&lt;footer&gt;
-
-  &lt;section&gt;</code></pre>
-<p>
-  The problem is that the end of my &lt;footer&gt; looks like this:
-</p>
-<pre><code>&lt;section&gt;
-&lt;footer&gt;</code></pre>
-<p>
-  I want the two ends to match; in other words, I want to remove that blank line between <code>&lt;footer&gt;</code> and <code>&lt;section&gt;</code>. If your code doesn’t look like that, or if this doesn’t bother you, then don’t worry about it (But <em>why</em> doesn’t it bother you? Oh wait&thinsp;&mdash;&thinsp;you don’t have OCD!). But if it does, then search for this:
-</p>
-<pre><code>&lt;footer&gt;
-
-      &lt;section&gt;</code></pre>
-<p>
-  And replace it with this:
-</p>
-<pre><code>&lt;footer&gt;
-      &lt;section&gt;</code></pre>
-<p>
-  Ahhhh. Much better!
-</p>
-<h3>Styling <span style="font-family: Monaco, Menlo, Consolas, 'Courier New', monospace !important; color: #d01a19;">&lt;footer&gt;</span></h3>
-<p>
-  Now let’s style this so we can call it a day. In <code>main.css</code>, find the <code>footer</code> selector and add declarations that add a border to the top of the <code>&lt;footer&gt;</code> with these characteristics (use shorthand!):
+  Now that the <code>&lt;hr&gt;</code> is gone, let’s style <code>&lt;footer&gt;</code> so we can call it a day. In <code>main.css</code>, find the <code>footer</code> selector and add declarations that add a border to the top of the <code>&lt;footer&gt;</code> with these characteristics (use shorthand!):
 </p>
 <ul>
   <li>width: <code>2px</code></li>

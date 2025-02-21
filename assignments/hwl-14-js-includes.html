@@ -1,7 +1,8 @@
-<!-- <p>
-  x.css, x.html; ~2,480 words;
-  Original instructions at https://chnsa.ws/25r
-</p> -->
+<!--
+x.css, x.html;
+~2,480 words;
+Original instructions at https://chnsa.ws/25r
+-->
 <p>
   When you are finished with this assignment, text me (314-780-0489) &amp; we will go over it together. <strong>You cannot submit this assignment otherwise.</strong>
 </p>
@@ -24,7 +25,7 @@
       <li><code>:last-of-type</code></li>
     </ul>
   </li>
-  <li>2 CSS pseudo-elements: <code>::after</code></li>
+  <li>a CSS pseudo-element: <code>::after</code></li>
   <li>a CSS property: <code>content</code>, which works with <code>::after</code></li>
 </ul>
 
@@ -48,7 +49,7 @@
   However, the second half of this assignment uses JavaScript to automatically place the breadcrumb navigation on every page. This is more complicated, because while every page has a breadcrumb, they are all different! Fortunately, JavaScript is a pretty powerful programming language &amp; can automatically generate &amp; insert the code for the breadcrumb on every webpage. As a result, the JavaScript is quite a bit more complicated. But that&rsquo;s OK, since the purpose of this assignment is not to teach you JavaScript; instead, it&rsquo;s to teach you how to <em>use</em> JavaScript.
 </p>
 <p>
-  Second, yes, you could use PHP to do the same things we are using JavaScript for in this assignment. However, I decided against that for two reasons:
+  And yes, some of you who know PHP are probably thinking that we could use that programming language to do the same things we are using JavaScript for in this assignment. However, I decided against that for two reasons:
 </p>
 <ol>
   <li>PHP is a huge subject that is way beyond the scope of this course.</li>
@@ -81,8 +82,10 @@
 <pre><code>&lt;script&gt;
   includeHTML('/includes/footer.html', 'main');
 &lt;/script&gt;
-&lt;/noscript&gt;
-  You cannot see the footer without enabling JavaScript.
+&lt;noscript&gt;
+  &lt;p&gt;
+    You cannot see the footer without enabling JavaScript.
+  &lt;/p&gt;
 &lt;/noscript&gt;</code></pre>
 <p>
   Enter <code>&lt;script src="/js/include.js"&gt;&lt;/script&gt;</code> in <code>&lt;head&gt;</code> (or at least above where you call the <code>includeHTML</code> function).
@@ -102,6 +105,7 @@
 <p>
   Live Preview <code>/services/landscape-maintenance.html</code>.
 </p>
+<h3 style="font-family: Monaco, Menlo, Consolas, 'Courier New', monospace; color: #d01a19;"><code>&lt;noscript&gt;</code></h3>
 <p>
   Before we leave, I have to explain something you see in the code we added to every page: <code>&lt;noscript&gt;</code>.
 </p>
@@ -155,7 +159,7 @@
   In other words, <code>div > *:last-child</code> tells the browser to count every element that&rsquo;s a child of <code>&lt;div&gt;</code> &amp; then choose the last one. However, <code>div > h2:last-of-type</code> tells the rendering engine to count only the <code>&lt;h2&gt;</code>s inside the <code>&lt;div&gt;</code> &amp; then select the last one of those.
 </p>
 <p>
-  After all that, it should be clear why we used <code>body > noscript:last-of-type</code> above as our selector. I don&rsquo;t want to use <code>body > *:last-child</code>, because I don&rsquo;t know what the last child might be, &amp; therefore I might not select the <code>&lt;noscript&gt;</code>. I don&rsquo;t want to just use <code>noscript:last-of-type</code>, because that might select a <code>&lt;noscript&gt;</code> that is not at the very end of the webpage. Instead, I use <code>body > noscript:last-of-type</code> so that I&rsquo;m sure to only target the very last <code>&lt;noscript&gt;</code> on the page, the one right before <code>&lt;/body&gt;</code>.
+  After all that, it should be clear why we used <code>body &gt; noscript:last-of-type</code> above as our selector. I don&rsquo;t want to use <code>body &gt; *:last-child</code>, because I don&rsquo;t know what the last child might be, &amp; therefore I might not select the <code>&lt;noscript&gt;</code>. I don&rsquo;t want to just use <code>noscript:last-of-type</code>, because that might select a <code>&lt;noscript&gt;</code> that is not at the very end of the webpage. Instead, I use <code>body &gt; noscript:last-of-type</code> so that I&rsquo;m sure to only target the very last <code>&lt;noscript&gt;</code> on the page, the one right before <code>&lt;/body&gt;</code>.
 </p>
 <p>
   Now, if people go to your webpage with JavaScript enabled (which matches 99% of Web users), they will see your beautiful footer. If they have JavaScript disabled, they will see a message letting them know that they are missing something. To test this, disable JavaScript in your browser & load the page. Here&rsquo;s how (&amp; by the way, this used to be <em>far</em> easier!):
@@ -298,7 +302,7 @@
   The selector told the rendering engine to insert <code>\00A0➤\00A0</code> after each <code>&lt;li&gt;</code> (here, Home &amp; Products), but not after the last child <code>&lt;li&gt;</code>, which here would be Fertilizers. Exactly what we want!
 </p>
 <p>
-  Hopefully you can now see how specifically CSS let&rsquo;s you target selectors, &amp; you learned a bit more about pseudo-classes &amp; pseudo-selectors.
+  Hopefully you can now see how specifically CSS let&rsquo;s you target selectors, &amp; you learned a bit more about pseudo-classes &amp; pseudo-elements.
 </p>
 <p>
   Use Live Preview to see if the breadcrumb appeared.
