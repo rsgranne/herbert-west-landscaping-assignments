@@ -83,7 +83,7 @@ footer a:link,
 footer a:visited,
 footer a:hover,
 footer a:active {
-  color: hsl(150, 70%, 31%);
+  color: hsl(150 70% 31%);
   text-decoration: none;
 }
 
@@ -108,7 +108,7 @@ footer a:hover {
   column-count: 3;
   column-width: auto;
   column-gap: 40px;
-  column-rule: 2px dotted hsl(150, 70%, 31%);
+  column-rule: 2px dotted hsl(150 70% 31%);
   list-style-type: none;
   padding: 0;
   margin-bottom: 2rem;
