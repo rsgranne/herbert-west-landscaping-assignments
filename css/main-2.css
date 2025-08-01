@@ -17,7 +17,7 @@ footer {
 }
 
 aside {
-  background-color: #333;
+  background-color: #1D824B;
   color: #eee;
 }
 
@@ -33,9 +33,9 @@ figcaption {
 }
 
 .callout {
-  background-color: #313D2B;
+  background-color: hsl(148deg 54% 66%);
   border: 2px solid #ccc;
-  color: #eee;
+  color: #333;
   padding: 0 1rem;
   width: 80%;
   margin-left: auto;

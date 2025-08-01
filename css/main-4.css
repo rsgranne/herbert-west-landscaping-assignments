@@ -9,7 +9,7 @@ h3,
 h4,
 h5,
 h6 {
-  font-family: "Source Serif 4", "Iowan Old Style", Constantia, Georgia, serif;
+  /* font-family: "Source Serif 4", "Iowan Old Style", Constantia, Georgia, serif; */
 }
 
 footer {
@@ -18,7 +18,7 @@ footer {
 }
 
 aside {
-  background-color: #333;
+  background-color: #1D824B;
   color: #eee;
 }
 
@@ -34,9 +34,9 @@ figcaption {
 }
 
 .callout {
-  background-color: #313D2B;
+  background-color: hsl(148deg 54% 66%);
   border: 2px solid #ccc;
-  color: #eee;
+  color: #333;
   padding: 0 1rem;
   width: 80%;
   margin-left: auto;
@@ -52,10 +52,7 @@ figcaption {
   display: flex;
 }
 
-footer a:link,
-footer a:visited,
-footer a:hover,
-footer a:active {
+footer a {
   color: hsl(150, 70%, 31%);
   text-decoration: none;
 }
