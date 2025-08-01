@@ -1,8 +1,9 @@
 <!-- 
-/about/privacy-policy-2,
-/services/seasonal-3;
+/about/privacy-policy-3,
+/services/seasonal-3,
+/tips/index-3;
 main-5.css;
-265 words 
+2,120 words 
 -->
 <p>
   When you are finished with this assignment, text me (314-780-0489) &amp; we will go over it together. <strong>You cannot submit this assignment otherwise.</strong>
@@ -11,6 +12,9 @@ main-5.css;
   In this assignment you will use these new CSS properties:
 </p>
 <ul>
+  <li><code><a href="https://developer.mozilla.org/en-US/docs/Web/CSS/border-bottom">border-bottom</a></code> &amp; <code><a href="https://developer.mozilla.org/en-US/docs/Web/CSS/border-top">border-top</a></code>: We&rsquo;ve previously used <code>border-left</code> to create a borders on the left of a <code>blockquote</code>. Now we will use <code>border-bottom</code> &amp; <code>border-top</code> to create borders on the bottom &amp; top of an element (this should seem kinda obvious!).</li>
+  <li><code><a href="https://developer.mozilla.org/en-US/docs/Web/CSS/float">float</a></code>: Specifies that an element should be taken from the <i>normal flow</i> (which refers to the way elements are positioned by default in the webpage based on their order in the HTML code) &amp; instead positioned to the left or right inside its container, with the rest of the content flowing around it. You can only float in one direction, either <code>left</code> or <code>right</code>, &amp; that is it.</li>
+  <li><code><a href="https://developer.mozilla.org/en-US/docs/Web/CSS/font-weight">font-weight</a></code>: Specifies the weight, or boldness, of a font. The values can be either keywords (<code>normal</code>, <code>bold</code>, <code>bolder</code>, &amp; <code>lighter</code>; of these, I find <code>bolder</code> &amp; <code>lighter</code> to be pretty vague &amp; not very useful) or numeric. The numbers range from <code>100</code> to <code>900</code>, incrementing by <code>100</code> each time (so <code>100</code>, <code>200</code>, <code>300</code>, all the way up to <code>900</code>). <code>400</code> is equivalent to <code>normal</code>, which is the default weight. <code>700</code> is equivalent to <code>bold</code>. <code>100</code> is also called <code>thin</code> &amp; is very light, while <code>900</code> is also called <code>black</code> &amp; is very heavy.</li>
   <li><code><a href="https://developer.mozilla.org/en-US/docs/Web/CSS/line-height" style="color:#d01a19;">line-height</a></code>: Specifies the vertical space between lines of text within a block-level element. The value should be a number without units, like <code>1.3</code>. <code>1.3</code> would mean 1.3 times the total height of the font, which is measured from the bottom descender to the top ascender.</li>
   <li><code><a href="https://developer.mozilla.org/en-US/docs/Web/CSS/text-transform" style="color:#d01a19;">text-transform</a></code>: Specifies capitalization of text. There are 4 values: <code>capitalize</code> (Every Word), <code>uppercase</code> (ALL CAPS), <code>lowercase</code>, &amp; <code>none</code> (do not change the current capitalization).</li>
 </ul>
@@ -18,61 +22,157 @@ main-5.css;
 <!-- line-height -->
 <h2 style="font-family: Monaco, Menlo, Consolas, 'Courier New', monospace !important; color: #d01a19;">line-height</h2>
 <p>
-  Let’s set the default <code>line-height</code> for all of our body text. To do this, use <i>the root of your document</i> (which element is that?) as the selector & set the <code>line-height</code> to <code>1.3</code>. See how it looks. Now adjust it to <code>1.4</code>. See how that looks. Now try <code>1.5</code>. Which one looks the best to you? Use that one.
+  Let&rsquo;s set the default <code>line-height</code> for all of our body text. To do this, use <i>the root of your document</i> (which element is that?) as the selector &amp; set the <code>line-height</code> to <code>1.3</code>. See how it looks. Now adjust it to <code>1.4</code>. See how that looks. Now try <code>1.5</code>. Which one looks the best to you? Use that one.
 </p>
 <p>
   Now for the headings. Use the headings selector we created a while ago, but add a <code>line-height</code> declaration to it. Generally headings should have a larger <code>line-height</code> than body text. Adjust as necessary until it looks good to you.
 </p>
 <p>
-  To test your new <code>line-height</code> for headings, open the Tips page & then resize your browser window until the title of the page is on two lines. How does it look with the <code>line-height</code> you chose for headings? Keep adjusting until it works.
+  To test your new <code>line-height</code> for headings, open the Tips page &amp; then resize your browser window until the title of the page is on two lines. How does it look with the <code>line-height</code> you chose for headings? Keep adjusting until it works.
 </p>
 
 <!-- text-transform -->
 <h2 style="font-family: Monaco, Menlo, Consolas, 'Courier New', monospace !important; color: #d01a19;">text-transform</h2>
 <p>
-  Let’s change the <code>&lt;h2&gt;</code>s in the <code>&lt;footer&gt;</code> so that <i>all</i> of those letters are uppercase. This is easy!
+  Let&rsquo;s change the <code>&lt;h2&gt;</code>s in the <code>&lt;footer&gt;</code> so that <i>all</i> of those letters are uppercase. This is easy! Be sure to check Live Preview before you continue.
 </p>
 
 <!-- <aside> on seasonal.html -->
 <h2 style="font-family: Monaco, Menlo, Consolas, 'Courier New', monospace !important; color: #d01a19;">seasonal.html</h2>
 <p>
-  Several assignments ago I had you add an <code>&lt;aside&gt;</code> to <code>seasonal.html</code>, but we never styled it. Let’s fix that now.
+  Several assignments ago I had you add an <code>&lt;aside&gt;</code> to <code>seasonal.html</code>, but we never styled it. Let&rsquo;s fix that now.
 </p>
 <p>
   We use <code>&lt;aside&gt;</code> for two purposes on this website:
 </p>
 <ul>
   <li>As a landmark indicating an area we will turn into a sidebar using CSS</li>
-  <li>As a <a href="https://en.wikipedia.org/wiki/Pull_quote">pull quote</a></li>
+  <li>As a <a href="https://en.wikipedia.org/wiki/Pull_quote"><i>pull quote</i></a>, a quotation that is pulled out of the text &amp; featured</li>
 </ul>
 <p>
-  We created a landmark on <code>seed.html</code> using <code>&lt;aside&gt;</code> so that it can eventually become a sidebar. The <code>&lt;aside&gt;</code> on <code>seasonal.html</code> surrounds text that we want to style as a pull quote.
+  We created a landmark on <code>seed.html</code> using <code>&lt;aside&gt;</code> so that it can eventually become a sidebar. The <code>&lt;aside&gt;</code> on <code>seasonal.html</code>, however, surrounds text that we want to style as a pull quote.
 </p>
 <p>
-  The problem is that when we styled <code>aside</code> earlier in our CSS, we used that as our selector. Therefore,
+  The problem is that when we styled <code>aside</code> earlier in our CSS, we used that as our selector. Therefore, we will have to add a class to the <code>&lt;aside&gt;</code> on the <code>seasonal.html</code> page that specifically indicates that this <code>&lt;aside&gt;</code> is a pull quote. So how about a class named, uh, <code>pull-quote</code>?
+</p>
+<p>
+  Earlier we styled <code>&lt;aside&gt;</code> to have a <code>background-color</code> of <code>#1D824B</code> (a dark green) &amp; a <code>color</code> of <code>#eee</code> (off-white). We don&rsquo;t want to do that with our pull quote <code>&lt;aside&gt;</code>. Instead, we want the background of the pull quote to be the same color as the webpage, which in this case is white. Then we&rsquo;ll re-use the dark green color that is the background color of <code>&lt;aside&gt;</code> and apply it to the color of the text in our pull quote. Clever, I know!
+</p>
+<p>
+  Based on that previous paragraph, you might think that we will do this in <code>main.css</code>:
+</p>
+<pre><code>.pull-quote {
+  background-color: white;
+  color: #1D824B;
+}</code></pre>
+<p>
+  This would work, but what if we change the background color of the webpage to an off-white, or something else? Then our white background would stick out like a billy goat at a ballet, &amp; no one wants <em>that</em>. Instead of <code>white</code>, we&rsquo;re going to a special CSS value that works with virtually every CSS property: <code>initial</code>.
+</p>
+<p>
+  <code>initial</code> can be <em>really</em> useful. When you apply <code>initial</code> to a CSS property (e.g., <code>background-color</code>, <code>margin</code>, or even something complex like <code>animation</code>), you tell the browser&rsquo;s rendering engine to apply the initial (default) value for that property. And how can you find out what the default value would be? Use MDN!
+</p>
+<p>
+  Let&rsquo;s take a look at the MDN page for <code>margin</code> as an example. Visit the MDN page for <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/margin"><code>margin</code></a> &amp; scroll down past &ldquo;Try it&rdquo; &amp; &ldquo;Constituent properties&rdquo; &amp; &ldquo;Syntax&rdquo; &amp; &ldquo;Description&rdquo; until you get to &ldquo;Formal definition&rdquo;. The very first thing listed there is &ldquo;Initial value&rdquo;, which tells you that the default value for <code>margin-top</code>, <code>margin-right</code>, &amp; so on is <code>0</code>, that is, no margin at all.
+</p>
+<blockquote>
+  <P>
+    <b>NOTE</b>: &ldquo;But Scott,&rdquo; I hear you saying, &ldquo;if the default for all margins is <code>0</code>, why do my <code>&lt;p&gt;</code> &amp; <code>&lt;h2&gt;</code> tags all have margins on the top &amp; bottom, &amp; my <code>&lt;blockquote&gt;</code> tags have margins on the top &amp; bottom <em>and</em> on the right &amp; left?&rdquo;
+  </P>
+  <p>
+    I will look at you with bemusement, take the toothpick out of my mouth, finish my mouthful of root beer, &amp; then say:
+  </p>
+  <blockquote>
+    <p>
+      Young <a href="https://starwars.fandom.com/wiki/Padawan">Padawan</a>, you are confused by the difference between CSS defaults &amp; Web browser rendering engine defaults. Remember, every Web browser has built-in style sheets that make certain elements look &amp; act a certain way that all browser makers have agreed to<span style="color: red; font-size: 1.1em;;">*</span>. Those are Web browser rendering engine defaults. So yes, the initial CSS value for all margins is <code>0</code>, but all Web browsers set a rendering engine default of <code>1em</code> for <code>margin-top</code> &amp; <code>margin-bottom</code> (equivalent to <code>16px</code>) to all <code>&lt;p&gt;</code> tags.
+    </p>
+    <p>
+      <code>&lt;h2&gt;</code> tags, however, have <code>19.92px</code> margins on top &amp; bottom, as you can see in this image showing the Chromium Inspector focusing on an <code>&lt;h2&gt;</code>.
+    </p>
+    <p>
+      <img src="https://granneman.com/downloads/web-dev-assignments/herbert-west-landscaping/images/h2-rendering-engine-default-margin-top-bottom.webp" alt="Default margin-top & margin-bottom for HTML img tags" style="border: 1px solid black; width: 90%; height: auto;">
+    </p>
+    <p>
+      <code>19.92px</code>? Where did that number come from? Here&rsquo;s how browsers arrived at that very specific number:
+    </p>
+    <ul>
+      <li><code>1em</code> is the total height of a font based on the size of the font, so if the <code>font-size</code> is set to <code>18px</code>, then <code>1em</code> equals <code>18px</code>, but if the <code>font-size</code> is set to <code>22px</code>, then <code>1em</code> equals <code>22px</code>, &amp; so on.</li>
+      <li><code>1em</code> by default in Web browsers is set to <code>16px</code></li>
+      <li><code>&lt;h2&gt;</code> is set to <code>1.5em</code> in all browsers</li>
+      <li><code>16px</code> &times; <code>1.5</code> equals <code>24px</code>, which is the default font-size for all <code>&lt;h2&gt;</code>s</li>
+      <li><code>24px</code> &times; <code>.83</code> is <code>19.9px</code>, which, lo &amp; behold!, is the size of the top &amp; bottom margins for <code>&lt;h2&gt;</code>!</li>
+    </ul>
+    <p>
+      So that&rsquo;s <code>&lt;p&gt;</code> &amp; <code>&lt;h2&gt;</code>. But what about <code>&lt;blockquote&gt;</code>? Sure, the CSS defaults for <code>&lt;margin&gt;</code> are <code>0</code> on all four sides, but the Web browser defaults for blockquote are:
+    </p>
+    <pre><code>blockquote {
+  display: block;
+  margin-top: 1em;
+  margin-bottom: 1em;
+  margin-left: 40px;
+  margin-right: 40px;
+}</code></pre>
+    <p>
+      So there you go&thinsp;&mdash;&thinsp;hopefully now it&rsquo;s clear to you what the difference is between CSS defaults &amp; Web browser rendering engine defaults.
+    </p>
+  </blockquote>
+  <p>
+    And at that point, I&rsquo;ll take another swig of root beer, put the toothpick back in my mouth, &amp; continue on my way.
+  </p>
+</blockquote>
+<p>
+  Back to <code>background-color</code>. If you visit <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/background-color">its MDN page</a>, &amp; scroll down to &ldquo;Formal definition&rdquo;, you&rsquo;ll discover that the initial value for <code>background-color</code> is… <code>transparent</code>! So, by switching <code>background-color: white</code> to <code>background-color: initial</code>, you are setting the background to be transparent, since that is the default value for <code>background-color</code>. That means our pull quote will always take on the color of the webpage it&rsquo;s sitting on top of.
+</p>
+<p>
+  Now that we have overridden the styles we early set for <code>&lt;aside&gt;</code>, let&rsquo;s add more. First of all, let&rsquo;s add a nice border to the top &amp; bottom of <code>.pull-quote</code> that is <code>.5em</code> wide, solid, &amp; a color of <code>#1D824B</code>. That looks nice.
+</p>
+<p>
+  Sometimes pull quotes take up the full width of its container, but that&rsquo;s not the case here. Instead, we are going to float the pull quote to the left, which is pretty common. There is one big potential gotcha, however: a floated element must have a width, or things will not go as planned. If you&rsquo;re floating an image, you don&rsquo;t need to specify that, because an image already possesses an intrinsic width. But if you&rsquo;re floating any other element, like a <code>&lt;p&gt;</code> or <code>&lt;div&gt;</code>, you definitely need to specify a <code>width</code> in your CSS.
+</p>
+<p>
+  So how wide should we make this particular pull quote? We don&rsquo;t want it to be <em>too</em> wide, so let&rsquo;s add a <code>max-width</code> of <code>20ch</code>. <code>ch</code>? What&rsquo;s that? So far we&rsquo;ve used <code>px</code> &amp; <code>em</code> to set the size of text. <code>ch</code> is a unit of measure that is equal to the width of the number <code>0</code> in the font (if the width of the number <code>0</code> cannot be determined for some reason, then <code>1ch</code> is <code>0.5em</code> wide by <code>1em</code> tall). Interestingly, it&rsquo;s the only unit of measure that is equal to the <em>width</em> of the character, not the height.
+</p>
+<p>
+  Now we need to add a <code>margin-right</code> to the pull quote so that it doesn&rsquo;t run into the text to the right of it. Let&rsquo;s try <code>.75rem</code>, which should keep it from running into the text, but not so much that it looks ridiculous. We need to take care of the bottom margin, too, so let&rsquo;s add a <code>margin-bottom</code> of <code>.5rem</code>, which should keep it from running into the text below it. Of course, we want a <code>margin-left</code> of <code>0</code>, because the pull quote is floated all the way to the left, &amp; we also want a <code>margin-top</code> of <code>0</code>, because we want the pull quote to be flush against the top of the text it surrounds.
+</p>
+<p>
+  When you specify the margins for all four sides of an element, you do know you can do it in a single declaration with just <code>margin</code>, right? Just remember the order of the values: <code>margin: top right bottom left</code>.
+</p>
+<p>
+  We have the margins all sorted out, but the text is still too close to the edges of the pull quote&rsquo;s box. Let&rsquo;s add a <code>padding</code> of <code>.5rem</code> to all four sides, which should be easy.
+</p>
+<p>
+  Finally, let&rsquo;s specify the typeface used in the pull quote. We&rsquo;ll use <code>font-family: "Iowan Old Style","Palatino Linotype", "URW Palladio L", P052, "Noto Serif", serif;</code> as our font stack. Why those particular fonts? <code>Iowan Old Style</code> is for all Apple devices, <code>Palatino Linotype</code> is for Windows, <code>URW Palladio L</code> &amp; <code>P052</code> are both for Linux, <code>Noto Serif</code> is for Android, &amp; <code>serif</code> is for everything else. This font stack focuses on Old Style serif typefaces, which, according to <a href="https://github.com/system-fonts/modern-font-stacks#old-style">Modern Font Stacks</a>, are &ldquo;characterized by diagonal stress, low contrast between thick and thin strokes, and rounded serifs, and were developed in the Renaissance period&rdquo;.
+</p>
+<p>
+  Just two more things, since we&rsquo;re dealing with the typefece. To make the pull quote stand out more, let&rsquo;s add a <code>font-weight</code> of <code>600</code> &amp; a <code>font-size</code> of <code>1.1rem</code>, which will make the pull quote a bit darker &amp; a bit larger than the body text. But wait! What if the font that gets applied to the pull quote is not available in a weight of <code>600</code>? In that case, the rendering engine will apply a weight of <code>700</code> to the pull quote, because that&rsquo;s the next available weight that is closest to <code>600</code>.
+</p>
+<p>
+  And that&rsquo;s it! We&rsquo;ve added a pull quote to <code>seasonal.html</code>, &amp; we&rsquo;ve styled it to our liking. For reference, check out the <a href="https://granneman.com/downloads/web-dev-assignments/herbert-west-landscaping/seasonal-3.pdf">finished version of <code>seasonal.html</code></a>. There was a lot to what we did, but it&rsquo;s not that difficult, &amp; these are all things you will use over &amp; over again.
 </p>
 
-<!-- /about/privacy-policy-2.html -->
+<!-- /about/privacy-policy-3.html -->
 <h2 style="font-family: Monaco, Menlo, Consolas, 'Courier New', monospace !important; color: #d01a19;">privacy-policy.html</h2>
 <p>
-  A while ago, when we first added hyperlinks to our website, we created a pretty bare bones webpage at <code>/about/privacy-policy.html</code>. Now it’s time to build out the Privacy Policy. I think you will enjoy this one.
+  A while ago, when we first added hyperlinks to our website, we created a pretty bare bones webpage at <code>/about/privacy-policy.html</code>. Back then, you knew the contents of the <code>&lt;title&gt;</code> &amp; the <code>&lt;h1&gt;</code>. Then we added a <code>&lt;header&gt;</code> &amp; <code>&lt;footer&gt;</code>. Now it&rsquo;s time to build out the Privacy Policy page with content. I think you will enjoy this one.
+</p>
+Reproduce this webpage: <a href="https://granneman.com/downloads/web-dev-assignments/herbert-west-landscaping/privacy-policy-3.pdf" target="_blank" rel="noopener">privacy-policy-3.pdf</a>.
 </p>
 <p>
-
+  Copy the text from <a href="https://granneman.com/downloads/web-dev-assignments/herbert-west-landscaping/privacy-policy-3.txt" target="_blank" rel="noopener">privacy-policy-3.txt</a>
 </p>
 <p>
-
+  By now you should know the following:
 </p>
+<ul>
+  <li>The <code>&lt;ol&gt;</code> at the top</li>
+  <li>Where <code>&lt;main&gt;</code> goes</li>
+  <li>The size of the <code>&lt;img&gt;</code> (which is named <code>privacy.webp</code>) that comes after the <code>&lt;h1&gt;</code></li>
+  <li>What tags go around the bolded text</li>
+</ul>
 <p>
-
+  And that&rsquo;s it&thinsp;&mdash;&thinsp;an assignment that has a lot new CSS, most of which you will find yourself using very often. Go forth &amp; build something cool!
 </p>
+<hr>
 <p>
-
-</p>
-<p>
-
-</p>
-
-<p>
-  And that’s it&thinsp;&mdash;&thinsp;a super-short, super-easy assignment!
+  <span style="color: red; font-size: 1.1em;;">*</span> For a good example of built-in browser styles, <a href="https://github.com/WebKit/WebKit/blob/main/Source/WebCore/css/html.css">check out Safari&rsquo;s</a>. They're pretty close to what every other browser&rsquo;s built-in styles look like.
 </p>

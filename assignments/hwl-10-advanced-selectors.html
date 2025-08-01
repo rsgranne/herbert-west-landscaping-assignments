@@ -3,7 +3,7 @@
 main-3.css,
 column-count, column-gap, column-rule, column-rule-color, column-rule-style, column-rule-width, column-width, text-decoration,
 complex selectors using child & descendant combinators, pseudo-classes;
-1750 words 
+1870 words 
 -->
 <p>
   When you are finished with this assignment, text me (314-780-0489) &amp; we will go over it together. <strong>You cannot submit this assignment otherwise.</strong>
@@ -43,27 +43,30 @@ complex selectors using child & descendant combinators, pseudo-classes;
 <!-- <footer> -->
 <h2 style="font-family: Monaco, Menlo, Consolas, 'Courier New', monospace !important; color: #d01a19;">&lt;footer&gt;</h2>
 <p>
-  We want all of the <code>&lt;a&gt;</code>s inside the <code>&lt;footer&gt;</code> to:
+  We are going to change the color of the links in the <code>&lt;footer&gt;</code>. Before we can do that, though, you need to learn about that special little element <code>&lt;a&gt;</code>, with its four <i>states</i> & associated <i>pseudo-classes</i>. <i>States</i> are the various conditions that the <code>&lt;a&gt;</code> element can be in due to a user’s interactivity with it or due to their browsing history. The four states an <code>&lt;a&gt;</code> can be in are:
 </p>
 <ul>
-  <li>Be this color: <code>hsl(150, 70%, 31%)</code> (HSL is a way to specify color that is extremely useful, as opposed to hexadecimal values like <code>#7c392e</code>, which are impossible to understand without looking them up)</li>
-  <li>Have the underline removed, but show up while a user is hovering over the link</li>
+  <li><i>unvisited</i>, which is how links appear before you&rsquo;ve clicked on them; be default, all browsers make unvisited links blue &amp; underlined</li>
+  <li><i>visited</i>, which is how links appear if you have already visited the webpage they are pointing at; by default, those links are purple &amp; underlined</li>
+  <li><i>hover</i>, which occurs when your mouse hovers over the link (obviously this doesn&rsquo;t work on mobile!); by default the cursor changes into a hand</li>
+  <li><i>active</i>, which occurs during the very brief moment you actually <i>click</i> on the link; by default the link becomes red &amp; you continue to see the hand cursor</li>
 </ul>
 <p>
-  Be aware that the <code>&lt;a&gt;</code> is unique among elements because it can have 4 states, all indicated using <i>pseudo-classes</i>, which always start with a <code>:</code> (for more on pseudo-classes, look for the “Width & Height” section in the <i><a href="https://granneman.com/presentations/all-presentations#css-layout-the-visual-formatting-model">CSS Layout: The Visual Formatting Model</a></i> presentation.) The 4 pseudo-classes associated with <code>&lt;a&gt;</code> are:
+  So <code>&lt;a&gt;</code> has four states. Cool. We can address any of those four states using <i>pseudo-classes</i>, which always start with a <code>:</code> &amp; are special selectors that let you style elements based on their current state or interaction<span style="color: red; font-size: 1.2rem;">*</span>. The four pseudo-classes associated with <code>&lt;a&gt;</code>s four states are (these should <em>not</em> surprise you!):
 </p>
 <ul>
-  <li><code>a:link</code>, which lets you style <i>unvisited</i> links; the defaults are blue &amp; underlined</li>
-  <li><code>a:visited</code>, which lets you style <i>visited</i> links; the defaults are purple &amp; underlined</li>
-  <li><code>a:hover</code>, which lets you style links while your mouse <i>hovers</i> over them (obviously this doesn&rsquo;t work on mobile!); the defaults are to change the cursor into a hand.</li>
-  <li><code>a:active</code>, which lets you style links the very brief moment during which they are <i>clicked</i>; the defaults are red with the hand cursor.</li>
+  <li><code>a:link</code>, which lets you style <i>unvisited</i> links</li>
+  <li><code>a:visited</code>, which lets you style <i>visited</i> links</li>
+  <li><code>a:hover</code>, which lets you style links while your mouse <i>hovers</i> over them</li>
+  <li><code>a:active</code>, which lets you style links while you <i>click</i> on them</li>
 </ul>
 <p>
-  <b>IMPORTANT</b>: you must specify those pseudo-classes in that order, or changes might not appear the way you want them to. Let&rsquo;s say I have a black background &amp; I want all my links on the entire page to be yellow all of the time, unless one is being clicked on, in which case I want it to become orange. This is how I would do it (notice that the first selector is a list; also note that <strong>this is an example!</strong>):
+  Back in the past you had to specify all of those pseudo-classes in that order&thinsp;&mdash;&thinsp;<code>:link</code>, <code>:visited</code>, <code>:hover</code>, <code>:active</code>&thinsp;&mdash;&thinsp;or your styles might not work the way you expected. However, those days ended in the early 2010s, & now you can just style <code>&lt;a&gt;</code> &amp; only use those pseudo-classes for something specific.
 </p>
-<pre><code>a:link,
-a:visited,
-a:hover {
+<p>
+  For example, let&rsquo;s say I have a black background for my webpage &amp; I want all my links to be yellow all of the time, unless one is being clicked on, in which case I want it to become orange. This is how I would do it (please note that <strong>this is an example!</strong>):
+</p>
+<pre><code>a {
   color: yellow;
 }
 
@@ -72,8 +75,15 @@ a:active {
 }
 </code></pre>
 <p>
-  Note that I kept the order listed above, which is <i>LVHA</i>, for <code>:link</code>, <code>:visited</code>, <code>:hover</code>, & <code>:active</code>. There are <a href="https://en.wikipedia.org/wiki/Special:Search?search=mnemonic">mnemonics</a> to help you remember this: <i>Licks very hairy arms</i> (<i>that</i> is memorable!), <i>Lazy vultures hopped awkwardly</i> (great mental image!), or the classic <i>LoVe HAte</i> (which is pretty clever, I have to say).
+  However, we are not going to do that on our webiste, because again, that is an example.
 </p>
+<p>
+  Instead, <em>this</em> is what you are going to do to all of the <code>&lt;a&gt;</code>s inside the <code>&lt;footer&gt;</code>:
+</p>
+<ul>
+  <li>All links should be this color: <code>hsl(150, 70%, 31%)</code> (remember, HSL is a better way to specify colors than hex values such as <code>#7c392e</code>)</li>
+  <li>All links should have their underline removed, but the underlines should show up when a user hovers over them</li>
+</ul>
 <p>
   Once you’re finished, links should look like this if you’re not hovering over them:
 </p>
@@ -189,3 +199,9 @@ a:active {
   <li>That brings us to mobile. Obviously this layout would suck on phones! That&rsquo;s why we would use responsive layout to turn this layout off for phones &amp; maybe even tablets too.</li>
   <li>Finally, accessibility. Multi-column layouts can present challenges for users with visual impairments or those using assistive technologies like screen readers, so keep that in mind.</li>
 </ul>
+<hr>
+<blockquote>
+  <p id="footnote">
+    <span style="color: red; font-size: 1.2rem;">*</span> For more on pseudo-classes, look for the “Width & Height” section in my <i><a href="https://granneman.com/presentations/all-presentations#css-layout-the-visual-formatting-model">CSS Layout: The Visual Formatting Model</a></i> presentation.
+  </p>
+</blockquote>
