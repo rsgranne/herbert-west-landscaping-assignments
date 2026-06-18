@@ -3,3 +3,5 @@
 # SpecStory
 .specstory
 .cursorindexingignore
+# SpecStory project identity file
+/.project.json
