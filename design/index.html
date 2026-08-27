@@ -12,6 +12,24 @@
         gap: 1rem;
       }
 
+      .design-guide table {
+        border-collapse: collapse;
+        margin-bottom: 1rem;
+      }
+
+      .design-guide th,
+      .design-guide td {
+        padding: .5rem;
+        text-align: left;
+        vertical-align: top;
+        border: 1px solid hsl(30 0% 80%);
+      }
+
+      .design-guide th {
+        color: black;
+        background-color: hsl(30 0% 93%);
+      }
+
       div:empty {
         width: 150px;
         height: 150px;
@@ -58,20 +76,48 @@
           color: hsl(8 70% 31%);
         }
       }
-
     </style>
   </head>
 
   <body class="design-guide">
 
-    <h1>Design Guide for Herbert West Landscaping</h1>
+    <h1>Design guide for Herbert West Landscaping</h1>
+
+    <section>
+      <h2>How to use this guide</h2>
+      <p>This guide describes the intended visual design of the finished Herbert West Landscaping website. We will build that design gradually.</p>
+      <p>During the HTML portion of the course, focus on meaningful content and semantic structure. Once we get to CSS, use this guide’s color, typography, spacing, and component decisions. After we start responsive design using Bootstrap, use it to guide layout and behavior at different screen sizes.</p>
+      <p>Bootstrap is an implementation tool. It can help us build the design efficiently, but it does not replace the design decisions documented here.</p>
+      <table>
+        <thead>
+          <tr>
+            <th scope="col">Course stage</th>
+            <th scope="col">What students use from this guide</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>HTML</td>
+            <td>Content, semantic structure, heading hierarchy, page purpose, and image/alt-text decisions</td>
+          </tr>
+          <tr>
+            <td>CSS</td>
+            <td>Color, typography, spacing, borders, cards, and other visual rules</td>
+          </tr>
+          <tr>
+            <td>Responsive design</td>
+            <td>Grid, breakpoints, responsive behavior, and component implementation</td>
+          </tr>
+        </tbody>
+      </table>
+    </section>
 
     <h2>Colors</h2>
 
     <article>
       <div class="primary">
         <div></div>
-        <h3 class="h4">Primary</h3>
+        <h3>Primary</h3>
         <p>
           hsl(150 70% 31%)
           <br>#18864F
@@ -80,7 +126,7 @@
 
       <div class="background">
         <div></div>
-        <h3 class="h4">Background</h3>
+        <h3>Background</h3>
         <p>
           hsl(116 100% 84%)
           <br>#B2FFAD
@@ -89,7 +135,7 @@
 
       <div class="gray">
         <div></div>
-        <h3 class="h4">Gray</h3>
+        <h3>Gray</h3>
         <p>
           hsl(30 0% 93%)
           <br>#EEEEEE
@@ -98,7 +144,7 @@
 
       <div class="contrast">
         <div></div>
-        <h3 class="h4">Contrast</h3>
+        <h3>Contrast</h3>
         <p>
           hsl(8 70% 31%)
           <br>#872618
