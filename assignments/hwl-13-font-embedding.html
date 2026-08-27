@@ -109,7 +109,7 @@ main-6.css,
   At the bottom of step 3 it says &ldquo;Customize folder prefix (optional):&rdquo; and the default is set to <code>../fonts/</code>. This is not a good default and it certainly is nothing like the paths we have been using, so we need to change it to <code>/fonts/</code>. <strong>Make sure you do this</strong>. As soon as you do you should see the code in the gray box change to conform to what we entered.
 </p>
 <p>
-  Before we copy the CSS, however, I always go ahead to step 4, &ldquo;Download files&rdquo;, and click on the big blue button to start the download. That will download a file named something like <code>rokkitt-v34-latin.zip</code> into your <code>Downloads</code> folder. Leave it alone for now and go back to step 3.
+  Before we copy the CSS, however, I always go ahead to step 4, &ldquo;Download files&rdquo;, and click on the big blue button to start the download. That will download a file named something like <code>rokkitt-v39-latin.zip</code> into your <code>Downloads</code> folder. Leave it alone for now and go back to step 3.
 </p>
 <h3 style="font-family: Monaco, Menlo, Consolas, 'Courier New', monospace !important; color: #d01a19;">main.css</h3>
 <p>
@@ -124,8 +124,7 @@ main-6.css,
   font-family: 'Rokkitt';
   font-style: normal;
   font-weight: 700;
-  src: url('/fonts/rokkitt-v34-latin-700.woff2') format('woff2'), /* Chrome 36+, Opera 23+, Firefox 39+ */
-       url('/fonts/rokkitt-v34-latin-700.woff') format('woff'); /* Chrome 5+, Firefox 3.6+, IE 9+, Safari 5.1+ */
+  src: url('/fonts/rokkitt-v39-latin-700.woff2') format('woff2');
 }
 /* rokkitt-700italic - latin */
 @font-face {
@@ -133,8 +132,7 @@ main-6.css,
   font-family: 'Rokkitt';
   font-style: italic;
   font-weight: 700;
-  src: url('/fonts/rokkitt-v34-latin-700italic.woff2') format('woff2'), /* Chrome 36+, Opera 23+, Firefox 39+ */
-       url('/fonts/rokkitt-v34-latin-700italic.woff') format('woff'); /* Chrome 5+, Firefox 3.6+, IE 9+, Safari 5.1+ */
+  src: url('/fonts/rokkitt-v39-latin-700italic.woff2') format('woff2');
 }</code></pre>
 <p>
   There is a lot of garbage in there that we do not need, starting with the comments, which include anything from <code>/*</code> to <code>*/</code>. Get rid of all that, so it should now look like this (notice I also put a blank line between the two <code>@font-face</code> style sets):
@@ -144,8 +142,7 @@ main-6.css,
   font-family: 'Rokkitt';
   font-style: normal;
   font-weight: 700;
-  src: url('/fonts/rokkitt-v34-latin-700.woff2') format('woff2'),
-       url('/fonts/rokkitt-v34-latin-700.woff') format('woff');
+  src: url('/fonts/rokkitt-v39-latin-700.woff2') format('woff2');
 }
 
 @font-face {
@@ -153,8 +150,7 @@ main-6.css,
   font-family: 'Rokkitt';
   font-style: italic;
   font-weight: 700;
-  src: url('/fonts/rokkitt-v34-latin-700italic.woff2') format('woff2'),
-       url('/fonts/rokkitt-v34-latin-700italic.woff') format('woff');
+  src: url('/fonts/rokkitt-v39-latin-700italic.woff2') format('woff2');
 }</code></pre>
 <p>
   There is one more thing to change: instead of a <code>font-family</code> name of <code>'Rokkitt'</code>, let&rsquo;s use <code>Heading</code>. Why? Because that way we can change the font at any time &amp; just change the <code>url()</code> parts without needing to change everywhere else in our CSS in which we refer to the font! In other words, assume we went with <code>Rokkitt</code> as the font-family, which would mean we would do this:
@@ -182,8 +178,7 @@ main-6.css,
   font-family: Heading;
   font-style: normal;
   font-weight: 700;
-  src: url('/fonts/rokkitt-v34-latin-700.woff2') format('woff2'),
-        url('/fonts/rokkitt-v34-latin-700.woff') format('woff');
+  src: url('/fonts/rokkitt-v39-latin-700.woff2') format('woff2');
 }
 
 @font-face {
@@ -191,8 +186,7 @@ main-6.css,
   font-family: Heading;
   font-style: italic;
   font-weight: 700;
-  src: url('/fonts/rokkitt-v34-latin-700italic.woff2') format('woff2'),
-        url('/fonts/rokkitt-v34-latin-700italic.woff') format('woff');
+  src: url('/fonts/rokkitt-v39-latin-700italic.woff2') format('woff2');
 }</code></pre>
 <p>
   Looking good. Now let&rsquo;s go down in <code>main.css</code> to our headings selector&thinsp;&mdash;&thinsp;which is <code>h1, h2, h3, h4, h5, h6</code>&thinsp;&mdash;&thinsp;and create a new <code>font-family</code> line after the current one (the Cascade at work!) so that it looks like this:
@@ -215,25 +209,25 @@ h6 {
   Time to view our work? Not so fast! Sure, our CSS is now in place but there&rsquo;s one problem: the fonts haven&rsquo;t been installed into our project!
 </p>
 <p>
-  Go back to your <code>Downloads</code> folder and move the <code>rokkitt-v34-latin.zip</code> file into the <code>fonts</code> folder in <code>herbert-west-landscaping</code>. What? There is no <code>fonts</code> folder? Then let&rsquo;s create one. At the same level as <code>images</code> &amp; <code>video</code> &amp; <code>css</code> we now need to create a new <code>fonts</code> folder. Do that, &amp; your <code>herbert-west-landscaping</code> folder should now look like this:
+  Go back to your <code>Downloads</code> folder and move the <code>rokkitt-v39-latin.zip</code> file into the <code>fonts</code> folder in <code>herbert-west-landscaping</code>. What? There is no <code>fonts</code> folder? Then let&rsquo;s create one. At the same level as <code>images</code> &amp; <code>video</code> &amp; <code>css</code> we now need to create a new <code>fonts</code> folder. Do that, &amp; your <code>herbert-west-landscaping</code> folder should now look like this:
 </p>
 <p>
   <img style="max-width: 40%; height: auto;" src="https://granneman.com/downloads/web-dev-assignments/herbert-west-landscaping/images/typography-project-folder-with-fonts-folder.webp" alt="Herbert West Landscaping project folder after adding the fonts folder">
 </p>
 <p>
-  OK, now move <code>rokkitt-v34-latin.zip</code> into the <code>fonts</code> folder, so that it now looks like this:
+  OK, now move <code>rokkitt-v39-latin.zip</code> into the <code>fonts</code> folder, so that it now looks like this:
 </p>
 <p>
   <img style="max-width: 50%; height: auto;" src="https://granneman.com/downloads/web-dev-assignments/herbert-west-landscaping/images/typography-project-folder-with-fonts-folder-expanded-with-zip.webp" alt="Herbert West Landscaping project folder after adding the zip file to the fonts folder">
 </p>
 <p>
-  Now you need to unzip that folder so that only the font files are in the <code>fonts</code> folder. When you unzip, you may end up with a folder named <code>rokkitt-v34-latin</code> next to <code>rokkitt-v34-latin.zip</code>, like this:
+  Now you need to unzip that folder so that only the font files are in the <code>fonts</code> folder. When you unzip, you may end up with a folder named <code>rokkitt-v39-latin</code> next to <code>rokkitt-v39-latin.zip</code>, like this:
 </p>
 <p>
   <img style="max-width: 50%; height: auto;" src="https://granneman.com/downloads/web-dev-assignments/herbert-west-landscaping/images/typography-project-folder-with-fonts-folder-expanded-unzipped.webp" alt="Herbert West Landscaping fonts folder after installing the font files">
 </p>
 <p>
-  Windows users, you will probably have a folder named <code>rokkitt-v34-latin</code> inside another folder named <code>rokkitt-v34-latin</code> (*sigh*). In either case, move the font files (which end in either <code>woff</code> or <code>woff2</code>) out of the <code>rokkitt-v34-latin</code> folder and into <code>fonts</code>, and then delete the now-empty <code>rokkitt-v34-latin</code> folder and the <code>rokkitt-v34-latin.zip</code> file, since we don&rsquo;t need them. Things should now look like this:
+  Windows users, you will probably have a folder named <code>rokkitt-v39-latin</code> inside another folder named <code>rokkitt-v39-latin</code> (*sigh*). In either case, move the font files (which end in <code>woff2</code>) out of the <code>rokkitt-v39-latin</code> folder and into <code>fonts</code>, and then delete the now-empty <code>rokkitt-v39-latin</code> folder and the <code>rokkitt-v39-latin.zip</code> file, since we don&rsquo;t need them. Things should now look like this:
 </p>
 <p>
   <img style="max-width: 60%; height: auto;" src="https://granneman.com/downloads/web-dev-assignments/herbert-west-landscaping/images/typography-project-folder-with-fonts-folder-expanded-with-only-fonts.webp" alt="Herbert West Landscaping project folder after installing the other font files">
@@ -255,7 +249,7 @@ h6 {
   Under &ldquo;2. Select styles&rdquo;, &ldquo;regular&rdquo; is already checked, which we want. Also check &ldquo;italic&rdquo; (right under &ldquo;regular&rdquo;) and 700.
 </p>
 <p>
-  Under &ldquo;3. Copy CSS&rdquo;, click on &ldquo;Modern Browsers&rdquo; and then click on the blue button in &ldquo;4. Download files&rdquo;. When you do so, <code>raleway-v28-latin.zip</code> will start downloading. Now go back to &ldquo;3. Copy CSS&rdquo; and change &ldquo;Customize folder prefix&rdquo; from <code>../fonts/</code> to <code>/fonts/</code>. After that, click in the gray box and copy the CSS.
+  Under &ldquo;3. Copy CSS&rdquo;, click on &ldquo;Modern Browsers&rdquo; and then click on the blue button in &ldquo;4. Download files&rdquo;. When you do so, <code>raleway-v37-latin.zip</code> will start downloading. Now go back to &ldquo;3. Copy CSS&rdquo; and change &ldquo;Customize folder prefix&rdquo; from <code>../fonts/</code> to <code>/fonts/</code>. After that, click in the gray box and copy the CSS.
 </p>
 <p>
   Back in <code>main.css</code>, paste in the new CSS at the top, above the previous <code>@font-face</code> style sets. It will look like this:
@@ -266,8 +260,7 @@ h6 {
   font-family: 'Raleway';
   font-style: normal;
   font-weight: 400;
-  src: url('/fonts/raleway-v28-latin-regular.woff2') format('woff2'), /* Chrome 36+, Opera 23+, Firefox 39+ */
-       url('/fonts/raleway-v28-latin-regular.woff') format('woff'); /* Chrome 5+, Firefox 3.6+, IE 9+, Safari 5.1+ */
+  src: url('/fonts/raleway-v37-latin-regular.woff2') format('woff2');
 }
 /* raleway-italic - latin */
 @font-face {
@@ -275,8 +268,7 @@ h6 {
   font-family: 'Raleway';
   font-style: italic;
   font-weight: 400;
-  src: url('/fonts/raleway-v28-latin-italic.woff2') format('woff2'), /* Chrome 36+, Opera 23+, Firefox 39+ */
-       url('/fonts/raleway-v28-latin-italic.woff') format('woff'); /* Chrome 5+, Firefox 3.6+, IE 9+, Safari 5.1+ */
+  src: url('/fonts/raleway-v37-latin-italic.woff2') format('woff2');
 }
 /* raleway-700 - latin */
 @font-face {
@@ -284,8 +276,7 @@ h6 {
   font-family: 'Raleway';
   font-style: normal;
   font-weight: 700;
-  src: url('/fonts/raleway-v28-latin-700.woff2') format('woff2'), /* Chrome 36+, Opera 23+, Firefox 39+ */
-       url('/fonts/raleway-v28-latin-700.woff') format('woff'); /* Chrome 5+, Firefox 3.6+, IE 9+, Safari 5.1+ */
+  src: url('/fonts/raleway-v37-latin-700.woff2') format('woff2');
 }</code></pre>
 <p>
   Remove the comments, add a blank line between each <code>@font-face</code> rule, and replace <code>Raleway</code> in the <code>font-family</code> with <code>Body</code>, so your code now looks like this:
@@ -295,8 +286,7 @@ h6 {
   font-family: Body;
   font-style: normal;
   font-weight: 400;
-  src: url('/fonts/raleway-v28-latin-regular.woff2') format('woff2'),
-       url('/fonts/raleway-v28-latin-regular.woff') format('woff');
+  src: url('/fonts/raleway-v37-latin-regular.woff2') format('woff2');
 }
 
 @font-face {
@@ -304,8 +294,7 @@ h6 {
   font-family: Body;
   font-style: italic;
   font-weight: 400;
-  src: url('/fonts/raleway-v28-latin-italic.woff2') format('woff2'),
-       url('/fonts/raleway-v28-latin-italic.woff') format('woff');
+  src: url('/fonts/raleway-v37-latin-italic.woff2') format('woff2');
 }
 
 @font-face {
@@ -313,8 +302,7 @@ h6 {
   font-family: Body;
   font-style: normal;
   font-weight: 700;
-  src: url('/fonts/raleway-v28-latin-700.woff2') format('woff2'),
-       url('/fonts/raleway-v28-latin-700.woff') format('woff');
+  src: url('/fonts/raleway-v37-latin-700.woff2') format('woff2');
 }</code></pre>
 <p>
   And then, add this declaration to the <code>html</code> selector:
@@ -330,7 +318,7 @@ h6 {
   line-height: 1.4;
 }</code></pre>
 <p>
-  Move the <code>raleway-v28-latin.zip</code> file into the <code>fonts</code> folder in <code>herbert-west-landscaping</code>, unzip it, and move the actual files so they are directly inside the <code>fonts</code> folder along with the <code>rokkit</code> files from earlier. <code>fonts</code> should now look like this:
+  Move the <code>raleway-v37-latin.zip</code> file into the <code>fonts</code> folder in <code>herbert-west-landscaping</code>, unzip it, and move the actual files so they are directly inside the <code>fonts</code> folder along with the <code>Rokkitt</code> files from earlier. <code>fonts</code> should now look like this:
 </p>
 <p>
   <img style="max-width: 60%; height: auto;" src="https://granneman.com/downloads/web-dev-assignments/herbert-west-landscaping/images/typography-project-folder-with-fonts-folder-expanded-with-all-fonts-installed.webp" alt="Herbert West Landscaping project folder after adding the other font files to the fonts folder">
@@ -373,8 +361,7 @@ h6 {
 &hellip;
   font-style: italic;
   font-weight: 700;
-  src: url('/fonts/rokkitt-v34-latin-700italic.woff2') format('woff2'),
-  url('/fonts/rokkitt-v34-latin-700italic.woff') format('woff');
+  src: url('/fonts/rokkitt-v39-latin-700italic.woff2') format('woff2');
   } */</code></pre>
 <p>
   Then comment out the font-family lines in <code>html</code> and <code>h1, h2, h3, h4, h5, h6</code>, like this (again, I am only showing certain lines to keep things short):

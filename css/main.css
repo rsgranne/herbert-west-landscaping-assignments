@@ -1,19 +1,9 @@
-@font-face {
-  font-display: swap;
-  font-family: Heading;
-  font-style: normal;
-  font-weight: 700;
-  src: url('/fonts/biorhyme-expanded-v19-latin-700.woff2') format('woff2'),
-    url('/fonts/biorhyme-expanded-v19-latin-700.woff') format('woff');
-}
-
-@font-face {
+/* @font-face {
   font-display: swap;
   font-family: Body;
   font-style: normal;
   font-weight: 400;
-  src: url('/fonts/josefin-sans-v25-latin-regular.woff2') format('woff2'),
-    url('/fonts/josefin-sans-v25-latin-regular.woff') format('woff');
+  src: url('/fonts/raleway-v37-latin-regular.woff2') format('woff2');
 }
 
 @font-face {
@@ -21,8 +11,7 @@
   font-family: Body;
   font-style: italic;
   font-weight: 400;
-  src: url('/fonts/josefin-sans-v25-latin-italic.woff2') format('woff2'),
-    url('/fonts/josefin-sans-v25-latin-italic.woff') format('woff');
+  src: url('/fonts/raleway-v37-latin-italic.woff2') format('woff2');
 }
 
 @font-face {
@@ -30,9 +19,24 @@
   font-family: Body;
   font-style: normal;
   font-weight: 700;
-  src: url('/fonts/josefin-sans-v25-latin-700.woff2') format('woff2'),
-    url('/fonts/josefin-sans-v25-latin-700.woff') format('woff');
+  src: url('/fonts/raleway-v37-latin-700.woff2') format('woff2');
 }
+
+@font-face {
+  font-display: swap;
+  font-family: Heading;
+  font-style: normal;
+  font-weight: 700;
+  src: url('/fonts/rokkitt-v39-latin-700.woff2') format('woff2');
+}
+
+@font-face {
+  font-display: swap;
+  font-family: Heading;
+  font-style: italic;
+  font-weight: 700;
+  src: url('/fonts/rokkitt-v39-latin-700italic.woff2') format('woff2');
+} */
 
 html {
   font-family: "Source Sans 3", Verdana, Geneva, Tahoma, sans-serif;
