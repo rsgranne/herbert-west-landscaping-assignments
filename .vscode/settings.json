@@ -1,0 +1,26 @@
+{
+  "workbench.colorCustomizations": {
+    "editorBracketHighlight.foreground1": "#FFA500",
+    "editorBracketHighlight.foreground2": "#DA70D6",
+    "editorBracketHighlight.foreground3": "#87CEFA",
+    "editorIndentGuide.activeBackground": "#FFA500",
+    "activityBar.background": "#063611",
+    "titleBar.activeBackground": "#084B18",
+    "titleBar.activeForeground": "#F1FDF4"
+  },
+  "cSpell.words": [
+    "Coprolites",
+    "crockpot",
+    "Dookie",
+    "feedmetoashoggoth",
+    "ISBT",
+    "Nyarlathotep",
+    "Oswalt",
+    "Padawan",
+    "Pavestone",
+    "Strangelove",
+    "waaaaaay",
+    "Whoopsy"
+  ],
+  "specstory.cloudSync.enabled": "never"
+}
