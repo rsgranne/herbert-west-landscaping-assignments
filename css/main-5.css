@@ -48,10 +48,10 @@ aside {
   font-weight: 600;
 }
 
-.pull-quote > p {
+/* .pull-quote > p {
   margin-top: 0;
   margin-bottom: 0;
-}
+} */
 
 blockquote {
   font-style: italic;

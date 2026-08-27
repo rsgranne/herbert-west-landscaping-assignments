@@ -16,6 +16,7 @@ main-5.css;
   <li><code><a href="https://developer.mozilla.org/en-US/docs/Web/CSS/float">float</a></code>: Specifies that an element should be taken from the <i>normal flow</i> (which refers to the way elements are positioned by default in the webpage based on their order in the HTML code) &amp; instead positioned to the left or right inside its container, with the rest of the content flowing around it. You can only float in one direction, either <code>left</code> or <code>right</code>, &amp; that is it.</li>
   <li><code><a href="https://developer.mozilla.org/en-US/docs/Web/CSS/font-weight">font-weight</a></code>: Specifies the weight, or boldness, of a font. The values can be either keywords (<code>normal</code>, <code>bold</code>, <code>bolder</code>, &amp; <code>lighter</code>; of these, I find <code>bolder</code> &amp; <code>lighter</code> to be pretty vague &amp; not very useful) or numeric. The numbers range from <code>100</code> to <code>900</code>, incrementing by <code>100</code> each time (so <code>100</code>, <code>200</code>, <code>300</code>, all the way up to <code>900</code>). <code>400</code> is equivalent to <code>normal</code>, which is the default weight. <code>700</code> is equivalent to <code>bold</code>. <code>100</code> is also called <code>thin</code> &amp; is very light, while <code>900</code> is also called <code>black</code> &amp; is very heavy.</li>
   <li><code><a href="https://developer.mozilla.org/en-US/docs/Web/CSS/line-height" style="color:#d01a19;">line-height</a></code>: Specifies the vertical space between lines of text within a block-level element. The value should be a number without units, like <code>1.3</code>. <code>1.3</code> would mean 1.3 times the total height of the font, which is measured from the bottom descender to the top ascender.</li>
+  <li><code>margin-block</code>: You’ve learned about block boxes &amp; how they stack vertically. You have also used <code>margin-top</code> &amp; <code>margin-bottom</code> to set the margin on the top &amp; bottom of a block-level element. Top & bottom are physical directions, however, &amp; they work well with English. But in some Chinese texts, you read from right to left, so <i>the block direction is right to left</i>. Uh oh! <code>margin-top</code> &amp; <code>margin-bottom</code> won’t work for those texts. To fix that problem, we use <code>margin-block</code>, a logical shorthand property instead of a physical shorthand property. that sets the <code>margin-top</code> &amp; <code>margin-bottom</code> in one declaration. It’s a logical property because it works with the direction of the text, so it will set the <code>margin-top</code> &amp; <code>margin-bottom</code> for the top &amp; bottom of the text, regardless of the direction of the text.</li>
   <li><code><a href="https://developer.mozilla.org/en-US/docs/Web/CSS/text-transform" style="color:#d01a19;">text-transform</a></code>: Specifies capitalization of text. There are 4 values: <code>capitalize</code> (Every Word), <code>uppercase</code> (ALL CAPS), <code>lowercase</code>, &amp; <code>none</code> (do not change the current capitalization).</li>
 </ul>
 
@@ -75,9 +76,9 @@ main-5.css;
   Let&rsquo;s take a look at the MDN page for <code>margin</code> as an example. Visit the MDN page for <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/margin"><code>margin</code></a> &amp; scroll down past &ldquo;Try it&rdquo; &amp; &ldquo;Constituent properties&rdquo; &amp; &ldquo;Syntax&rdquo; &amp; &ldquo;Description&rdquo; until you get to &ldquo;Formal definition&rdquo;. The very first thing listed there is &ldquo;Initial value&rdquo;, which tells you that the default value for <code>margin-top</code>, <code>margin-right</code>, &amp; so on is <code>0</code>, that is, no margin at all.
 </p>
 <blockquote>
-  <P>
+  <p>
     <b>NOTE</b>: &ldquo;But Scott,&rdquo; I hear you saying, &ldquo;if the default for all margins is <code>0</code>, why do my <code>&lt;p&gt;</code> &amp; <code>&lt;h2&gt;</code> tags all have margins on the top &amp; bottom, &amp; my <code>&lt;blockquote&gt;</code> tags have margins on the top &amp; bottom <em>and</em> on the right &amp; left?&rdquo;
-  </P>
+  </p>
   <p>
     I will look at you with bemusement, take the toothpick out of my mouth, finish my mouthful of root beer, &amp; then say:
   </p>
@@ -123,6 +124,12 @@ main-5.css;
   Back to <code>background-color</code>. If you visit <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/background-color">its MDN page</a>, &amp; scroll down to &ldquo;Formal definition&rdquo;, you&rsquo;ll discover that the initial value for <code>background-color</code> is… <code>transparent</code>! So, by switching <code>background-color: white</code> to <code>background-color: initial</code>, you are setting the background to be transparent, since that is the default value for <code>background-color</code>. That means our pull quote will always take on the color of the webpage it&rsquo;s sitting on top of.
 </p>
 <p>
+  Let&rsquo;s specify the typeface used in <code>.pull-quote</code>. We&rsquo;ll use <code>font-family: "Iowan Old Style","Palatino Linotype", "URW Palladio L", P052, "Noto Serif", serif;</code> as our font stack. Why those particular fonts? <code>Iowan Old Style</code> is for all Apple devices, <code>Palatino Linotype</code> is for Windows, <code>URW Palladio L</code> &amp; <code>P052</code> are both for Linux, <code>Noto Serif</code> is for Android, &amp; <code>serif</code> is for everything else. This font stack focuses on Old Style serif typefaces, which, according to <a href="https://github.com/system-fonts/modern-font-stacks#old-style">Modern Font Stacks</a>, are &ldquo;characterized by diagonal stress, low contrast between thick and thin strokes, and rounded serifs, and were developed in the Renaissance period&rdquo;.
+</p>
+<p>
+  Let’s add two more declarations about the typefece. To make the pull quote stand out more, let&rsquo;s add a <code>font-weight</code> of <code>600</code> &amp; a <code>font-size</code> of <code>1.1rem</code>, which will make the pull quote a bit darker &amp; a bit larger than the body text. But wait! What if the font that gets applied to the pull quote is not available in a weight of <code>600</code>? In that case, the rendering engine will apply a weight of <code>700</code> to the pull quote, because that&rsquo;s the next available weight that is closest to <code>600</code>.
+</p>
+<p>
   Now that we have overridden the styles we early set for <code>&lt;aside&gt;</code>, let&rsquo;s add more. First of all, let&rsquo;s add a nice border to the top &amp; bottom of <code>.pull-quote</code> that is <code>.5em</code> wide, solid, &amp; a color of <code>#1D824B</code>. That looks nice.
 </p>
 <p>
@@ -138,13 +145,72 @@ main-5.css;
   When you specify the margins for all four sides of an element, you do know you can do it in a single declaration with just <code>margin</code>, right? Just remember the order of the values: <code>margin: top right bottom left</code>.
 </p>
 <p>
-  We have the margins all sorted out, but the text is still too close to the edges of the pull quote&rsquo;s box. Let&rsquo;s add a <code>padding</code> of <code>.5rem</code> to all four sides, which should be easy.
+  We have the margins all sorted out, but the text is still too close to the edges of the pull quote&rsquo;s box. Let&rsquo;s add a <code>padding</code> of <code>.5rem</code> to all four sides, which should be easy. Wait a minute — now the pull quote looks like this:
 </p>
 <p>
-  Finally, let&rsquo;s specify the typeface used in the pull quote. We&rsquo;ll use <code>font-family: "Iowan Old Style","Palatino Linotype", "URW Palladio L", P052, "Noto Serif", serif;</code> as our font stack. Why those particular fonts? <code>Iowan Old Style</code> is for all Apple devices, <code>Palatino Linotype</code> is for Windows, <code>URW Palladio L</code> &amp; <code>P052</code> are both for Linux, <code>Noto Serif</code> is for Android, &amp; <code>serif</code> is for everything else. This font stack focuses on Old Style serif typefaces, which, according to <a href="https://github.com/system-fonts/modern-font-stacks#old-style">Modern Font Stacks</a>, are &ldquo;characterized by diagonal stress, low contrast between thick and thin strokes, and rounded serifs, and were developed in the Renaissance period&rdquo;.
+  <img src="https://granneman.com/downloads/web-dev-assignments/herbert-west-landscaping/pull-quote-padding-problem.webp" alt="Pull quote with too much padding on top & bottom" style="border: 1px solid black; width: 30%; height: auto;">
 </p>
 <p>
-  Just two more things, since we&rsquo;re dealing with the typefece. To make the pull quote stand out more, let&rsquo;s add a <code>font-weight</code> of <code>600</code> &amp; a <code>font-size</code> of <code>1.1rem</code>, which will make the pull quote a bit darker &amp; a bit larger than the body text. But wait! What if the font that gets applied to the pull quote is not available in a weight of <code>600</code>? In that case, the rendering engine will apply a weight of <code>700</code> to the pull quote, because that&rsquo;s the next available weight that is closest to <code>600</code>.
+  That is <strong>way</strong> too much padding on the top &amp; bottom. But why is that there? We set the <code>padding</code> for all <i>four</i> sides to <code>.5rem</code>, so why are the top &amp; bottom so large?
+</p>
+<p>
+  To figure it out, we need to use the browser’s Inspector to see the actual CSS that the browser applies to the pull quote. To do that, right-click on the pull quote in Live Preview &amp; select <i>Inspect</i> (Safari users will select <i>Inspect Element</i>, but you must first go into Safari’s settings, click on the <i>Advanced</i> tab, &amp; check the box next to <i>Show features for web developers</i>).
+</p>
+<p>
+  If you right-clicked on the pull quote in Live Preview &amp; selected <i>Inspect</i>, you will see something like the following (if you do not, make sure you click on the Elements tab in the Inspector, then find the <code>&lt;aside class="pull-quote"&gt;</code> element &amp; click on it; in the other area, click on the <i>Computed</i> tab &amp; scroll down to see the box illustration).
+</p>
+<p>
+  <img src="https://granneman.com/downloads/web-dev-assignments/herbert-west-landscaping/pull-quote-padding-aside.webp" alt="Browser Inspector showing the computed CSS for the pull quote" style="border: 1px solid black; width: 90%; height: auto;">
+</p>
+<p>
+  There is a lot going on in that image, but I want you to notice how the colors around the rendered pull quote &amp; match the colors in the box illustration: the margin is orange, the border is yellow, the padding is green, &amp; the content is blue. Also notice how the box illustration has numbers that tell you the number of pixels for the margin, border, padding, &amp; content. Those numbers match what we’ve been setting in our styles, namely:
+</p>
+<ul>
+  <li>The margin, from the top going clockwise, is <code>0</code>, <code>12</code> (<code>.75rem</code> — remember that <code>1rem</code> by default is <code>16px</code>), <code>8</code> (<code>.5rem</code>), <code>0</code>.</li>
+  <li>The border is <code>8px</code> (<code>.5rem</code>)on the top & bottom, & <code>0</code> on the right & left.</li>
+  <li>The padding is <code>8px</code> (<code>.5rem</code>) on all four sides.</li>
+</ul>
+<p>
+  That all looks fine, but it still doesn’t answer our question. But take a look at the blue content box in the illustration. See all that space above & below the text? Where’s that coming from?
+</p>
+<p>
+  Hmmm. Let’s take a closer look at that <code>&lt;p&gt;</code> tag inside the pull quote. In the Inspector, simple click on the <code>&lt;p&gt;</code> tag to select it, &amp; you should see the following:
+</p>
+<p>
+  <img src="https://granneman.com/downloads/web-dev-assignments/herbert-west-landscaping/pull-quote-padding-p.webp" alt="Browser Inspector showing computed CSS for paragraph in pull quote" style="border: 1px solid black; width: 90%; height: auto;">
+</p>
+<p>
+  You will see that the <code>&lt;p&gt;</code> has a <code>margin-top</code> &amp; <code>margin-bottom</code> of <code>17.6px</code>. That’s why the pull quote has so much space above &amp; below the text! <code>17.6</code> is sure an oddly specific number, though. Normally the top & bottom margin for a paragraph is <code>16px</code>. Why is ours larger?
+</p>
+<p>
+  Remember earlier we set <code>font-size</code> for <code>.pull-quote</code> to <code>1.1rem</code>? <code>16px</code> is the default size for <code>1rem</code> (the default font size for <code>&lt;html&gt;</code>, you’ll remember). So <code>1.1rem</code> is <code>16px</code> &times; <code>1.1</code> = <code>17.6px</code>.
+</p>
+<p>
+  So now what? Well, we need to set the <code>margin-top</code> &amp; <code>margin-bottom</code> for <code>&lt;p&gt;</code> to <code>0</code> in our CSS. That will remove the extra space above &amp; below the text. Now we could do this:
+</p>
+<p>
+<pre><code>.pull-quote > p {
+  margin-top: 0;
+  margin-bottom: 0;
+}</code></pre>
+</p>
+<p>
+  But there is a more efficient way to do this. We can use the <code>margin-block</code> logical shorthand property to set the <code>margin-top</code> &amp; <code>margin-bottom</code> to <code>0</code> in one declaration.
+</p>
+<p>
+
+</p>
+<p>
+
+</p>
+<p>
+
+</p>
+<p>
+
+</p>
+<p>
+
 </p>
 <p>
   And that&rsquo;s it! We&rsquo;ve added a pull quote to <code>seasonal.html</code>, &amp; we&rsquo;ve styled it to our liking. For reference, check out the <a href="https://granneman.com/downloads/web-dev-assignments/herbert-west-landscaping/seasonal-3.pdf">finished version of <code>seasonal.html</code></a>. There was a lot to what we did, but it&rsquo;s not that difficult, &amp; these are all things you will use over &amp; over again.
@@ -155,7 +221,8 @@ main-5.css;
 <p>
   A while ago, when we first added hyperlinks to our website, we created a pretty bare bones webpage at <code>/about/privacy-policy.html</code>. Back then, you knew the contents of the <code>&lt;title&gt;</code> &amp; the <code>&lt;h1&gt;</code>. Then we added a <code>&lt;header&gt;</code> &amp; <code>&lt;footer&gt;</code>. Now it&rsquo;s time to build out the Privacy Policy page with content. I think you will enjoy this one.
 </p>
-Reproduce this webpage: <a href="https://granneman.com/downloads/web-dev-assignments/herbert-west-landscaping/privacy-policy-3.pdf" target="_blank" rel="noopener">privacy-policy-3.pdf</a>.
+<p>
+  Reproduce this webpage: <a href="https://granneman.com/downloads/web-dev-assignments/herbert-west-landscaping/privacy-policy-3.pdf" target="_blank" rel="noopener">privacy-policy-3.pdf</a>.
 </p>
 <p>
   Copy the text from <a href="https://granneman.com/downloads/web-dev-assignments/herbert-west-landscaping/privacy-policy-3.txt" target="_blank" rel="noopener">privacy-policy-3.txt</a>
