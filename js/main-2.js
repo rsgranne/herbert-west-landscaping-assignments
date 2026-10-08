@@ -164,8 +164,9 @@ function generateBreadcrumb() {
 }
 
 // Generate breadcrumb unless the <body> has the "no-breadcrumb" class
+// (because this script is deferred, the page is ready by the time this runs)
 if (!document.body.classList.contains('no-breadcrumb')) {
-  window.addEventListener('load', generateBreadcrumb);
+  generateBreadcrumb();
 }
 
 // ===================================================================
