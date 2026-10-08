@@ -1,3 +1,5 @@
+// To use, include <script src="/js/main.js" defer></script> in the <head>.
+//
 // 1. HTML includes
 // 2. Breadcrumbs
 // 3. Manager-card filters
@@ -56,22 +58,32 @@ function includeHTML(url, targetElement = null) {
     .catch(error => console.error('Error fetching the file:', error));
 }
 
-// To use, include <script src="/js/main.js"></script> in the <head> (or at least above where you call the includeHTML function) & then place the following near the bottom of your HTML file, just before any other <script> tags that come before </body>:
+// To use, include `<script src="/js/main.js" defer></script>` in the `<head>`. `defer` tells the browser to download this file right away but wait to run it until it has finished reading the whole page.
+//
+// Then place the following near the bottom of your HTML file, just before `</body>`:
 //
 // <script>
-//   includeHTML('/includes/footer.html', 'main');
+//   document.addEventListener('DOMContentLoaded', () => {
+//     includeHTML('/includes/footer.html', 'main');
+//   });
 // </script>
 // <noscript>
 //   You cannot see the footer without enabling JavaScript.
 // </noscript>
 //
-// Replace /includes/footer.html & the footer in <noscript> with the file you want to insert.
+// `DOMContentLoaded` fires when the browser has finished reading the page. Deferred scripts like this one always run just before that, so by then `includeHTML` is ready to use.
 //
-// Replace main with either an element (like main), an ID (#main), or a class (.main), & the included file will be placed below it.
+// Replace `/includes/footer.html` & `the footer` in `<noscript>` with the file you want to insert.
+//
+// Replace `main` with either an element (like `main`), an id (`#main`), or a class (`.main`), & the included file will be placed below it.
+//
+// `includeHTML` isn’t just for footers: call it as many times as you want, on any page, to include any fragment of HTML anywhere you want.
 
 // ===================================================================
 // 2. Breadcrumbs
 // ===================================================================
+
+// The page also needs <header id="header">, because the breadcrumb is added to the end of it.
 
 // Capitalizes the first letter of a word
 function capitalizeFirstLetter(string) {
@@ -153,87 +165,81 @@ function generateBreadcrumb() {
 }
 
 // Generate breadcrumb unless the <body> has the "no-breadcrumb" class
-window.addEventListener('load', () => {
-  if (!document.body.classList.contains('no-breadcrumb')) {
-    generateBreadcrumb();
-  }
-});
+if (!document.body.classList.contains('no-breadcrumb')) {
+  window.addEventListener('load', generateBreadcrumb);
+}
 
 // ===================================================================
 // 3. Manager-card filters
 // ===================================================================
 
-function initializeManagerFilters() {
-  // Select all character cards
-  const characterCards = document.querySelectorAll('.managers > div');
+// Select all character cards
+const characterCards = document.querySelectorAll('.managers > div');
 
-  // Store active filter selections
-  let activeAlignment = 'all';
-  let activeType = 'all';
-  let activeEnvironment = 'all';
+// Store active filter selections
+let activeAlignment = 'all';
+let activeType = 'all';
+let activeEnvironment = 'all';
 
-  // Helper function to switch button classes
-  function updateButtonClasses(buttonGroup, selectedButton) {
-    buttonGroup.forEach(button => {
-      if (button === selectedButton) {
-        button.classList.remove('btn-outline-primary');
-        button.classList.add('btn-primary');
-      } else {
-        button.classList.remove('btn-primary');
-        button.classList.add('btn-outline-primary');
-      }
-    });
-  }
-
-  // Function to filter cards based on the selected filters
-  function filterCards() {
-    characterCards.forEach(card => {
-      // Get the card's attributes
-      const cardAlignment = card.getAttribute('data-alignment');
-      const cardType = card.getAttribute('data-type');
-      const cardEnvironment = card.getAttribute('data-environment');
-
-      // Check if the card matches the active filters
-      const alignmentMatch = activeAlignment === 'all' || cardAlignment === activeAlignment;
-      const typeMatch = activeType === 'all' || cardType === activeType;
-      const environmentMatch = activeEnvironment === 'all' || cardEnvironment === activeEnvironment;
-
-      // Apply the filters by toggling a CSS class (avoids layout side-effects)
-      if (alignmentMatch && typeMatch && environmentMatch) {
-        card.classList.remove('is-hidden');
-      } else {
-        card.classList.add('is-hidden');
-      }
-    });
-  }
-
-  // Function to handle button clicks and class switching
-  function setupFilterButtons(attribute, buttons) {
-    buttons.forEach(button => {
-      button.addEventListener('click', () => {
-        const value = button.getAttribute(attribute);
-
-        // Update the appropriate active filter
-        if (attribute === 'data-alignment') activeAlignment = value;
-        if (attribute === 'data-type') activeType = value;
-        if (attribute === 'data-environment') activeEnvironment = value;
-
-        // Update button classes
-        updateButtonClasses(buttons, button);
-
-        // Apply the filters
-        filterCards();
-      });
-    });
-  }
-
-  // Set up event listeners for each filter group
-  setupFilterButtons('data-alignment', document.querySelectorAll('.filters button[data-alignment]'));
-  setupFilterButtons('data-type', document.querySelectorAll('.filters button[data-type]'));
-  setupFilterButtons('data-environment', document.querySelectorAll('.filters button[data-environment]'));
+// Helper function to switch button classes
+function updateButtonClasses(buttonGroup, selectedButton) {
+  buttonGroup.forEach(button => {
+    if (button === selectedButton) {
+      button.classList.remove('btn-outline-primary');
+      button.classList.add('btn-primary');
+    } else {
+      button.classList.remove('btn-primary');
+      button.classList.add('btn-outline-primary');
+    }
+  });
 }
 
-window.addEventListener('load', initializeManagerFilters);
+// Function to filter cards based on the selected filters
+function filterCards() {
+  characterCards.forEach(card => {
+    // Get the card's attributes
+    const cardAlignment = card.getAttribute('data-alignment');
+    const cardType = card.getAttribute('data-type');
+    const cardEnvironment = card.getAttribute('data-environment');
+
+    // Check if the card matches the active filters
+    const alignmentMatch = activeAlignment === 'all' || cardAlignment === activeAlignment;
+    const typeMatch = activeType === 'all' || cardType === activeType;
+    const environmentMatch = activeEnvironment === 'all' || cardEnvironment === activeEnvironment;
+
+    // Apply the filters by toggling a CSS class (avoids layout side-effects)
+    if (alignmentMatch && typeMatch && environmentMatch) {
+      card.classList.remove('is-hidden');
+    } else {
+      card.classList.add('is-hidden');
+    }
+  });
+}
+
+// Function to handle button clicks and class switching
+function setupFilterButtons(attribute, buttons) {
+  buttons.forEach(button => {
+    button.addEventListener('click', () => {
+      const value = button.getAttribute(attribute);
+
+      // Update the appropriate active filter
+      if (attribute === 'data-alignment') activeAlignment = value;
+      if (attribute === 'data-type') activeType = value;
+      if (attribute === 'data-environment') activeEnvironment = value;
+
+      // Update button classes
+      updateButtonClasses(buttons, button);
+
+      // Apply the filters
+      filterCards();
+    });
+  });
+}
+
+// Set up event listeners for each filter group
+setupFilterButtons('data-alignment', document.querySelectorAll('.filters button[data-alignment]'));
+setupFilterButtons('data-type', document.querySelectorAll('.filters button[data-type]'));
+setupFilterButtons('data-environment', document.querySelectorAll('.filters button[data-environment]'));
 
 // ===================================================================
 // 4. Form validation

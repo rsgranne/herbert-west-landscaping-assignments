@@ -47,15 +47,23 @@ function includeHTML(url, targetElement = null) {
     .catch(error => console.error('Error fetching the file:', error));
 }
 
-// To use, include `<script src="/js/include.js"></script>` in the `<head>` (or at least above where you call the `includeHTML` function) & then place the following near the bottom of your HTML file, just before any other `<script>` tags that come before `</body>`:
+// To use, include `<script src="/js/include.js" defer></script>` in the `<head>`. `defer` tells the browser to download this file right away but wait to run it until it has finished reading the whole page.
+//
+// Then place the following near the bottom of your HTML file, just before `</body>`:
 //
 // <script>
-//   includeHTML('/includes/footer.html', 'main');
+//   document.addEventListener('DOMContentLoaded', () => {
+//     includeHTML('/includes/footer.html', 'main');
+//   });
 // </script>
 // <noscript>
 //   You cannot see the footer without enabling JavaScript.
 // </noscript>
 //
+// `DOMContentLoaded` fires when the browser has finished reading the page. Deferred scripts like this one always run just before that, so by then `includeHTML` is ready to use.
+//
 // Replace `/includes/footer.html` & `the footer` in `<noscript>` with the file you want to insert.
 //
 // Replace `main` with either an element (like `main`), an id (`#main`), or a class (`.main`), & the included file will be placed below it.
+//
+// `includeHTML` isn’t just for footers: call it as many times as you want, on any page, to include any fragment of HTML anywhere you want.

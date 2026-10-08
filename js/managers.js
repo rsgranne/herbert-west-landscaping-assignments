@@ -1,3 +1,5 @@
+// To use, insert the following in <head>: <script src="/js/managers.js" defer></script>
+
 // Select all character cards
 const characterCards = document.querySelectorAll('.managers > div');
 
