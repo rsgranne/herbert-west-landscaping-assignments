@@ -1,6 +1,6 @@
 <!--
 x.css, x.html;
-~2,840 words;
+~2,890 words;
 Original instructions at https://chnsa.ws/25r
 -->
 <p>
@@ -108,10 +108,14 @@ Original instructions at https://chnsa.ws/25r
   Use Live Preview to see if the footer appeared on <code>index.html</code>.
 </p>
 <p>
-  Now find &amp; replace <code>&lt;footer&gt; … &lt;/footer&gt;</code> with the <code>&lt;script&gt;</code> lines above.
+  Now use find &amp; replace to make the same changes on every other page:
 </p>
+<ol>
+  <li>Find <code>&lt;/head&gt;</code> &amp; replace it with <code>&lt;script src="/js/include.js" defer&gt;&lt;/script&gt;</code> followed by <code>&lt;/head&gt;</code>. Before you replace, click the ✕ next to <code>index.html</code> in the search results to leave it out, since it already has that line.</li>
+  <li>Find <code>&lt;footer&gt; … &lt;/footer&gt;</code> &amp; replace it with the <code>&lt;script&gt;</code> &amp; <code>&lt;noscript&gt;</code> lines above.</li>
+</ol>
 <p>
-  Go look at the code for <code>/services/landscape-maintenance.html</code> &amp; you&rsquo;ll notice that it didn&rsquo;t get replaced. Why? Because it&rsquo;s missing the <code>&lt;script&gt;</code> lines above & it still has the <code>&lt;footer&gt;</code> section in it. Fix all that, just like we did on <code>index.html</code>.
+  Go look at the code for <code>/services/landscape-maintenance.html</code> &amp; you&rsquo;ll notice that its footer didn&rsquo;t get replaced. Why? Because it&rsquo;s missing the <code>&lt;script&gt;</code> &amp; <code>&lt;noscript&gt;</code> lines above & it still has the <code>&lt;footer&gt;</code> section in it. Fix all that, just like we did on <code>index.html</code>.
 </p>
 <p>
   If you haven&rsquo;t already, go to <code>footer.html</code> &amp; add <code>.social-media-icons</code> onto the <code>&lt;ul&gt;</code> that contains the icons.
