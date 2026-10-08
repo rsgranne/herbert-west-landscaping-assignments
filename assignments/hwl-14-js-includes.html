@@ -1,6 +1,6 @@
 <!--
 x.css, x.html;
-~2,640 words;
+~2,840 words;
 Original instructions at https://chnsa.ws/25r
 -->
 <p>
@@ -83,7 +83,9 @@ Original instructions at https://chnsa.ws/25r
   Where <code>&lt;footer&gt; … &lt;/footer&gt;</code> used to go, enter this instead:
 </p>
 <pre><code>&lt;script&gt;
-  includeHTML('/includes/footer.html', 'main');
+  document.addEventListener('DOMContentLoaded', () =&gt; {
+    includeHTML('/includes/footer.html', 'main');
+  });
 &lt;/script&gt;
 &lt;noscript&gt;
   &lt;p&gt;
@@ -91,7 +93,16 @@ Original instructions at https://chnsa.ws/25r
   &lt;/p&gt;
 &lt;/noscript&gt;</code></pre>
 <p>
-  Enter <code>&lt;script src="/js/include.js"&gt;&lt;/script&gt;</code> in <code>&lt;head&gt;</code> (or at least above where you call the <code>includeHTML</code> function).
+  Enter <code>&lt;script src="/js/include.js" defer&gt;&lt;/script&gt;</code> in <code>&lt;head&gt;</code>.
+</p>
+<p>
+  What’s that <code>defer</code>? Normally, when a browser reaches a <code>&lt;script&gt;</code> in the <code>&lt;head&gt;</code>, it stops, downloads the JavaScript, &amp; runs it immediately—before the rest of the page even exists. <code>defer</code> tells the browser to download the file right away but to wait to run it until it has finished reading the whole page. From now on, every <code>&lt;script&gt;</code> that links to a JavaScript file goes in <code>&lt;head&gt;</code> with <code>defer</code>.
+</p>
+<p>
+  And what’s that <code>DOMContentLoaded</code>? Our little <code>&lt;script&gt;</code> near the bottom of the page runs as soon as the browser reaches it, but <code>include.js</code> is deferred, so it hasn’t run yet. <code>document.addEventListener('DOMContentLoaded', …)</code> tells the browser, “Wait until you’ve finished reading the page, &amp; then run this code.” Deferred scripts always run just before that happens, so by then <code>includeHTML</code> is ready to use.
+</p>
+<p>
+  We happen to be using <code>includeHTML</code> to include the footer, but it isn’t just for footers: you can use it as many times as you want, on any page, to include any fragment of HTML anywhere you want.
 </p>
 <p>
   Use Live Preview to see if the footer appeared on <code>index.html</code>.
@@ -218,9 +229,12 @@ Original instructions at https://chnsa.ws/25r
   &lt;/ol&gt;
 &lt;/nav&gt;</code></pre>
 <p>
-  In its place, enter this:
+  In its place, enter this comment, so that anyone reading your HTML knows where the breadcrumb will appear:
 </p>
-<pre><code>&lt;script src="/js/breadcrumb.js"&gt;&lt;/script&gt;</code></pre>
+<pre><code>&lt;!-- /js/breadcrumb.js inserts the breadcrumb here --&gt;</code></pre>
+<p>
+  Enter <code>&lt;script src="/js/breadcrumb.js" defer&gt;&lt;/script&gt;</code> in <code>&lt;head&gt;</code>, right below the <code>&lt;script&gt;</code> for <code>include.js</code>.
+</p>
 <p>
   Add an ID of <code>header</code> onto the <code>&lt;header&gt;</code> element, like this:
 </p>
