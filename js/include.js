@@ -54,7 +54,7 @@ function includeHTML(url, targetElement = null) {
 // </script>
 // <noscript>
 //   You cannot see the footer without enabling JavaScript.
-// </noscript >
+// </noscript>
 //
 // Replace `/includes/footer.html` & `the footer` in `<noscript>` with the file you want to insert.
 //
