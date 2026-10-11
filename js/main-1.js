@@ -7,6 +7,7 @@
 // 1. HTML includes
 // ===================================================================
 
+// https://chnsa.ws/25p
 // Function to include HTML content below a specified element, ID, or class
 function includeHTML(url, targetElement = null) {
   // Fetch the external HTML file
@@ -103,6 +104,7 @@ function includeHTML(url, targetElement = null) {
 // 2. Breadcrumbs
 // ===================================================================
 
+// https://chnsa.ws/25q
 // The page also needs <header id="header">, because the breadcrumb is added to the end of it.
 
 // Capitalizes the first letter of a word

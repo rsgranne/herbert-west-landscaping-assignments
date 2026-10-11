@@ -1,3 +1,4 @@
+// https://chnsa.ws/25q
 // To use, insert the following in <head>: <script src="/js/breadcrumb.js" defer></script>
 // The page also needs <header id="header">, because the breadcrumb is added to the end of it.
 
