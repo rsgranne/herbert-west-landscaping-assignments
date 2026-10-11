@@ -1,49 +1,71 @@
 // Function to include HTML content below a specified element, ID, or class
 function includeHTML(url, targetElement = null) {
+  // Fetch the external HTML file
   fetch(url)
+
+    // Check that the file was found, then convert the response from the server into plain text
     .then(response => {
+      // A missing file (like a 404) still sends back a response, so stop here with an error
       if (!response.ok) {
         throw new Error(`HTTP error! status: ${response.status}`);
       }
       return response.text();
     })
+
+    // Work with the HTML text after it has been loaded
     .then(data => {
       // Warn if the included file contains a full HTML document (which is usually a mistake when using includeHTML)
       if (data.toLowerCase().includes('<html')) {
         console.warn(`⚠️ Warning: ${url} appears to contain a full HTML document! Make sure it only contains the intended fragment.`);
       }
 
-      // Parse the fetched HTML string into a DOM structure so we can manipulate its elements
+      // Create a parser that can turn a string of HTML into real HTML elements
       const parser = new DOMParser();
+
+      // Parse the fetched HTML text as an HTML document
       const htmlContent = parser.parseFromString(data, 'text/html');
 
-      // Get only the element nodes from the parsed content (ignores text/comments)
-      const includedElements = Array.from(htmlContent.body.children);
+      // Get only the actual HTML elements inside the fetched file’s <body>
+      // This skips whitespace, line breaks, comments, and text nodes
+      const includedContent = htmlContent.body.children;
 
+      // Create a temporary container for the included elements
+      // This lets us insert everything at once while keeping the correct order
+      const fragment = document.createDocumentFragment();
+
+      // Copy each included element into the temporary fragment
+      Array.from(includedContent).forEach(node => {
+        fragment.appendChild(node.cloneNode(true));
+      });
+
+      // If the user provided a target element, selector, ID, or class
       if (targetElement) {
-        // Determine the target element (it can be a selector string or a DOM element)
+        // If targetElement is a string, use it as a CSS selector
+        // Examples: 'main', '#main', '.main'
+        //
+        // If targetElement is already an element, use it directly
         const targetElementNode = typeof targetElement === 'string'
           ? document.querySelector(targetElement)
           : targetElement;
 
-        // Ensure the target element exists before proceeding
+        // Stop with an error if the target element doesn’t exist on this page
         if (!targetElementNode) {
           console.error(`Target element '${targetElement}' not found.`);
           return;
         }
 
-        // Insert each valid element after the target element
-        includedElements.forEach(node => {
-          targetElementNode.insertAdjacentElement('afterend', node.cloneNode(true));
-        });
+        // Insert the included content after the target element
+        targetElementNode.after(fragment);
       } else {
-        // If no target is specified, insert each included element before the first child of <body> (i.e., at the top of the page content)
+        // If no target element was provided, find the first element in <body>
         const firstElement = document.body.firstElementChild;
-        includedElements.forEach(node => {
-          firstElement.insertAdjacentElement('beforebegin', node.cloneNode(true));
-        });
+
+        // Insert the included content before the first element in <body>
+        firstElement.before(fragment);
       }
     })
+
+    // Show an error in the console if the file cannot be fetched or inserted
     .catch(error => console.error('Error fetching the file:', error));
 }
 
