@@ -112,7 +112,7 @@
   When you look at the resulting webpage using Live Preview, you will find that the SVG logo for Facebook is enormous. Look at the code, &amp; you&rsquo;ll see that width &amp; height is never defined (the <code>viewBox</code> defines the dimensions of the <i>SVG viewport</i>, which causes the problem). There are a few ways we could fix this:
 </p>
 <ul>
-  <li>Add <code>width="48" height="48"</code> to the <code>&lt;svg&gt;</code> element so that it looks like this: <code>&lt;svg viewBox="0 0 1000 1000" width="48" height="48"&gt;</code> &larr; For now, do this! (If you have gone over the SVG section of the slides, you will remember that if you are embedding an SVG, you should remove <code>xmlns=&quot;http://www.w3.org/2000/svg&quot;</code> from the <code>&lt;svg&gt;</code> element after you paste it in)</li>
+  <li>Add <code>width="48" height="48"</code> to the <code>&lt;svg&gt;</code> element so that it looks like this: <code>&lt;svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 1000" width="48" height="48"&gt;</code> &larr; For now, do this! (Leave <code>xmlns="http://www.w3.org/2000/svg"</code> alone. A standalone SVG file needs it, but inside an HTML page it’s harmless.)</li>
   <li>
     Use CSS. We haven&rsquo;t gotten into that yet, but you would do something like:
   </li>
