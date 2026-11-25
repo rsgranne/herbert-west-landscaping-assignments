@@ -106,7 +106,7 @@
   <img style="max-width: 100%; height: auto;" src="https://granneman.com/downloads/web-dev-assignments/herbert-west-landscaping/images/svg-linked-mastodon.webp" alt="Code example for linking to an SVG image">
 </p>
 <p>
-  For Facebook, however, I want you to replace the word &ldquo;Facebook&rdquo; with the SVG code. In other words, you are <em>embedding</em> the SVG code for <code>facebook-logo-hwl.svg</code> in the HTML where the word &ldquo;Facebook&rdquo; was. How do you get the code for the Facebook SVG? Click on the <code>facebook-logo-hwl.svg</code> file &amp; then copy &amp; paste that code! When you are done, it should look like this (keep in mind that it is a <em>lot</em> taller than this, but I cropped it so it wasn’t excessive in these instructions):
+  For Facebook, however, I want you to replace the word &ldquo;Facebook&rdquo; with the SVG code. In other words, you are <em>embedding</em> the SVG code for <code>facebook-hwl.svg</code> in the HTML where the word &ldquo;Facebook&rdquo; was. How do you get the code for the Facebook SVG? Click on the <code>facebook-hwl.svg</code> file &amp; then copy &amp; paste that code! When you are done, it should look like this (keep in mind that it is a <em>lot</em> taller than this, but I cropped it so it wasn’t excessive in these instructions):
 </p>
 <p>
   <img style="max-width: 100%; height: auto;" src="https://granneman.com/downloads/web-dev-assignments/herbert-west-landscaping/images/svg-embedded-facebook-2025-02-20-04-43.webp" alt="Code example for an embedded SVG image">
@@ -120,7 +120,7 @@
   When you look at the resulting webpage using Live Preview, you will find that the SVG logo for Facebook is enormous. Look at the code, &amp; you&rsquo;ll see that width &amp; height is never defined (the <code>viewBox</code> defines the dimensions of the <i>SVG viewport</i>, which causes the problem). There are a few ways we could fix this:
 </p>
 <ul>
-  <li>Add <code>width="48" height="48"</code> to the <code>&lt;svg&gt;</code> element so that it looks like this: <code>&lt;svg viewBox="0 0 256 256" width="48" height="48"&gt;</code> &larr; For now, do this! (If you have gone over the SVG section of the slides, you will remember that if you are embedding an SVG, you should remove <code>xmlns=&quot;http://www.w3.org/2000/svg&quot;</code> from the <code>&lt;svg&gt;</code> element after you paste it in)</li>
+  <li>Add <code>width="48" height="48"</code> to the <code>&lt;svg&gt;</code> element so that it looks like this: <code>&lt;svg viewBox="0 0 1000 1000" width="48" height="48"&gt;</code> &larr; For now, do this! (If you have gone over the SVG section of the slides, you will remember that if you are embedding an SVG, you should remove <code>xmlns=&quot;http://www.w3.org/2000/svg&quot;</code> from the <code>&lt;svg&gt;</code> element after you paste it in)</li>
   <li>
     Use CSS. We haven&rsquo;t gotten into that yet, but you would do something like:
   </li>
