@@ -52,19 +52,11 @@
   <img style="max-width: 40vw; height: auto;" src="https://granneman.com/downloads/web-dev-assignments/herbert-west-landscaping/images/root-images-expanded+index+services-cs-lm.webp" alt="Folder structure after uploading the images folder for Herbert West Landscaping assignment 4">
 </p>
 <p>
-  You will notice that all images are available as either SVG, WebP, or, in a few cases, as both JPG &amp; WebP. <strong>Read the following carefully</strong>:
+  You will notice that all images are available as either SVG or WebP. <strong>Read the following carefully</strong>:
 </p>
 <ul>
   <li>If the <code>&lt;img&gt;</code> is an SVG, then obviously use the SVG.</li>
-  <li>If the only format for an <code>&lt;img&gt;</code> is WebP, then use that.</li>
-  <li>
-    <p>
-      However, if there is both a WebP <em>and</em> a JPG version of an image, then you are going to use the <code>srcset</code> attribute with the <code>&lt;img&gt;</code>, with the WebP as the <code>srcset</code> format, &amp; with JPG as the fallback in <code>src</code>. Don&rsquo;t worry&thinsp;&mdash;&thinsp;I only did that on a few webpages.
-    </p>
-    <p>
-      IMPORTANT: At this time, autocomplete doesn&rsquo;t work for the <code>srcset</code> attribute, so just copy the value of <code>src</code> (which points to the <code>jpg</code>) &amp; paste it into the value for <code>srcset</code>, & then change <code>jpg</code> to <code>webp</code>. Hopefully this will be fixed once I <a href="https://github.com/microsoft/vscode/issues/175807">file a bug to the makers of VS Code</a>.
-    </p>
-  </li>
+  <li>Otherwise, use the WebP.</li>
 </ul>
 
 <h3>Videos</h3>
