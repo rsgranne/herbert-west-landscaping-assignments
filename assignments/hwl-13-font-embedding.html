@@ -53,7 +53,7 @@ main-6.css,
   OK, how about <a href="https://fonts.google.com/specimen/Libre+Baskerville?category=Serif&stylecount=2">Libre Baskerville</a> (click on that link too)? That has a 700 style, but it doesn&rsquo;t have a 700 italic, so it&rsquo;s out as well. Back to searching.
 </p>
 <p>
-  Aha! How about <a href="https://fonts.google.com/specimen/Rokkitt?category=Serif">Rokkit</a> (take a look)? That one has 18 styles (100–900, as well as italics for every weight), so it will definitely have 700 &amp; 700 italic, and sure enough it does. Whew!
+  Aha! How about <a href="https://fonts.google.com/specimen/Rokkitt?category=Serif">Rokkitt</a> (take a look)? That one has 18 styles (100–900, as well as italics for every weight), so it will definitely have 700 &amp; 700 italic, and sure enough it does. Whew!
 </p>
 <p>
   That is all we are going to do on that page. We are not going to click on anything else, because we are not going to embed fonts the Google way (if you don&rsquo;t recall the problems with the Google way, go look in the <a href="https://granneman.com/downloads/web-dev/CSS-Typography-Condensed.pdf"><i>CSS Typography Condensed</i> slides</a> for the <i>Embedding</i> section and start reading there).
@@ -76,14 +76,14 @@ main-6.css,
   Let&rsquo;s take a gander at <a href="https://fonts.google.com/specimen/Raleway">Raleway</a> (click it!). It has 9 weights & corresponding italics, so that will work. Yes, it&rsquo;s very stylized (that capital W!), but I&rsquo;m purposely picking very noticeable fonts so that when you test your code using Live Preview you will definitely be able to see whether or not it has worked.
 </p>
 <p>
-  We now have our choices: Rokkit 700 &amp; 700 italic for headings, and Raleway 400, 400 italic, &amp; 700 for the body. On to google-webfonts-helper!
+  We now have our choices: Rokkitt 700 &amp; 700 italic for headings, and Raleway 400, 400 italic, &amp; 700 for the body. On to google-webfonts-helper!
 </p>
 <h3>google-webfonts-helper</h3>
 <p>
   Head to <a href="https://gwfh.mranftl.com/fonts">google-webfonts-helper</a> in your browser. First, headings.
 </p>
 <p>
-  In the search box in the upper left corner, type in <code>Rokkit</code>, which will filter the list to our desired typeface. Click on it and the main content of the page should change to show you Rokkit.
+  In the search box in the upper left corner, type in <code>Rokkitt</code>, which will filter the list to our desired typeface. Click on it and the main content of the page should change to show you Rokkitt.
 </p>
 <p>
   Step 1 is &ldquo;Select charsets&rdquo;, &amp; we have 3 choices: <i>latin</i> (which is already checked), <i>latin-ext</i>, and <i>vietnamese</i>. &ldquo;Latin&rdquo; means western European, which includes English, French, Spanish, and the like. Do we need &ldquo;latin-ext&rdquo; (the &ldquo;ext&rdquo; is short for &ldquo;extended&rdquo;)?
@@ -171,7 +171,7 @@ main-6.css,
   Now if we decide to use a different font later, we just change the <code>url()</code> lines in <code>@font-face</code> and that is all. We don&rsquo;t need to change the <code>font-family</code> in <code>@font-face</code>, nor do we need to change it anywhere else in our CSS. Much easier!
 </p>
 <p>
-  So if we follow my advice, we now have this in <code>main.css</code> (&amp; notice we also get rid of the completely unnecessary single quotation marks around <code>Rokkit</code> as well):
+  So if we follow my advice, we now have this in <code>main.css</code> (&amp; notice we also get rid of the completely unnecessary single quotation marks around <code>Rokkitt</code> as well):
 </p>
 <pre><code>@font-face {
   font-display: swap;
